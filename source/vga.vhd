@@ -13,7 +13,10 @@ entity VGA is
         VGA_G  : out std_logic_vector(3 downto 0) := (others => '0');
         VGA_HS : out std_logic 					  := '0';
         VGA_R  : out std_logic_vector(3 downto 0) := (others => '0');
-        VGA_VS : out std_logic 					  := '0'
+        VGA_VS : out std_logic 					  := '0';
+        hPos   : out integer;
+        vPos   : out integer;
+        status : in std_logic_vector(3 downto 0)  := (others => '0')
 	);
 
 
@@ -45,29 +48,6 @@ architecture rtl of VGA is
 	signal lineCount : integer := 0;
 	signal nextLineCount : integer := 0;
 
-	constant RED : std_logic_vector(11 downto 0) := X"F00";
-	constant DRED : std_logic_vector(11 downto 0) := X"800";
-	constant GREEN : std_logic_vector(11 downto 0) := X"0F0";
-	constant DGREEN : std_logic_vector(11 downto 0) := X"080";
-	constant BLUE : std_logic_vector(11 downto 0) := X"00F";
-	constant DBLUE : std_logic_vector(11 downto 0) := X"008";
-	constant WHITE : std_logic_vector(11 downto 0) := X"FFF";
-	constant Black : std_logic_vector(11 downto 0) := X"000";
-	constant ORANGE : std_logic_vector(11 downto 0) := X"F80";
-	constant YELLOW : std_logic_vector(11 downto 0) := X"FF0";
-
-	signal leftColor : std_logic_vector(11 downto 0);
-	signal midColor : std_logic_vector(11 downto 0);
-	signal rightColor : std_logic_vector(11 downto 0);
-
-	type COUNTRY is (FRANCE, ITALY, IRELAND, BELGIUM, MALI, CHAD, NIGERIA, IVORY_COAST);
-	signal active_country, next_country : COUNTRY := FRANCE;
-
-	type button_state is (IDLE, PRE_PUSH, PUSH, POST_PUSH, POST_RELEASE);
-	signal current_button_state, next_button_state : button_state;
-	constant MaxDebounceAcc : integer := 20000;
-	signal debounceAcc : integer := 0;
-
 
 begin
 
@@ -80,22 +60,30 @@ begin
 			currentStateH <= nextStateH;
 			pixelCount <= nextPixelCount;
 			pixelCountV <= nextPixelCountV;
-			--lineCount <= nextLineCount;
 
 			if currentStateH = DATA AND currentStateV = DATA then
-				if pixelCount < 213 then
-					VGA_R <= leftColor(11 downto 8);
-					VGA_G <= leftColor(7 downto 4);
-					VGA_B <= leftColor(3 downto 0);
-				elsif pixelCount < 426 then
-					VGA_R <= midColor(11 downto 8);
-					VGA_G <= midColor(7 downto 4);
-					VGA_B <= midColor(3 downto 0);
+				if status(0) = '1' then
+					VGA_B <= "0000";
+					VGA_G <= "0000";
+					VGA_R <= "0000";
+				elsif status(1) = '1' then
+					VGA_B <= "0000";
+					VGA_G <= "0000";
+					VGA_R <= "0000";
+				elsif status(2) = '1' then
+					VGA_B <= "0000";
+					VGA_G <= "0000";
+					VGA_R <= "0000";
+				elsif status(3) = '1' then
+					VGA_B <= "0000";
+					VGA_G <= "0000";
+					VGA_R <= "0000";
 				else
-					VGA_R <= rightColor(11 downto 8);
-					VGA_G <= rightColor(7 downto 4);
-					VGA_B <= rightColor(3 downto 0);
+					VGA_B <= "0000";
+					VGA_G <= "0000";
+					VGA_R <= "0000";
 				end if;
+
 				
 			else
 				VGA_B <= (others => '0');
@@ -119,14 +107,11 @@ begin
 				if currentStateV = DATA then
 					if lineCount < V_LINES then
 						lineCount <= lineCount + 1;
-						--nextLineCount <= lineCount + 1;
 					else
 						lineCount <= 0;
-						--nextLineCount <= 0;
 					end if;
 				else
 					lineCount <= 0;
-					--nextLineCount <= 0;
 				end if;
 			end if;
 
@@ -215,133 +200,6 @@ begin
 
 		end case;
 
-	end process;
-
-	buttonCommit : process(clk, reset)
-	begin
-
-		if reset = '0' then
-			current_button_state <= IDLE;
-			active_country <= FRANCE;
-
-		elsif rising_edge(clk) then
-
-			if current_button_state /= next_button_state then
-				debounceAcc <= 0;
-			--elsif current_button_state = PRE_PUSH OR current_button_state = POST_PUSH then
-			else
-				debounceAcc <= debounceAcc + 1;
-			end if;
-
-			if current_button_state = PUSH then
-				active_country <= next_country;
-			end if;
-
-			current_button_state <= next_button_state;
-
-		end if;
-
-	end process;
-
-	buttonBounce : process(adv, current_button_state, debounceAcc)
-	begin
-
-		case current_button_state is
-
-			when IDLE =>
-				if adv = '0' then
-					next_button_state <= PRE_PUSH;
-				else
-					next_button_state <= IDLE;
-				end if;
-
-			when PRE_PUSH =>
-				if adv = '0' then
-					if debounceAcc >= MaxDebounceAcc then
-						next_button_state <= PUSH;
-					else
-						next_button_state <= PRE_PUSH;
-					end if;
-				else
-					next_button_state <= IDLE;
-				end if;
-
-			when PUSH =>
-				next_button_state <= POST_PUSH;
-
-			when POST_PUSH =>
-				if adv = '0' then
-					next_button_state <= POST_PUSH;
-				else
-					next_button_state <= POST_RELEASE;
-				end if;
-
-			when POST_RELEASE =>
-				if adv = '0' then
-					next_button_state <= POST_PUSH;
-				else
-					if debounceAcc >= MaxDebounceAcc then
-						next_button_state <= IDLE;
-					else
-						next_button_state <= POST_RELEASE;
-					end if;
-				end if;				
-
-		end case;
-
-	end process;
-
-	countrySelection : process(active_country)
-	begin
-		case active_country is
-			when FRANCE =>
-				next_country <= ITALY;
-				leftColor <= BLUE;
-				midColor <= WHITE;
-				rightColor <= RED;
-			
-			when ITALY =>
-				next_country <= IRELAND;
-				leftColor <= DGREEN;
-				midColor <= WHITE;
-				rightColor <= DRED;
-
-			when IRELAND =>
-				next_country <= BELGIUM;
-				leftColor <= DGREEN;
-				midColor <= WHITE;
-				rightColor <= ORANGE;
-
-			when BELGIUM =>
-				next_country <= MALI;
-				leftColor <= BLACK;
-				midColor <= YELLOW;
-				rightColor <= RED;
-			
-			when MALI =>
-				next_country <= CHAD;
-				leftColor <= GREEN;
-				midColor <= YELLOW;
-				rightColor <= DRED;
-
-			when CHAD =>
-				next_country <= NIGERIA;
-				leftColor <= DBLUE;
-				midColor <= YELLOW;
-				rightColor <= DRED;
-
-			when NIGERIA =>
-				next_country <= IVORY_COAST;
-				leftColor <= DGREEN;
-				midColor <= WHITE;
-				rightColor <= DGREEN;
-
-			when IVORY_COAST =>
-				next_country <= FRANCE;
-				leftColor <= ORANGE;
-				midColor <= WHITE;
-				rightColor <= GREEN;
-		end case;
 	end process;
 	
 end architecture rtl;
