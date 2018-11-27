@@ -31,17 +31,35 @@ architecture rtl of DE10 is
     component VGA is
         port (
             clk    : in  std_logic;
-            reset  : in std_logic;
-            adv    : in std_logic;
+            reset  : in  std_logic;
             VGA_B  : out std_logic_vector(3 downto 0) := (others => '0');
             VGA_G  : out std_logic_vector(3 downto 0) := (others => '0');
             VGA_HS : out std_logic                    := '0';
             VGA_R  : out std_logic_vector(3 downto 0) := (others => '0');
-            VGA_VS : out std_logic                    := '0'
+            VGA_VS : out std_logic                    := '0';
+            hPos   : out integer;
+            vPos   : out integer;
+            status : in  std_logic_vector(3 downto 0) := (others => '0')
         );
-    end component VGA;    
+    end component VGA;  
+
+    component Status is
+        port (
+            ball_status   : in  std_logic;
+            paddle_status : in  std_logic;
+            brick_status  : in  std_logic_vector(1 downto 0);
+            status        : out std_logic_vector(3 downto 0) := (others => '0')
+        );
+    end component Status;    
 
     signal clockVGA : std_logic := '0';
+    signal hPos : integer;
+    signal vPos : integer;
+    signal pixel_status : std_logic_vector(3 downto 0);
+    signal ball_status : std_logic;
+    signal paddle_status : std_logic;
+    signal brick_status : std_logic_vector(1 downto 0);
+
 
 begin
 
@@ -51,8 +69,26 @@ begin
 			c0 => clockVGA
 		);
 
-    vga1 : VGA
-        port map(clockVGA, KEY(0), KEY(1), VGA_B, VGA_G, VGA_HS, VGA_R, VGA_VS);
+    VGA_1 : VGA
+        port map (
+            clk    => clockVGA,
+            reset  => KEY(0),
+            VGA_B  => VGA_B,
+            VGA_G  => VGA_G,
+            VGA_HS => VGA_HS,
+            VGA_R  => VGA_R,
+            VGA_VS => VGA_VS,
+            hPos   => hPos,
+            vPos   => vPos,
+            status => pixel_status
+        );
 
+    Status_1 : Status
+        port map (
+            ball_status   => ball_status,
+            paddle_status => paddle_status,
+            brick_status  => brick_status,
+            status        => pixel_status
+        );        
 	
 end architecture rtl;

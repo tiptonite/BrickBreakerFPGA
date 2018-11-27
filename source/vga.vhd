@@ -8,7 +8,6 @@ entity VGA is
 	port(
 		clk    : in std_logic;
 		reset  : in std_logic;
-		adv    : in std_logic;
         VGA_B  : out std_logic_vector(3 downto 0) := (others => '0');
         VGA_G  : out std_logic_vector(3 downto 0) := (others => '0');
         VGA_HS : out std_logic 					  := '0';
@@ -62,22 +61,27 @@ begin
 			pixelCountV <= nextPixelCountV;
 
 			if currentStateH = DATA AND currentStateV = DATA then
+				-- Paddle
 				if status(0) = '1' then
-					VGA_B <= "0000";
-					VGA_G <= "0000";
-					VGA_R <= "0000";
+					VGA_B <= "0110";
+					VGA_G <= "0110";
+					VGA_R <= "1001";
+				-- Ball
 				elsif status(1) = '1' then
-					VGA_B <= "0000";
+					VGA_B <= "1111";
 					VGA_G <= "0000";
 					VGA_R <= "0000";
+				-- Brick
 				elsif status(2) = '1' then
 					VGA_B <= "0000";
 					VGA_G <= "0000";
-					VGA_R <= "0000";
+					VGA_R <= "1111";
+				-- Mortar
 				elsif status(3) = '1' then
-					VGA_B <= "0000";
-					VGA_G <= "0000";
-					VGA_R <= "0000";
+					VGA_B <= "1111";
+					VGA_G <= "1111";
+					VGA_R <= "1111";
+				-- Background
 				else
 					VGA_B <= "0000";
 					VGA_G <= "0000";
