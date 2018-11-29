@@ -1,6 +1,5 @@
 .DS_Store
 *.bak
-*.rpt
 *.done
 *.smsg
 *.summary
@@ -14,5 +13,3 @@
 *tmp
 .qsys_edit
 modelsim/
-*.bsf
-*.ppf
