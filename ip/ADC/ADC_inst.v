@@ -1,13 +1,16 @@
 	ADC u0 (
-		.CLOCK (<connected-to-CLOCK>), //      clk.clk
-		.CH0   (<connected-to-CH0>),   // readings.CH0
-		.CH1   (<connected-to-CH1>),   //         .CH1
-		.CH2   (<connected-to-CH2>),   //         .CH2
-		.CH3   (<connected-to-CH3>),   //         .CH3
-		.CH4   (<connected-to-CH4>),   //         .CH4
-		.CH5   (<connected-to-CH5>),   //         .CH5
-		.CH6   (<connected-to-CH6>),   //         .CH6
-		.CH7   (<connected-to-CH7>),   //         .CH7
-		.RESET (<connected-to-RESET>)  //    reset.reset
+		.adc_command_valid          (<connected-to-adc_command_valid>),          //  adc_command.valid
+		.adc_command_channel        (<connected-to-adc_command_channel>),        //             .channel
+		.adc_command_startofpacket  (<connected-to-adc_command_startofpacket>),  //             .startofpacket
+		.adc_command_endofpacket    (<connected-to-adc_command_endofpacket>),    //             .endofpacket
+		.adc_command_ready          (<connected-to-adc_command_ready>),          //             .ready
+		.adc_response_valid         (<connected-to-adc_response_valid>),         // adc_response.valid
+		.adc_response_channel       (<connected-to-adc_response_channel>),       //             .channel
+		.adc_response_data          (<connected-to-adc_response_data>),          //             .data
+		.adc_response_startofpacket (<connected-to-adc_response_startofpacket>), //             .startofpacket
+		.adc_response_endofpacket   (<connected-to-adc_response_endofpacket>),   //             .endofpacket
+		.clk_clk                    (<connected-to-clk_clk>),                    //          clk.clk
+		.clk_out_clk                (<connected-to-clk_out_clk>),                //      clk_out.clk
+		.reset_reset_n              (<connected-to-reset_reset_n>)               //        reset.reset_n
 	);
 

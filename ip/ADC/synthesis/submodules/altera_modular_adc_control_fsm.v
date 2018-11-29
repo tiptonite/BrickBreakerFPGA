@@ -11,19 +11,6 @@
 // agreement for further details.
 
 
-// (C) 2001-2016 Intel Corporation. All rights reserved.
-// Your use of Intel Corporation's design tools, logic functions and other 
-// software and tools, and its AMPP partner logic functions, and any output 
-// files any of the foregoing (including device programming or simulation 
-// files), and any associated documentation or information are expressly subject 
-// to the terms and conditions of the Intel Program License Subscription 
-// Agreement, Intel MegaCore Function License Agreement, or other applicable 
-// license agreement, including, without limitation, that your use is for the 
-// sole purpose of programming logic devices manufactured by Intel and sold by 
-// Intel or its authorized distributors.  Please refer to the applicable 
-// agreement for further details.
-
-
 // synthesis translate_off
 `timescale 1ns / 1ps
 // synthesis translate_on
@@ -572,7 +559,7 @@ always @* begin
         end
 
         PWRDWN_TSEN: begin
-            chsel_nxt   = chsel;
+            //chsel_nxt   = chsel;
             soc_nxt     = 1'b0;
             usr_pwd_nxt = 1'b1;
             if (cmd_fetched & cmd_is_ts)        // Transition to TS mode
@@ -581,6 +568,13 @@ always @* begin
                 tsen_nxt    = tsen;
             else
                 tsen_nxt    = 1'b0;             // Transition to Normal mode
+            
+            // Case:496977 
+            // Ensure the right chsel during power up sequence (voltage sensing mode vs temperature sensing mode)
+            if (cmd_fetched & (cmd_is_ts | (cmd_is_rclb & tsen)))   // Set channel select to TSD channel if transition to TS mode or recalibration on TS mode
+                chsel_nxt   = 5'b10001;
+            else
+                chsel_nxt   = 5'b11110;                                // Set channel select to dummy channel for voltage sensing mode (just like the original design)
         end
 
         PWRDWN_DONE: begin
@@ -591,7 +585,8 @@ always @* begin
         end
 
         PWRUP_CH: begin
-            chsel_nxt   = 5'b11110;
+            //chsel_nxt   = 5'b11110;
+            chsel_nxt   = chsel;
             soc_nxt     = soc;
             usr_pwd_nxt = 1'b0;
             tsen_nxt    = tsen;
@@ -690,11 +685,14 @@ always @* begin
 
         WAIT_PEND: begin
             //chsel_nxt   = chsel;
-            chsel_nxt   = 5'b11110; // The reason for this change is to support ADC's simulation model (case:226093). 
-                                    // During the final sampling cycle which meant to complete the pending ADC sampling (ADC output is one cycle delay in nature), 
-                                    // we assign a dummy channel value instead of maintaining the previous channel value. Functionally, it does not matter. 
-                                    // But it does matter to simulation model where it keep popping up the expected value from user's simulation file based on current channel value.
-                                    // This will avoid the simulation model from incorrectly popping out the value from previous channel twice during ADC mode transition.
+            if (tsen)
+                chsel_nxt   = chsel;         
+            else                             
+                chsel_nxt   = 5'b11110;     // The reason for this change is to support ADC's simulation model (case:226093).
+                                            // During the final sampling cycle which meant to complete the pending ADC sampling (ADC output is one cycle delay in nature),
+                                            // we assign a dummy channel value instead of maintaining the previous channel value. Functionally, it does not matter. 
+                                            // But it does matter to simulation model where it keep popping up the expected value from user's simulation file based on current channel value.
+                                            // This will avoid the simulation model from incorrectly popping out the value from previous channel twice during ADC mode transition.
             soc_nxt     = soc;
             usr_pwd_nxt = usr_pwd;
             tsen_nxt    = tsen;

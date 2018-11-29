@@ -1,29 +1,35 @@
 	component ADC is
 		port (
-			CLOCK : in  std_logic                     := 'X'; -- clk
-			CH0   : out std_logic_vector(11 downto 0);        -- CH0
-			CH1   : out std_logic_vector(11 downto 0);        -- CH1
-			CH2   : out std_logic_vector(11 downto 0);        -- CH2
-			CH3   : out std_logic_vector(11 downto 0);        -- CH3
-			CH4   : out std_logic_vector(11 downto 0);        -- CH4
-			CH5   : out std_logic_vector(11 downto 0);        -- CH5
-			CH6   : out std_logic_vector(11 downto 0);        -- CH6
-			CH7   : out std_logic_vector(11 downto 0);        -- CH7
-			RESET : in  std_logic                     := 'X'  -- reset
+			adc_command_valid          : in  std_logic                     := 'X';             -- valid
+			adc_command_channel        : in  std_logic_vector(4 downto 0)  := (others => 'X'); -- channel
+			adc_command_startofpacket  : in  std_logic                     := 'X';             -- startofpacket
+			adc_command_endofpacket    : in  std_logic                     := 'X';             -- endofpacket
+			adc_command_ready          : out std_logic;                                        -- ready
+			adc_response_valid         : out std_logic;                                        -- valid
+			adc_response_channel       : out std_logic_vector(4 downto 0);                     -- channel
+			adc_response_data          : out std_logic_vector(11 downto 0);                    -- data
+			adc_response_startofpacket : out std_logic;                                        -- startofpacket
+			adc_response_endofpacket   : out std_logic;                                        -- endofpacket
+			clk_clk                    : in  std_logic                     := 'X';             -- clk
+			clk_out_clk                : out std_logic;                                        -- clk
+			reset_reset_n              : in  std_logic                     := 'X'              -- reset_n
 		);
 	end component ADC;
 
 	u0 : component ADC
 		port map (
-			CLOCK => CONNECTED_TO_CLOCK, --      clk.clk
-			CH0   => CONNECTED_TO_CH0,   -- readings.CH0
-			CH1   => CONNECTED_TO_CH1,   --         .CH1
-			CH2   => CONNECTED_TO_CH2,   --         .CH2
-			CH3   => CONNECTED_TO_CH3,   --         .CH3
-			CH4   => CONNECTED_TO_CH4,   --         .CH4
-			CH5   => CONNECTED_TO_CH5,   --         .CH5
-			CH6   => CONNECTED_TO_CH6,   --         .CH6
-			CH7   => CONNECTED_TO_CH7,   --         .CH7
-			RESET => CONNECTED_TO_RESET  --    reset.reset
+			adc_command_valid          => CONNECTED_TO_adc_command_valid,          --  adc_command.valid
+			adc_command_channel        => CONNECTED_TO_adc_command_channel,        --             .channel
+			adc_command_startofpacket  => CONNECTED_TO_adc_command_startofpacket,  --             .startofpacket
+			adc_command_endofpacket    => CONNECTED_TO_adc_command_endofpacket,    --             .endofpacket
+			adc_command_ready          => CONNECTED_TO_adc_command_ready,          --             .ready
+			adc_response_valid         => CONNECTED_TO_adc_response_valid,         -- adc_response.valid
+			adc_response_channel       => CONNECTED_TO_adc_response_channel,       --             .channel
+			adc_response_data          => CONNECTED_TO_adc_response_data,          --             .data
+			adc_response_startofpacket => CONNECTED_TO_adc_response_startofpacket, --             .startofpacket
+			adc_response_endofpacket   => CONNECTED_TO_adc_response_endofpacket,   --             .endofpacket
+			clk_clk                    => CONNECTED_TO_clk_clk,                    --          clk.clk
+			clk_out_clk                => CONNECTED_TO_clk_out_clk,                --      clk_out.clk
+			reset_reset_n              => CONNECTED_TO_reset_reset_n               --        reset.reset_n
 		);
 

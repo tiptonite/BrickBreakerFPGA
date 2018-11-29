@@ -1,24 +1,30 @@
 
 module ADC (
-	CLOCK,
-	CH0,
-	CH1,
-	CH2,
-	CH3,
-	CH4,
-	CH5,
-	CH6,
-	CH7,
-	RESET);	
+	adc_command_valid,
+	adc_command_channel,
+	adc_command_startofpacket,
+	adc_command_endofpacket,
+	adc_command_ready,
+	adc_response_valid,
+	adc_response_channel,
+	adc_response_data,
+	adc_response_startofpacket,
+	adc_response_endofpacket,
+	clk_clk,
+	clk_out_clk,
+	reset_reset_n);	
 
-	input		CLOCK;
-	output	[11:0]	CH0;
-	output	[11:0]	CH1;
-	output	[11:0]	CH2;
-	output	[11:0]	CH3;
-	output	[11:0]	CH4;
-	output	[11:0]	CH5;
-	output	[11:0]	CH6;
-	output	[11:0]	CH7;
-	input		RESET;
+	input		adc_command_valid;
+	input	[4:0]	adc_command_channel;
+	input		adc_command_startofpacket;
+	input		adc_command_endofpacket;
+	output		adc_command_ready;
+	output		adc_response_valid;
+	output	[4:0]	adc_response_channel;
+	output	[11:0]	adc_response_data;
+	output		adc_response_startofpacket;
+	output		adc_response_endofpacket;
+	input		clk_clk;
+	output		clk_out_clk;
+	input		reset_reset_n;
 endmodule
