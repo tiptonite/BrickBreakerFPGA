@@ -13,8 +13,8 @@ entity VGA is
         VGA_HS : out std_logic 					  := '0';
         VGA_R  : out std_logic_vector(3 downto 0) := (others => '0');
         VGA_VS : out std_logic 					  := '0';
-        hPos   : out integer;
-        vPos   : out integer;
+        hPos   : out unsigned(10 downto 0);
+        vPos   : out unsigned(9 downto 0);
         status : in std_logic_vector(3 downto 0)  := (others => '0')
 	);
 
@@ -45,10 +45,13 @@ architecture rtl of VGA is
 	signal pixelCountV : integer := 0;
 	signal nextPixelCountV : integer := 0;
 	signal lineCount : integer := 0;
-	signal nextLineCount : integer := 0;
+	--signal nextLineCount : integer := 0;
 
 
 begin
+
+	hPos <= to_unsigned(nextPixelCount, hPos'length);
+	vPos <= to_unsigned(lineCount, vPos'length);
 
 	commit : process(clk)
 	begin
