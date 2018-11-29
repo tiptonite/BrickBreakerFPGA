@@ -44,7 +44,7 @@ architecture rtl of DE10 is
             VGA_R  : out std_logic_vector(3 downto 0) := (others => '0');
             VGA_VS : out std_logic                    := '0';
             hPos   : out unsigned(10 downto 0);
-			vPos   : out unsigned(9 downto 0);
+            vPos   : out unsigned(9 downto 0);
             status : in  std_logic_vector(3 downto 0) := (others => '0')
         );
     end component VGA;  
@@ -86,8 +86,6 @@ architecture rtl of DE10 is
 	component paddle is
 		generic (
 			PaddleUpdate : integer
-
-
 		);
 		port (
 			clk : in std_logic;
@@ -99,19 +97,28 @@ architecture rtl of DE10 is
 		);
 	end component paddle;
 	
+  component Bricks is
+        port (
+            clk          : in  std_logic;
+            hPos         : in  unsigned(10 downto 0);
+            vPos         : in  unsigned(9 downto 0);
+            brick_status : out std_logic_vector(1 downto 0)
+        );
+    end component Bricks; 
+  
     signal clockVGA : std_logic := '0';
     signal hPos : unsigned(10 downto 0);
     signal vPos : unsigned(9 downto 0);
     signal pixel_status : std_logic_vector(3 downto 0);
-    signal ball_status : std_logic;
-    signal paddle_status : std_logic;
-    signal brick_status : std_logic_vector(1 downto 0);
 	signal livesNum :unsigned(3 downto 0);
 	signal ADC1 :std_logic_vector(3 downto 0);
 	signal ADC2 :std_logic_vector(3 downto 0);
 	signal ADC3 :std_logic_vector(3 downto 0);
 	signal ADC_reset :std_logic;
 	signal ADC_DATA :std_logic_vector (11 downto 0);
+    signal ball_status : std_logic := '0';
+    signal paddle_status : std_logic := '0';
+    signal brick_status : std_logic_vector(1 downto 0) := (others => '0');
 
 
 begin
@@ -213,5 +220,12 @@ begin
 	 ADC2(3 downto 0)<=ADC_DATA(7 downto 4);
 	 ADC3(3 downto 0)<=ADC_DATA(11 downto 8);
      
+    Bricks_1 : Bricks
+        port map (
+            clk          => clockVGA,
+            hPos         => hPos,
+            vPos         => vPos,
+            brick_status => brick_status
+        );        
 	
 end architecture rtl;

@@ -173,6 +173,7 @@ set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name QIP_FILE ../ip/ADC/synthesis/ADC.qip
 set_global_assignment -name VHDL_FILE ../source/sevenSeg.vhd
 set_global_assignment -name VHDL_FILE ../source/paddle.vhd
+set_global_assignment -name VHDL_FILE ../source/Bricks.vhd
 set_global_assignment -name VHDL_FILE ../source/Status.vhd
 set_global_assignment -name VHDL_FILE ../source/vga.vhd
 set_global_assignment -name VHDL_FILE ../source/DE10.vhd
