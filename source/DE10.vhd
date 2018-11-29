@@ -37,8 +37,8 @@ architecture rtl of DE10 is
             VGA_HS : out std_logic                    := '0';
             VGA_R  : out std_logic_vector(3 downto 0) := (others => '0');
             VGA_VS : out std_logic                    := '0';
-            hPos   : out integer;
-            vPos   : out integer;
+            hPos   : out unsigned(10 downto 0);
+            vPos   : out unsigned(9 downto 0);
             status : in  std_logic_vector(3 downto 0) := (others => '0')
         );
     end component VGA;  
@@ -52,13 +52,22 @@ architecture rtl of DE10 is
         );
     end component Status;    
 
+    component Bricks is
+        port (
+            clk          : in  std_logic;
+            hPos         : in  unsigned(10 downto 0);
+            vPos         : in  unsigned(9 downto 0);
+            brick_status : out std_logic_vector(1 downto 0)
+        );
+    end component Bricks;    
+
     signal clockVGA : std_logic := '0';
-    signal hPos : integer;
-    signal vPos : integer;
+    signal hPos : unsigned(10 downto 0);
+    signal vPos : unsigned(9 downto 0);
     signal pixel_status : std_logic_vector(3 downto 0);
-    signal ball_status : std_logic;
-    signal paddle_status : std_logic;
-    signal brick_status : std_logic_vector(1 downto 0);
+    signal ball_status : std_logic := '0';
+    signal paddle_status : std_logic := '0';
+    signal brick_status : std_logic_vector(1 downto 0) := (others => '0');
 
 
 begin
@@ -89,6 +98,14 @@ begin
             paddle_status => paddle_status,
             brick_status  => brick_status,
             status        => pixel_status
+        );        
+
+    Bricks_1 : Bricks
+        port map (
+            clk          => clockVGA,
+            hPos         => hPos,
+            vPos         => vPos,
+            brick_status => brick_status
         );        
 	
 end architecture rtl;
