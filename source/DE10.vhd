@@ -13,6 +13,12 @@ entity DE10 is
         VGA_HS : out std_logic := '0';
         VGA_R  : out std_logic_vector(3 downto 0) := (others => '0');
         VGA_VS : out std_logic := '0'
+		HEX0   : out std_logic_vector(7 downto 0);
+		HEX1   : out std_logic_vector(7 downto 0);
+		HEX2   : out std_logic_vector(7 downto 0);
+		HEX3   : out std_logic_vector(7 downto 0);
+		HEX4   : out std_logic_vector(7 downto 0);
+		HEX5   : out std_logic_vector(7 downto 0);
 	);
 
 
@@ -51,7 +57,48 @@ architecture rtl of DE10 is
             status        : out std_logic_vector(3 downto 0) := (others => '0')
         );
     end component Status;    
+	
+	
+	component sevenSeg is
+		port (
+			 clk		:in std_logic;
+		   num_in	:in	unsigned(3 downto 0);
+		   seg_out	:out	unsigned(7 downto 0);
+		   dec		:in	std_logic
+		);
+	end component sevenSeg;
+	
+	component ADC_Driver is
+		port (
+			CLOCK : in  std_logic                     := 'X'; -- clk
+			RESET : in  std_logic                     := 'X'; -- reset
+			CH0   : out std_logic_vector(11 downto 0);        -- CH0
+			CH1   : out std_logic_vector(11 downto 0);        -- CH1
+			CH2   : out std_logic_vector(11 downto 0);        -- CH2
+			CH3   : out std_logic_vector(11 downto 0);        -- CH3
+			CH4   : out std_logic_vector(11 downto 0);        -- CH4
+			CH5   : out std_logic_vector(11 downto 0);        -- CH5
+			CH6   : out std_logic_vector(11 downto 0);        -- CH6
+			CH7   : out std_logic_vector(11 downto 0)         -- CH7
+		);
+	end component ADC_Driver;
+	
+	component paddle is
+		generic (
+			PaddleUpdate : integer
 
+
+		);
+		port (
+			clk : in std_logic;
+			hPos : in unsigned(10 downto 0);
+			vPos : in unsigned(9 downto 0);
+			paddle_status : out std_logic;
+			ADC_in :in std_logic_vector(11 downto 0);
+
+		);
+	end component paddle;
+	
     signal clockVGA : std_logic := '0';
     signal hPos : integer;
     signal vPos : integer;
@@ -59,6 +106,12 @@ architecture rtl of DE10 is
     signal ball_status : std_logic;
     signal paddle_status : std_logic;
     signal brick_status : std_logic_vector(1 downto 0);
+	signal livesNum :std_logic_vector(3 downto 0);
+	signal ADC1 :std_logic_vector(3 downto 0);
+	signal ADC2 :std_logic_vector(3 downto 0);
+	signal ADC3 :std_logic_vector(3 downto 0);
+	signal ADC_reset :std_logic;
+	signal ADC_DATA :std_logic_vector (11 downto 0);
 
 
 begin
@@ -89,6 +142,76 @@ begin
             paddle_status => paddle_status,
             brick_status  => brick_status,
             status        => pixel_status
-        );        
+        );
+
+	lives: sevenSeg
+		port map(
+			clk => MAX10_CLK1_50,
+			num_in (3 downto 0) => livesNum(3 downto 0),
+			seg_out(7 downto 0) =>HEX0(7 downto 0),
+			dec => '0'
+		);
+		
+	paddle_1 : paddle
+		generic map(
+			PaddleUpdate => 25000000
+		
+		);
+		port map(
+			clk =>MAX10_CLK1_50
+			hPos => hPos,
+			vPos => vPos,
+			paddle_status => paddle_status,
+			ADC_in => ADC_DATA
+		
+		);
+	
+	ADCcount1: sevenSeg
+		port map(
+			clk => MAX10_CLK1_50,
+			num_in (3 downto 0) => ADC1(3 downto 0),
+			seg_out(7 downto 0) =>HEX3(7 downto 0),
+			dec => '0'
+		);
+	 
+	ADCcount2: sevenSeg
+		port map(
+			clk => MAX10_CLK1_50,
+			num_in (3 downto 0) => ADC2(3 downto 0),
+			seg_out(7 downto 0) =>HEX4(7 downto 0),
+			dec => '0'
+		);
+	
+	ADCcount1: sevenSeg
+		port map(
+			clk => MAX10_CLK1_50,
+			num_in (3 downto 0) => ADC3(3 downto 0),
+			seg_out(7 downto 0) =>HEX5(7 downto 0),
+			dec => '0'
+		);
+	
+	u0 : component ADC_Driver
+		port map (
+			CLOCK => MAX10_CLK1_50, --      clk.clk
+			RESET => ADC_reset, --    reset.reset
+			CH0   => ADC_DATA,   -- readings.CH0
+			CH1   => open,   --         .CH1
+			CH2   => open,   --         .CH2
+			CH3   => open,   --         .CH3
+			CH4   => open,   --         .CH4
+			CH5   => open,   --         .CH5
+			CH6   => open,   --         .CH6
+			CH7   => open    --         .CH7
+		);
+	
+	
+	 HEX1(7 downto 0)<=x"FF";
+     HEX2(7 downto 0)<=x"FF";
+	 livesNum<=b"101";
+	 ADC_reset<=not KEY(0);
+	 ADC1(3 downto 0)<=ADC_DATA(3 downto 0);
+	 ADC2(3 downto 0)<=ADC_DATA(7 downto 4);
+	 ADC3(3 downto 0)<=ADC_DATA(11 downto 8);
+     
 	
 end architecture rtl;
