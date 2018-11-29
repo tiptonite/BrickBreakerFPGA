@@ -14,7 +14,7 @@ entity paddle is
             hPos : in unsigned(10 downto 0);
             vPos : in unsigned(9 downto 0);
             paddle_status : out std_logic;
-            ADC_in :in std_logic_vector(11 downto 0);
+            ADC_in :in std_logic_vector(11 downto 0)
 
     );
 end entity paddle;
@@ -22,7 +22,7 @@ end entity paddle;
 
 architecture RTL of paddle is
 
-    signal PC : unsigned(10 downto 0) :=320; --Center of paddle Horizontal position
+    signal PC : unsigned(10 downto 0) :=b"00101000000"; --Center of paddle Horizontal position
     signal PL : unsigned(10 downto 0); --Upper left corner of paddle position
     signal DX : unsigned(10 downto 0);
     signal nPC : unsigned(10 downto 0);
@@ -53,41 +53,41 @@ architecture RTL of paddle is
     end process P_status;
 
 
-    --Rate at which paddle position updates
-    P_update : process(clk)
-    begin
-        if rising_edge(clk)then
-            if count = PaddleUpdate then
-                count<=0;
-                update<='1';
-            else
-                count<=count+1;
-                update<='0';
-            end if;
-        end if;
-    end process P_update;
-
-    -- Determine rate of change of paddle position
-    P_rate : process()
-    begin
-
-
-    end process P_rate;
-
-    -- Update position of paddle
-    P_position : process(update)
-    begin
-        if update='1' then
-            PC<=nPC;
-        end if;
-
-
-
-    end process P_position;
-
-
-
-    nPC<=PC+DX;
+--    --Rate at which paddle position updates
+--    P_update : process(clk)
+--    begin
+--        if rising_edge(clk)then
+--            if count = PaddleUpdate then
+--                count<=0;
+--                update<='1';
+--            else
+--                count<=count+1;
+--                update<='0';
+--            end if;
+--        end if;
+--    end process P_update;
+--
+--    -- Determine rate of change of paddle position
+--    P_rate : process()
+--    begin
+--
+--
+--    end process P_rate;
+--
+--    -- Update position of paddle
+--    P_position : process(update)
+--    begin
+--        if update='1' then
+--            PC<=nPC;
+--        end if;
+--
+--
+--
+--    end process P_position;
+--
+--
+--
+--    nPC<=PC+DX;
     PL<=PC-20;
     PR<=PC+20;
 end architecture RTL;

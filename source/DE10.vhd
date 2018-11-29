@@ -12,13 +12,13 @@ entity DE10 is
         VGA_G  : out std_logic_vector(3 downto 0) := (others => '0');
         VGA_HS : out std_logic := '0';
         VGA_R  : out std_logic_vector(3 downto 0) := (others => '0');
-        VGA_VS : out std_logic := '0'
+        VGA_VS : out std_logic := '0';
 		HEX0   : out std_logic_vector(7 downto 0);
 		HEX1   : out std_logic_vector(7 downto 0);
 		HEX2   : out std_logic_vector(7 downto 0);
 		HEX3   : out std_logic_vector(7 downto 0);
 		HEX4   : out std_logic_vector(7 downto 0);
-		HEX5   : out std_logic_vector(7 downto 0);
+		HEX5   : out std_logic_vector(7 downto 0)
 	);
 
 
@@ -43,8 +43,8 @@ architecture rtl of DE10 is
             VGA_HS : out std_logic                    := '0';
             VGA_R  : out std_logic_vector(3 downto 0) := (others => '0');
             VGA_VS : out std_logic                    := '0';
-            hPos   : out integer;
-            vPos   : out integer;
+            hPos   : out unsigned(10 downto 0);
+			vPos   : out unsigned(9 downto 0);
             status : in  std_logic_vector(3 downto 0) := (others => '0')
         );
     end component VGA;  
@@ -62,13 +62,13 @@ architecture rtl of DE10 is
 	component sevenSeg is
 		port (
 			 clk		:in std_logic;
-		   num_in	:in	unsigned(3 downto 0);
-		   seg_out	:out	unsigned(7 downto 0);
+		   num_in	:in	std_logic_vector(3 downto 0);
+		   seg_out	:out	std_logic_vector(7 downto 0);
 		   dec		:in	std_logic
 		);
 	end component sevenSeg;
 	
-	component ADC_Driver is
+	component ADC is
 		port (
 			CLOCK : in  std_logic                     := 'X'; -- clk
 			RESET : in  std_logic                     := 'X'; -- reset
@@ -81,7 +81,7 @@ architecture rtl of DE10 is
 			CH6   : out std_logic_vector(11 downto 0);        -- CH6
 			CH7   : out std_logic_vector(11 downto 0)         -- CH7
 		);
-	end component ADC_Driver;
+	end component ADC;
 	
 	component paddle is
 		generic (
@@ -94,19 +94,19 @@ architecture rtl of DE10 is
 			hPos : in unsigned(10 downto 0);
 			vPos : in unsigned(9 downto 0);
 			paddle_status : out std_logic;
-			ADC_in :in std_logic_vector(11 downto 0);
+			ADC_in :in std_logic_vector(11 downto 0)
 
 		);
 	end component paddle;
 	
     signal clockVGA : std_logic := '0';
-    signal hPos : integer;
-    signal vPos : integer;
+    signal hPos : unsigned(10 downto 0);
+    signal vPos : unsigned(9 downto 0);
     signal pixel_status : std_logic_vector(3 downto 0);
     signal ball_status : std_logic;
     signal paddle_status : std_logic;
     signal brick_status : std_logic_vector(1 downto 0);
-	signal livesNum :std_logic_vector(3 downto 0);
+	signal livesNum :unsigned(3 downto 0);
 	signal ADC1 :std_logic_vector(3 downto 0);
 	signal ADC2 :std_logic_vector(3 downto 0);
 	signal ADC3 :std_logic_vector(3 downto 0);
@@ -147,7 +147,7 @@ begin
 	lives: sevenSeg
 		port map(
 			clk => MAX10_CLK1_50,
-			num_in (3 downto 0) => livesNum(3 downto 0),
+			num_in (3 downto 0) => std_logic_vector(livesNum(3 downto 0)),
 			seg_out(7 downto 0) =>HEX0(7 downto 0),
 			dec => '0'
 		);
@@ -156,9 +156,9 @@ begin
 		generic map(
 			PaddleUpdate => 25000000
 		
-		);
+		)
 		port map(
-			clk =>MAX10_CLK1_50
+			clk =>MAX10_CLK1_50,
 			hPos => hPos,
 			vPos => vPos,
 			paddle_status => paddle_status,
@@ -182,7 +182,7 @@ begin
 			dec => '0'
 		);
 	
-	ADCcount1: sevenSeg
+	ADCcount3: sevenSeg
 		port map(
 			clk => MAX10_CLK1_50,
 			num_in (3 downto 0) => ADC3(3 downto 0),
@@ -190,7 +190,7 @@ begin
 			dec => '0'
 		);
 	
-	u0 : component ADC_Driver
+	u0 : component ADC
 		port map (
 			CLOCK => MAX10_CLK1_50, --      clk.clk
 			RESET => ADC_reset, --    reset.reset
@@ -207,7 +207,7 @@ begin
 	
 	 HEX1(7 downto 0)<=x"FF";
      HEX2(7 downto 0)<=x"FF";
-	 livesNum<=b"101";
+	 livesNum<=b"0101";
 	 ADC_reset<=not KEY(0);
 	 ADC1(3 downto 0)<=ADC_DATA(3 downto 0);
 	 ADC2(3 downto 0)<=ADC_DATA(7 downto 4);
