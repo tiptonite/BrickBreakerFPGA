@@ -66,9 +66,9 @@ begin
 			if currentStateH = DATA AND currentStateV = DATA then
 				-- Paddle
 				if status(0) = '1' then
-					VGA_B <= "0110";
-					VGA_G <= "0110";
-					VGA_R <= "1001";
+					VGA_B <= "0011";
+					VGA_G <= "0101";
+					VGA_R <= "1000";
 				-- Ball
 				elsif status(1) = '1' then
 					VGA_B <= "1111";

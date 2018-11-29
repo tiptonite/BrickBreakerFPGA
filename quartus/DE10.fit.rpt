@@ -1,5 +1,5 @@
 Fitter report for DE10
-Thu Nov 29 12:15:08 2018
+Thu Nov 29 12:41:31 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -71,15 +71,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Nov 29 12:15:08 2018       ;
+; Fitter Status                      ; Successful - Thu Nov 29 12:41:30 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; DE10                                        ;
 ; Top-level Entity Name              ; DE10                                        ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,222 / 49,760 ( 6 % )                      ;
-;     Total combinational functions  ; 3,185 / 49,760 ( 6 % )                      ;
+; Total logic elements               ; 3,250 / 49,760 ( 7 % )                      ;
+;     Total combinational functions  ; 3,219 / 49,760 ( 6 % )                      ;
 ;     Dedicated logic registers      ; 1,620 / 49,760 ( 3 % )                      ;
 ; Total registers                    ; 1620                                        ;
 ; Total pins                         ; 66 / 360 ( 18 % )                           ;
@@ -158,14 +158,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.25        ;
+; Average used               ; 1.31        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   8.5%      ;
-;     Processor 3            ;   8.1%      ;
-;     Processor 4            ;   7.9%      ;
+;     Processor 2            ;  10.7%      ;
+;     Processor 3            ;  10.3%      ;
+;     Processor 4            ;  10.2%      ;
 +----------------------------+-------------+
 
 
@@ -217,8 +217,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 4994 ) ; 0.00 % ( 0 / 4994 )        ; 0.00 % ( 0 / 4994 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 4994 ) ; 0.00 % ( 0 / 4994 )        ; 0.00 % ( 0 / 4994 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 5028 ) ; 0.00 % ( 0 / 5028 )        ; 0.00 % ( 0 / 5028 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 5028 ) ; 0.00 % ( 0 / 5028 )        ; 0.00 % ( 0 / 5028 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -241,7 +241,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 4942 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 4976 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 52 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -257,26 +257,26 @@ The pin-out file can be found in //Mac/Home/Documents/school/F18/BrickBreaker/qu
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 3,222 / 49,760 ( 6 % ) ;
-;     -- Combinational with no register       ; 1602                   ;
-;     -- Register only                        ; 37                     ;
-;     -- Combinational with a register        ; 1583                   ;
+; Total logic elements                        ; 3,250 / 49,760 ( 7 % ) ;
+;     -- Combinational with no register       ; 1630                   ;
+;     -- Register only                        ; 31                     ;
+;     -- Combinational with a register        ; 1589                   ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 1595                   ;
-;     -- 3 input functions                    ; 1287                   ;
-;     -- <=2 input functions                  ; 303                    ;
-;     -- Register only                        ; 37                     ;
+;     -- 4 input functions                    ; 1590                   ;
+;     -- 3 input functions                    ; 1303                   ;
+;     -- <=2 input functions                  ; 326                    ;
+;     -- Register only                        ; 31                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 2956                   ;
-;     -- arithmetic mode                      ; 229                    ;
+;     -- normal mode                          ; 2955                   ;
+;     -- arithmetic mode                      ; 264                    ;
 ;                                             ;                        ;
 ; Total registers*                            ; 1,620 / 51,509 ( 3 % ) ;
 ;     -- Dedicated logic registers            ; 1,620 / 49,760 ( 3 % ) ;
 ;     -- I/O registers                        ; 0 / 1,749 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 218 / 3,110 ( 7 % )    ;
+; Total LABs:  partially or completely used   ; 233 / 3,110 ( 7 % )    ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 66 / 360 ( 18 % )      ;
 ;     -- Clock pins                           ; 2 / 8 ( 25 % )         ;
@@ -296,12 +296,12 @@ The pin-out file can be found in //Mac/Home/Documents/school/F18/BrickBreaker/qu
 ; Remote update blocks                        ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 1.3% / 1.2% / 1.5%     ;
-; Peak interconnect usage (total/H/V)         ; 19.5% / 17.9% / 21.7%  ;
+; Average interconnect usage (total/H/V)      ; 1.6% / 1.4% / 1.8%     ;
+; Peak interconnect usage (total/H/V)         ; 23.4% / 20.7% / 27.3%  ;
 ; Maximum fan-out                             ; 1485                   ;
 ; Highest non-global fan-out                  ; 613                    ;
-; Total fan-out                               ; 14519                  ;
-; Average fan-out                             ; 2.89                   ;
+; Total fan-out                               ; 14577                  ;
+; Average fan-out                             ; 2.88                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -314,26 +314,26 @@ The pin-out file can be found in //Mac/Home/Documents/school/F18/BrickBreaker/qu
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 3222 / 49760 ( 6 % ) ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 1602                 ; 0                              ;
-;     -- Register only                        ; 37                   ; 0                              ;
-;     -- Combinational with a register        ; 1583                 ; 0                              ;
+; Total logic elements                        ; 3250 / 49760 ( 7 % ) ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 1630                 ; 0                              ;
+;     -- Register only                        ; 31                   ; 0                              ;
+;     -- Combinational with a register        ; 1589                 ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 1595                 ; 0                              ;
-;     -- 3 input functions                    ; 1287                 ; 0                              ;
-;     -- <=2 input functions                  ; 303                  ; 0                              ;
-;     -- Register only                        ; 37                   ; 0                              ;
+;     -- 4 input functions                    ; 1590                 ; 0                              ;
+;     -- 3 input functions                    ; 1303                 ; 0                              ;
+;     -- <=2 input functions                  ; 326                  ; 0                              ;
+;     -- Register only                        ; 31                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 2956                 ; 0                              ;
-;     -- arithmetic mode                      ; 229                  ; 0                              ;
+;     -- normal mode                          ; 2955                 ; 0                              ;
+;     -- arithmetic mode                      ; 264                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total registers                             ; 1620                 ; 0                              ;
 ;     -- Dedicated logic registers            ; 1620 / 49760 ( 3 % ) ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 218 / 3110 ( 7 % )   ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 233 / 3110 ( 7 % )   ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 66                   ; 0                              ;
@@ -352,8 +352,8 @@ The pin-out file can be found in //Mac/Home/Documents/school/F18/BrickBreaker/qu
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 14501                ; 1584                           ;
-;     -- Registered Connections               ; 6861                 ; 0                              ;
+;     -- Total Connections                    ; 14559                ; 1584                           ;
+;     -- Registered Connections               ; 6881                 ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 1556                           ;
@@ -1115,30 +1115,30 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                ; Entity Name                            ; Library Name ;
 +------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
-; |DE10                                                                        ; 3222 (1)    ; 1620 (0)                  ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 66   ; 0            ; 1602 (1)     ; 37 (0)            ; 1583 (0)         ; 0          ; |DE10                                                                                                                                                                                                              ; DE10                                   ; work         ;
-;    |ADC_COMM:ADC_COMM_1|                                                     ; 202 (126)   ; 114 (48)                  ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 88 (78)      ; 28 (13)           ; 86 (34)          ; 0          ; |DE10|ADC_COMM:ADC_COMM_1                                                                                                                                                                                          ; ADC_COMM                               ; work         ;
-;       |ADC:adc_1|                                                            ; 77 (0)      ; 66 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 15 (0)            ; 52 (0)           ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1                                                                                                                                                                                ; ADC                                    ; adc          ;
+; |DE10                                                                        ; 3250 (1)    ; 1620 (0)                  ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 66   ; 0            ; 1630 (1)     ; 31 (0)            ; 1589 (0)         ; 0          ; |DE10                                                                                                                                                                                                              ; DE10                                   ; work         ;
+;    |ADC_COMM:ADC_COMM_1|                                                     ; 205 (126)   ; 114 (48)                  ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 91 (78)      ; 21 (4)            ; 93 (44)          ; 0          ; |DE10|ADC_COMM:ADC_COMM_1                                                                                                                                                                                          ; ADC_COMM                               ; work         ;
+;       |ADC:adc_1|                                                            ; 79 (0)      ; 66 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 17 (0)            ; 49 (0)           ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1                                                                                                                                                                                ; ADC                                    ; adc          ;
 ;          |ADC_altpll_sys:altpll_sys|                                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys                                                                                                                                                      ; ADC_altpll_sys                         ; ADC          ;
 ;             |ADC_altpll_sys_altpll_9b92:sd1|                                 ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1                                                                                                                       ; ADC_altpll_sys_altpll_9b92             ; ADC          ;
-;          |ADC_modular_adc_0:modular_adc_0|                                   ; 74 (0)      ; 63 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 13 (0)            ; 51 (0)           ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0                                                                                                                                                ; ADC_modular_adc_0                      ; ADC          ;
-;             |altera_modular_adc_control:control_internal|                    ; 74 (0)      ; 63 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 13 (0)            ; 51 (0)           ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal                                                                                                    ; altera_modular_adc_control             ; ADC          ;
-;                |altera_modular_adc_control_fsm:u_control_fsm|                ; 74 (70)     ; 63 (59)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (10)      ; 13 (11)           ; 51 (51)          ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm                                                       ; altera_modular_adc_control_fsm         ; ADC          ;
-;                   |altera_std_synchronizer:u_clk_dft_synchronizer|           ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer        ; altera_std_synchronizer                ; work         ;
-;                   |altera_std_synchronizer:u_eoc_synchronizer|               ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_eoc_synchronizer            ; altera_std_synchronizer                ; work         ;
-;                |fiftyfivenm_adcblock_top_wrapper:adc_inst|                   ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst                                                          ; fiftyfivenm_adcblock_top_wrapper       ; ADC          ;
-;                   |chsel_code_converter_sw_to_hw:decoder|                    ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|chsel_code_converter_sw_to_hw:decoder                    ; chsel_code_converter_sw_to_hw          ; ADC          ;
+;          |ADC_modular_adc_0:modular_adc_0|                                   ; 76 (0)      ; 63 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 15 (0)            ; 48 (0)           ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0                                                                                                                                                ; ADC_modular_adc_0                      ; ADC          ;
+;             |altera_modular_adc_control:control_internal|                    ; 76 (0)      ; 63 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 15 (0)            ; 48 (0)           ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal                                                                                                    ; altera_modular_adc_control             ; ADC          ;
+;                |altera_modular_adc_control_fsm:u_control_fsm|                ; 75 (71)     ; 63 (59)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 15 (13)           ; 48 (47)          ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm                                                       ; altera_modular_adc_control_fsm         ; ADC          ;
+;                   |altera_std_synchronizer:u_clk_dft_synchronizer|           ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer        ; altera_std_synchronizer                ; work         ;
+;                   |altera_std_synchronizer:u_eoc_synchronizer|               ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_eoc_synchronizer            ; altera_std_synchronizer                ; work         ;
+;                |fiftyfivenm_adcblock_top_wrapper:adc_inst|                   ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 1 (0)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst                                                          ; fiftyfivenm_adcblock_top_wrapper       ; ADC          ;
+;                   |chsel_code_converter_sw_to_hw:decoder|                    ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|chsel_code_converter_sw_to_hw:decoder                    ; chsel_code_converter_sw_to_hw          ; ADC          ;
 ;                   |fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance ; fiftyfivenm_adcblock_primitive_wrapper ; ADC          ;
 ;          |altera_reset_controller:rst_controller_001|                        ; 3 (0)       ; 3 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (0)             ; 1 (0)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001                                                                                                                                     ; altera_reset_controller                ; ADC          ;
 ;             |altera_reset_synchronizer:alt_rst_sync_uq1|                     ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 1 (1)            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1                                                                                          ; altera_reset_synchronizer              ; ADC          ;
-;    |Bricks:Bricks_1|                                                         ; 2716 (2716) ; 1367 (1367)               ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1349 (1349)  ; 0 (0)             ; 1367 (1367)      ; 0          ; |DE10|Bricks:Bricks_1                                                                                                                                                                                              ; Bricks                                 ; work         ;
-;    |VGA:VGA_1|                                                               ; 273 (273)   ; 118 (118)                 ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 155 (155)    ; 9 (9)             ; 109 (109)        ; 0          ; |DE10|VGA:VGA_1                                                                                                                                                                                                    ; VGA                                    ; work         ;
-;    |paddle:paddle_1|                                                         ; 9 (9)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10|paddle:paddle_1                                                                                                                                                                                              ; paddle                                 ; work         ;
+;    |Bricks:Bricks_1|                                                         ; 2715 (2715) ; 1367 (1367)               ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1348 (1348)  ; 0 (0)             ; 1367 (1367)      ; 0          ; |DE10|Bricks:Bricks_1                                                                                                                                                                                              ; Bricks                                 ; work         ;
+;    |VGA:VGA_1|                                                               ; 276 (276)   ; 118 (118)                 ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 158 (158)    ; 10 (10)           ; 108 (108)        ; 0          ; |DE10|VGA:VGA_1                                                                                                                                                                                                    ; VGA                                    ; work         ;
+;    |paddle:paddle_1|                                                         ; 42 (42)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 10 (10)          ; 0          ; |DE10|paddle:paddle_1                                                                                                                                                                                              ; paddle                                 ; work         ;
 ;    |pll:pll1|                                                                ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10|pll:pll1                                                                                                                                                                                                     ; pll                                    ; work         ;
 ;       |altpll:altpll_component|                                              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10|pll:pll1|altpll:altpll_component                                                                                                                                                                             ; altpll                                 ; work         ;
 ;          |pll_altpll:auto_generated|                                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10|pll:pll1|altpll:altpll_component|pll_altpll:auto_generated                                                                                                                                                   ; pll_altpll                             ; work         ;
-;    |sevenSeg:ADCcount1|                                                      ; 7 (7)       ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 7 (7)            ; 0          ; |DE10|sevenSeg:ADCcount1                                                                                                                                                                                           ; sevenSeg                               ; work         ;
-;    |sevenSeg:ADCcount2|                                                      ; 7 (7)       ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 7 (7)            ; 0          ; |DE10|sevenSeg:ADCcount2                                                                                                                                                                                           ; sevenSeg                               ; work         ;
-;    |sevenSeg:ADCcount3|                                                      ; 7 (7)       ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 7 (7)            ; 0          ; |DE10|sevenSeg:ADCcount3                                                                                                                                                                                           ; sevenSeg                               ; work         ;
+;    |sevenSeg:ADCcount1|                                                      ; 9 (9)       ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 9 (9)            ; 0          ; |DE10|sevenSeg:ADCcount1                                                                                                                                                                                           ; sevenSeg                               ; work         ;
+;    |sevenSeg:ADCcount2|                                                      ; 11 (11)     ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 11 (11)          ; 0          ; |DE10|sevenSeg:ADCcount2                                                                                                                                                                                           ; sevenSeg                               ; work         ;
+;    |sevenSeg:ADCcount3|                                                      ; 11 (11)     ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 11 (11)          ; 0          ; |DE10|sevenSeg:ADCcount3                                                                                                                                                                                           ; sevenSeg                               ; work         ;
 +------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1227,42 +1227,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MAX10_CLK1_50                                                                                                                                                      ;                   ;         ;
 ; KEY[0]                                                                                                                                                             ;                   ;         ;
 ;      - ADC_COMM:ADC_COMM_1|current_state.RD                                                                                                                        ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|adc_value[3]~1                                                                                                                          ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|adc_value[4]~1                                                                                                                          ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                       ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0]  ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|current_state.IDLE                                                                                                                      ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[31]                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[30]                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[29]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[26]                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[28]                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[27]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[15]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[14]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[13]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[12]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[6]                                                                                                                                ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[5]                                                                                                                                ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[4]                                                                                                                                ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[3]                                                                                                                                ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[2]                                                                                                                                ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[1]                                                                                                                                ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[11]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[10]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[9]                                                                                                                                ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[8]                                                                                                                                ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[7]                                                                                                                                ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[16]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[17]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[18]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[26]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[25]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[24]                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[23]                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[22]                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[21]                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[20]                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[19]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[24]                                                                                                                               ; 0                 ; 6       ;
-;      - ADC_COMM:ADC_COMM_1|count[25]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[4]                                                                                                                                ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[3]                                                                                                                                ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[2]                                                                                                                                ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[1]                                                                                                                                ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[6]                                                                                                                                ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[5]                                                                                                                                ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[7]                                                                                                                                ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[8]                                                                                                                                ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[12]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[11]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[10]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[9]                                                                                                                                ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[13]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[14]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[18]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[17]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[16]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|count[15]                                                                                                                               ; 0                 ; 6       ;
+;      - ADC_COMM:ADC_COMM_1|current_state.IDLE                                                                                                                      ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|adc_valid                                                                                                                               ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]  ; 0                 ; 6       ;
 ;      - ADC_COMM:ADC_COMM_1|count[0]                                                                                                                                ; 0                 ; 6       ;
@@ -1275,20 +1275,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                                                                                                   ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1|wire_pll7_clk[0]                                                                ; PLL_1              ; 66      ; Clock                      ; yes    ; Global Clock         ; GCLK19           ; --                        ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|arc_to_conv     ; LCCOMB_X46_Y48_N0  ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[7]~24 ; LCCOMB_X46_Y48_N22 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|load_dout~0     ; LCCOMB_X45_Y48_N24 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out            ; FF_X49_Y48_N15     ; 63      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; ADC_COMM:ADC_COMM_1|Selector3~1                                                                                                                                        ; LCCOMB_X45_Y50_N20 ; 32      ; Latch enable               ; yes    ; Global Clock         ; GCLK10           ; --                        ;
-; ADC_COMM:ADC_COMM_1|adc_value[3]~1                                                                                                                                     ; LCCOMB_X49_Y48_N16 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Bricks:Bricks_1|Equal0~10                                                                                                                                              ; LCCOMB_X44_Y32_N0  ; 73      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Bricks:Bricks_1|vToAdd[4]~40                                                                                                                                           ; LCCOMB_X46_Y34_N16 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|arc_to_conv     ; LCCOMB_X45_Y52_N20 ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[7]~24 ; LCCOMB_X45_Y52_N22 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|load_dout~0     ; LCCOMB_X44_Y52_N28 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out            ; FF_X46_Y43_N1      ; 63      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; ADC_COMM:ADC_COMM_1|Selector3~1                                                                                                                                        ; LCCOMB_X45_Y48_N16 ; 32      ; Latch enable               ; yes    ; Global Clock         ; GCLK13           ; --                        ;
+; ADC_COMM:ADC_COMM_1|adc_value[4]~1                                                                                                                                     ; LCCOMB_X49_Y37_N0  ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Bricks:Bricks_1|Equal0~10                                                                                                                                              ; LCCOMB_X47_Y29_N16 ; 73      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Bricks:Bricks_1|vToAdd[4]~40                                                                                                                                           ; LCCOMB_X50_Y35_N12 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; KEY[0]                                                                                                                                                                 ; PIN_B8             ; 40      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
 ; MAX10_CLK1_50                                                                                                                                                          ; PIN_P11            ; 4       ; Clock                      ; no     ; --                   ; --               ; --                        ;
 ; MAX10_CLK1_50                                                                                                                                                          ; PIN_P11            ; 68      ; Clock                      ; yes    ; Global Clock         ; GCLK18           ; --                        ;
-; VGA:VGA_1|commit~2                                                                                                                                                     ; LCCOMB_X37_Y24_N2  ; 33      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; VGA:VGA_1|currentStateV.DATA                                                                                                                                           ; FF_X44_Y34_N15     ; 32      ; Latch enable               ; yes    ; Global Clock         ; GCLK11           ; --                        ;
-; VGA:VGA_1|lineCount[27]~40                                                                                                                                             ; LCCOMB_X44_Y34_N18 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; VGA:VGA_1|Selector7~0                                                                                                                                                  ; LCCOMB_X29_Y35_N16 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; VGA:VGA_1|commit~2                                                                                                                                                     ; LCCOMB_X45_Y33_N30 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; VGA:VGA_1|currentStateV.DATA                                                                                                                                           ; FF_X29_Y35_N11     ; 32      ; Latch enable               ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; pll:pll1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0]                                                                                            ; PLL_4              ; 1485    ; Clock                      ; yes    ; Global Clock         ; GCLK8            ; --                        ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
@@ -1298,11 +1298,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                                                    ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1|wire_pll7_clk[0] ; PLL_1              ; 66      ; 6                                    ; Global Clock         ; GCLK19           ; --                        ;
-; ADC_COMM:ADC_COMM_1|Selector3~1                                                                         ; LCCOMB_X45_Y50_N20 ; 32      ; 0                                    ; Global Clock         ; GCLK10           ; --                        ;
-; MAX10_CLK1_50                                                                                           ; PIN_P11            ; 68      ; 27                                   ; Global Clock         ; GCLK18           ; --                        ;
-; VGA:VGA_1|currentStateV.DATA                                                                            ; FF_X44_Y34_N15     ; 32      ; 0                                    ; Global Clock         ; GCLK11           ; --                        ;
-; pll:pll1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0]                             ; PLL_4              ; 1485    ; 27                                   ; Global Clock         ; GCLK8            ; --                        ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1|wire_pll7_clk[0] ; PLL_1              ; 66      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
+; ADC_COMM:ADC_COMM_1|Selector3~1                                                                         ; LCCOMB_X45_Y48_N16 ; 32      ; 0                                    ; Global Clock         ; GCLK13           ; --                        ;
+; MAX10_CLK1_50                                                                                           ; PIN_P11            ; 68      ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
+; VGA:VGA_1|currentStateV.DATA                                                                            ; FF_X29_Y35_N11     ; 32      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+; pll:pll1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0]                             ; PLL_4              ; 1485    ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
 +---------------------------------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1312,7 +1312,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                   ; Fan-Out ;
 +------------------------+---------+
 ; VGA:VGA_1|lineCount[6] ; 613     ;
-; VGA:VGA_1|lineCount[7] ; 579     ;
+; VGA:VGA_1|lineCount[7] ; 577     ;
 +------------------------+---------+
 
 
@@ -1321,92 +1321,92 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 3,361 / 148,641 ( 2 % ) ;
-; C16 interconnects     ; 43 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 1,569 / 106,704 ( 1 % ) ;
-; Direct links          ; 522 / 148,641 ( < 1 % ) ;
+; Block interconnects   ; 3,572 / 148,641 ( 2 % ) ;
+; C16 interconnects     ; 42 / 5,382 ( < 1 % )    ;
+; C4 interconnects      ; 1,958 / 106,704 ( 2 % ) ;
+; Direct links          ; 412 / 148,641 ( < 1 % ) ;
 ; Global clocks         ; 5 / 20 ( 25 % )         ;
-; Local interconnects   ; 2,238 / 49,760 ( 4 % )  ;
+; Local interconnects   ; 2,214 / 49,760 ( 4 % )  ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )         ;
-; R24 interconnects     ; 58 / 5,406 ( 1 % )      ;
-; R4 interconnects      ; 1,671 / 147,764 ( 1 % ) ;
+; R24 interconnects     ; 69 / 5,406 ( 1 % )      ;
+; R4 interconnects      ; 2,056 / 147,764 ( 1 % ) ;
 +-----------------------+-------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 14.78) ; Number of LABs  (Total = 218) ;
+; Number of Logic Elements  (Average = 13.95) ; Number of LABs  (Total = 233) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 8                             ;
-; 2                                           ; 1                             ;
+; 1                                           ; 17                            ;
+; 2                                           ; 4                             ;
 ; 3                                           ; 2                             ;
-; 4                                           ; 0                             ;
-; 5                                           ; 1                             ;
-; 6                                           ; 1                             ;
-; 7                                           ; 2                             ;
+; 4                                           ; 3                             ;
+; 5                                           ; 0                             ;
+; 6                                           ; 0                             ;
+; 7                                           ; 0                             ;
 ; 8                                           ; 1                             ;
-; 9                                           ; 2                             ;
-; 10                                          ; 2                             ;
-; 11                                          ; 1                             ;
-; 12                                          ; 4                             ;
-; 13                                          ; 0                             ;
-; 14                                          ; 0                             ;
-; 15                                          ; 12                            ;
-; 16                                          ; 181                           ;
+; 9                                           ; 0                             ;
+; 10                                          ; 1                             ;
+; 11                                          ; 2                             ;
+; 12                                          ; 0                             ;
+; 13                                          ; 5                             ;
+; 14                                          ; 14                            ;
+; 15                                          ; 38                            ;
+; 16                                          ; 146                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 0.98) ; Number of LABs  (Total = 218) ;
+; LAB-wide Signals  (Average = 0.93) ; Number of LABs  (Total = 233) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 12                            ;
-; 1 Clock                            ; 183                           ;
+; 1 Async. clear                     ; 11                            ;
+; 1 Clock                            ; 188                           ;
 ; 1 Clock enable                     ; 13                            ;
 ; 1 Sync. clear                      ; 2                             ;
 ; 2 Async. clears                    ; 1                             ;
-; 2 Clocks                           ; 3                             ;
+; 2 Clocks                           ; 2                             ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 22.21) ; Number of LABs  (Total = 218) ;
+; Number of Signals Sourced  (Average = 20.79) ; Number of LABs  (Total = 233) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 5                             ;
-; 2                                            ; 4                             ;
-; 3                                            ; 1                             ;
-; 4                                            ; 0                             ;
-; 5                                            ; 1                             ;
+; 1                                            ; 13                            ;
+; 2                                            ; 5                             ;
+; 3                                            ; 2                             ;
+; 4                                            ; 5                             ;
+; 5                                            ; 0                             ;
 ; 6                                            ; 1                             ;
-; 7                                            ; 1                             ;
+; 7                                            ; 0                             ;
 ; 8                                            ; 0                             ;
-; 9                                            ; 0                             ;
-; 10                                           ; 1                             ;
+; 9                                            ; 1                             ;
+; 10                                           ; 0                             ;
 ; 11                                           ; 0                             ;
-; 12                                           ; 3                             ;
-; 13                                           ; 0                             ;
-; 14                                           ; 2                             ;
-; 15                                           ; 3                             ;
-; 16                                           ; 24                            ;
+; 12                                           ; 0                             ;
+; 13                                           ; 4                             ;
+; 14                                           ; 3                             ;
+; 15                                           ; 5                             ;
+; 16                                           ; 21                            ;
 ; 17                                           ; 3                             ;
-; 18                                           ; 3                             ;
-; 19                                           ; 2                             ;
+; 18                                           ; 2                             ;
+; 19                                           ; 1                             ;
 ; 20                                           ; 4                             ;
-; 21                                           ; 5                             ;
-; 22                                           ; 2                             ;
-; 23                                           ; 15                            ;
-; 24                                           ; 27                            ;
-; 25                                           ; 24                            ;
-; 26                                           ; 51                            ;
-; 27                                           ; 21                            ;
-; 28                                           ; 4                             ;
+; 21                                           ; 6                             ;
+; 22                                           ; 12                            ;
+; 23                                           ; 17                            ;
+; 24                                           ; 32                            ;
+; 25                                           ; 26                            ;
+; 26                                           ; 38                            ;
+; 27                                           ; 19                            ;
+; 28                                           ; 3                             ;
 ; 29                                           ; 5                             ;
-; 30                                           ; 1                             ;
+; 30                                           ; 0                             ;
 ; 31                                           ; 1                             ;
 ; 32                                           ; 4                             ;
 +----------------------------------------------+-------------------------------+
@@ -1415,72 +1415,74 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 5.81) ; Number of LABs  (Total = 218) ;
+; Number of Signals Sourced Out  (Average = 5.37) ; Number of LABs  (Total = 233) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 0                             ;
-; 1                                               ; 10                            ;
-; 2                                               ; 26                            ;
-; 3                                               ; 32                            ;
-; 4                                               ; 40                            ;
-; 5                                               ; 32                            ;
-; 6                                               ; 20                            ;
-; 7                                               ; 12                            ;
-; 8                                               ; 8                             ;
-; 9                                               ; 7                             ;
-; 10                                              ; 3                             ;
+; 1                                               ; 20                            ;
+; 2                                               ; 37                            ;
+; 3                                               ; 39                            ;
+; 4                                               ; 45                            ;
+; 5                                               ; 25                            ;
+; 6                                               ; 13                            ;
+; 7                                               ; 8                             ;
+; 8                                               ; 11                            ;
+; 9                                               ; 2                             ;
+; 10                                              ; 2                             ;
 ; 11                                              ; 1                             ;
 ; 12                                              ; 3                             ;
 ; 13                                              ; 3                             ;
-; 14                                              ; 0                             ;
+; 14                                              ; 3                             ;
 ; 15                                              ; 1                             ;
-; 16                                              ; 17                            ;
+; 16                                              ; 16                            ;
 ; 17                                              ; 1                             ;
 ; 18                                              ; 1                             ;
 ; 19                                              ; 0                             ;
-; 20                                              ; 1                             ;
+; 20                                              ; 0                             ;
+; 21                                              ; 2                             ;
 +-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 14.98) ; Number of LABs  (Total = 218) ;
+; Number of Distinct Inputs  (Average = 14.55) ; Number of LABs  (Total = 233) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 0                             ;
-; 3                                            ; 7                             ;
-; 4                                            ; 4                             ;
-; 5                                            ; 2                             ;
-; 6                                            ; 3                             ;
-; 7                                            ; 7                             ;
+; 2                                            ; 3                             ;
+; 3                                            ; 12                            ;
+; 4                                            ; 9                             ;
+; 5                                            ; 5                             ;
+; 6                                            ; 1                             ;
+; 7                                            ; 2                             ;
 ; 8                                            ; 2                             ;
-; 9                                            ; 7                             ;
-; 10                                           ; 3                             ;
-; 11                                           ; 15                            ;
-; 12                                           ; 14                            ;
-; 13                                           ; 23                            ;
-; 14                                           ; 15                            ;
-; 15                                           ; 22                            ;
-; 16                                           ; 22                            ;
-; 17                                           ; 17                            ;
-; 18                                           ; 9                             ;
-; 19                                           ; 10                            ;
-; 20                                           ; 5                             ;
-; 21                                           ; 5                             ;
-; 22                                           ; 2                             ;
-; 23                                           ; 5                             ;
-; 24                                           ; 3                             ;
-; 25                                           ; 2                             ;
-; 26                                           ; 0                             ;
-; 27                                           ; 2                             ;
-; 28                                           ; 0                             ;
-; 29                                           ; 5                             ;
-; 30                                           ; 2                             ;
+; 9                                            ; 1                             ;
+; 10                                           ; 13                            ;
+; 11                                           ; 9                             ;
+; 12                                           ; 13                            ;
+; 13                                           ; 17                            ;
+; 14                                           ; 26                            ;
+; 15                                           ; 28                            ;
+; 16                                           ; 24                            ;
+; 17                                           ; 19                            ;
+; 18                                           ; 5                             ;
+; 19                                           ; 9                             ;
+; 20                                           ; 4                             ;
+; 21                                           ; 3                             ;
+; 22                                           ; 1                             ;
+; 23                                           ; 4                             ;
+; 24                                           ; 6                             ;
+; 25                                           ; 0                             ;
+; 26                                           ; 2                             ;
+; 27                                           ; 0                             ;
+; 28                                           ; 6                             ;
+; 29                                           ; 0                             ;
+; 30                                           ; 1                             ;
 ; 31                                           ; 0                             ;
 ; 32                                           ; 1                             ;
-; 33                                           ; 1                             ;
-; 34                                           ; 2                             ;
+; 33                                           ; 5                             ;
+; 34                                           ; 0                             ;
+; 35                                           ; 1                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -1655,89 +1657,79 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------+----------------------+-------------------+
 ; Source Clock(s)                                           ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------------------------------------------------+----------------------+-------------------+
-; ADC_COMM_1|adc_1|altpll_sys|sd1|pll7|clk[0]               ; MAX10_CLK1_50        ; 83.3              ;
-; MAX10_CLK1_50,ADC_COMM_1|adc_1|altpll_sys|sd1|pll7|clk[0] ; MAX10_CLK1_50        ; 5.6               ;
-; MAX10_CLK1_50                                             ; MAX10_CLK1_50        ; 2.0               ;
+; ADC_COMM_1|adc_1|altpll_sys|sd1|pll7|clk[0]               ; MAX10_CLK1_50        ; 86.7              ;
+; MAX10_CLK1_50,ADC_COMM_1|adc_1|altpll_sys|sd1|pll7|clk[0] ; MAX10_CLK1_50        ; 4.5               ;
 +-----------------------------------------------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                                                                                                                                                                                                     ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
-; Source Register                                                                                                                                                                                               ; Destination Register                                                                                                                                                          ; Delay Added in ns ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_valid                                              ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 6.966             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[8]                                            ; ADC_COMM:ADC_COMM_1|adc_value[8]                                                                                                                                              ; 6.456             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[7]                                            ; ADC_COMM:ADC_COMM_1|adc_value[7]                                                                                                                                              ; 6.456             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[10]                                           ; ADC_COMM:ADC_COMM_1|adc_value[10]                                                                                                                                             ; 6.387             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[1]                                            ; ADC_COMM:ADC_COMM_1|adc_value[1]                                                                                                                                              ; 6.369             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[2]                                            ; ADC_COMM:ADC_COMM_1|adc_value[2]                                                                                                                                              ; 6.369             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[3]                                            ; ADC_COMM:ADC_COMM_1|adc_value[3]                                                                                                                                              ; 6.369             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[11]                                           ; ADC_COMM:ADC_COMM_1|adc_value[11]                                                                                                                                             ; 6.232             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[4]                                            ; ADC_COMM:ADC_COMM_1|adc_value[4]                                                                                                                                              ; 6.123             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[5]                                            ; ADC_COMM:ADC_COMM_1|adc_value[5]                                                                                                                                              ; 6.123             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[6]                                            ; ADC_COMM:ADC_COMM_1|adc_value[6]                                                                                                                                              ; 6.123             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[9]                                            ; ADC_COMM:ADC_COMM_1|adc_value[9]                                                                                                                                              ; 6.087             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[0]                                            ; ADC_COMM:ADC_COMM_1|adc_value[0]                                                                                                                                              ; 6.040             ;
-; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                                                         ; ADC_COMM:ADC_COMM_1|current_state.RD                                                                                                                                          ; 3.037             ;
-; ADC_COMM:ADC_COMM_1|count[31]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[30]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[29]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[28]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[26]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[27]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[24]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[23]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[22]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[21]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[20]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[19]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[18]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[17]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[16]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[15]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[14]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[13]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[12]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[11]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[10]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[9]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[8]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[7]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[6]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[5]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[4]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[3]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[2]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[1]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|current_state.IDLE                                                                                                                                                                        ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|count[25]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                         ; 2.597             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[9]                                            ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[9]            ; 0.198             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[4]                                            ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[4]            ; 0.198             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[5]                                            ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[5]            ; 0.198             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[6]                                            ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[6]            ; 0.198             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[0]                                            ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[0]            ; 0.198             ;
-; VGA:VGA_1|currentStateV.DATA                                                                                                                                                                                  ; VGA:VGA_1|currentStateV.V_FRONT_PORCH                                                                                                                                         ; 0.129             ;
-; ADC_COMM:ADC_COMM_1|adc_value[9]                                                                                                                                                                              ; sevenSeg:ADCcount3|seg_out[0]                                                                                                                                                 ; 0.079             ;
-; ADC_COMM:ADC_COMM_1|adc_value[5]                                                                                                                                                                              ; sevenSeg:ADCcount2|seg_out[0]                                                                                                                                                 ; 0.079             ;
-; ADC_COMM:ADC_COMM_1|adc_value[1]                                                                                                                                                                              ; sevenSeg:ADCcount1|seg_out[0]                                                                                                                                                 ; 0.079             ;
-; ADC_COMM:ADC_COMM_1|adc_value[4]                                                                                                                                                                              ; sevenSeg:ADCcount2|seg_out[1]                                                                                                                                                 ; 0.071             ;
-; ADC_COMM:ADC_COMM_1|adc_value[0]                                                                                                                                                                              ; sevenSeg:ADCcount1|seg_out[1]                                                                                                                                                 ; 0.071             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[6]                                           ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PWRDWN_TSEN ; 0.057             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer|dreg[0] ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]               ; 0.057             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_eoc_synchronizer|dreg[0]     ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]               ; 0.057             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PUTRESP_DLY3                                ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]               ; 0.056             ;
-; VGA:VGA_1|pixelCount[31]                                                                                                                                                                                      ; VGA:VGA_1|pixelCount[29]                                                                                                                                                      ; 0.056             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PWRDWN                                      ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PWRDWN_TSEN ; 0.050             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[7]                                           ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[7]           ; 0.050             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PRE_CONV                                    ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]               ; 0.044             ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|eoc_synch_dly                                          ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]               ; 0.028             ;
-; VGA:VGA_1|currentStateV.V_SYNC                                                                                                                                                                                ; VGA:VGA_1|VGA_VS                                                                                                                                                              ; 0.025             ;
-; VGA:VGA_1|currentStateH.H_SYNC                                                                                                                                                                                ; VGA:VGA_1|VGA_HS                                                                                                                                                              ; 0.025             ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 68 path(s) that have the largest delay added for hold.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                                                                                                                                                                                                        ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                                                                                                                                                                                               ; Destination Register                                                                                                                                                             ; Delay Added in ns ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[0]                                            ; ADC_COMM:ADC_COMM_1|adc_value[0]                                                                                                                                                 ; 7.005             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[1]                                            ; ADC_COMM:ADC_COMM_1|adc_value[1]                                                                                                                                                 ; 6.936             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[3]                                            ; ADC_COMM:ADC_COMM_1|adc_value[3]                                                                                                                                                 ; 6.865             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[2]                                            ; ADC_COMM:ADC_COMM_1|adc_value[2]                                                                                                                                                 ; 6.865             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[10]                                           ; ADC_COMM:ADC_COMM_1|adc_value[10]                                                                                                                                                ; 6.584             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[8]                                            ; ADC_COMM:ADC_COMM_1|adc_value[8]                                                                                                                                                 ; 6.584             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[7]                                            ; ADC_COMM:ADC_COMM_1|adc_value[7]                                                                                                                                                 ; 6.584             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[6]                                            ; ADC_COMM:ADC_COMM_1|adc_value[6]                                                                                                                                                 ; 6.584             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[4]                                            ; ADC_COMM:ADC_COMM_1|adc_value[4]                                                                                                                                                 ; 6.576             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[11]                                           ; ADC_COMM:ADC_COMM_1|adc_value[11]                                                                                                                                                ; 6.550             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[5]                                            ; ADC_COMM:ADC_COMM_1|adc_value[5]                                                                                                                                                 ; 6.550             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[9]                                            ; ADC_COMM:ADC_COMM_1|adc_value[9]                                                                                                                                                 ; 6.487             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_valid                                              ; ADC_COMM:ADC_COMM_1|current_state.RD                                                                                                                                             ; 6.258             ;
+; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                                                         ; ADC_COMM:ADC_COMM_1|current_state.RD                                                                                                                                             ; 2.675             ;
+; ADC_COMM:ADC_COMM_1|count[31]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[30]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[29]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[28]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[27]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[26]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[25]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[24]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[23]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[22]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[21]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[20]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[19]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[18]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[17]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[16]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[14]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[13]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[12]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[11]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[10]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[9]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[8]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[7]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[6]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[5]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[4]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[3]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[2]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[1]                                                                                                                                                                                  ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|count[15]                                                                                                                                                                                 ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; ADC_COMM:ADC_COMM_1|current_state.IDLE                                                                                                                                                                        ; ADC_COMM:ADC_COMM_1|current_state.REQ                                                                                                                                            ; 1.795             ;
+; VGA:VGA_1|currentStateV.DATA                                                                                                                                                                                  ; VGA:VGA_1|currentStateV.V_FRONT_PORCH                                                                                                                                            ; 0.134             ;
+; VGA:VGA_1|pixelCount[31]                                                                                                                                                                                      ; VGA:VGA_1|VGA_R[3]                                                                                                                                                               ; 0.066             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[6]                                           ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PWRDWN_TSEN    ; 0.058             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer|dreg[0] ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]                  ; 0.058             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.WAIT                                        ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.GETCMD_W       ; 0.058             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PUTRESP_DLY3                                ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]                  ; 0.058             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.GETCMD_W                                    ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]                  ; 0.050             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[9]                                            ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[9]               ; 0.049             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[4]                                            ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[4]               ; 0.049             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PWRDWN                                      ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PWRDWN_TSEN    ; 0.049             ;
+; VGA:VGA_1|currentStateH.DATA                                                                                                                                                                                  ; VGA:VGA_1|currentStateH.H_FRONT_PORCH                                                                                                                                            ; 0.037             ;
+; VGA:VGA_1|currentStateV.V_SYNC                                                                                                                                                                                ; VGA:VGA_1|VGA_VS                                                                                                                                                                 ; 0.036             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|eoc_synch_dly                                          ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.WAIT_PEND_DLY1 ; 0.011             ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 59 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1840,9 +1832,10 @@ Info (176353): Automatically promoted node ADC_COMM:ADC_COMM_1|Selector3~1  File
 Info (176353): Automatically promoted node VGA:VGA_1|currentStateV.DATA  File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 30
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node VGA:VGA_1|VGA_B~0 File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 11
-        Info (176357): Destination node VGA:VGA_1|lineCount[27]~40 File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 59
+        Info (176357): Destination node VGA:VGA_1|VGA_B~1 File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 11
+        Info (176357): Destination node VGA:VGA_1|VGA_B~2 File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 11
         Info (176357): Destination node VGA:VGA_1|Selector7~0 File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 132
+        Info (176357): Destination node VGA:VGA_1|Selector7~1 File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 132
         Info (176357): Destination node VGA:VGA_1|Selector4~0 File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 132
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -1865,21 +1858,21 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "ARDUINO_IO[8]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "ARDUINO_IO[9]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "ARDUINO_RESET_N" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 18% of the available device resources in the region that extends from location X45_Y22 to location X55_Y32
+    Info (170196): Router estimated peak interconnect usage is 22% of the available device resources in the region that extends from location X33_Y22 to location X44_Y32
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 2.09 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
+Info (11888): Total time spent on timing analysis during the Fitter is 1.11 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1896,10 +1889,10 @@ Critical Warning (16248): Pin VGA_HS is placed too close with ADC pins. I/O pins
 Critical Warning (16248): Pin VGA_VS is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 16
 Info (144001): Generated suppressed messages file //Mac/Home/Documents/school/F18/BrickBreaker/quartus/DE10.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 5699 megabytes
-    Info: Processing ended: Thu Nov 29 12:15:09 2018
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Peak virtual memory: 5695 megabytes
+    Info: Processing ended: Thu Nov 29 12:41:32 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:27
 
 
 +----------------------------+

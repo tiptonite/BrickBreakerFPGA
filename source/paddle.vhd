@@ -53,6 +53,13 @@ architecture RTL of paddle is
     end process P_status;
 
 
+    process(ADC_in)
+    begin
+
+        PC <= unsigned('0' & ADC_in(11 downto 2));
+
+    end process;
+
 --    --Rate at which paddle position updates
 --    P_update : process(clk)
 --    begin
