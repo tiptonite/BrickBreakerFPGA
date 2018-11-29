@@ -54,6 +54,7 @@ architecture rtl of DE10 is
 
     component Bricks is
         port (
+            clk          : in  std_logic;
             hPos         : in  unsigned(10 downto 0);
             vPos         : in  unsigned(9 downto 0);
             brick_status : out std_logic_vector(1 downto 0)
@@ -101,6 +102,7 @@ begin
 
     Bricks_1 : Bricks
         port map (
+            clk          => clockVGA,
             hPos         => hPos,
             vPos         => vPos,
             brick_status => brick_status
