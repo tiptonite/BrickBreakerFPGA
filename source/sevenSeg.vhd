@@ -23,8 +23,8 @@ use ieee.numeric_std.all;
 entity sevenSeg is
 	port(
 		clk		:in std_logic;
-		num_in	:in	unsigned(3 downto 0);
-		seg_out	:out	unsigned(7 downto 0);
+		num_in	:in	std_logic_vector(3 downto 0);
+		seg_out	:out std_logic_vector(7 downto 0);
 		dec		:in	std_logic
 	
 	);
@@ -32,9 +32,9 @@ entity sevenSeg is
 	
 	
 architecture RTL of sevenSeg is
-	type seven_Seg is array (0 to 15) of unsigned(7 downto 0);
+	type seven_Seg is array (0 to 15) of std_logic_vector(7 downto 0);
 	constant sevSeg: seven_Seg := (X"C0", X"F9", X"A4",X"B0",X"99",X"92",X"82",X"F8",X"80",X"98",x"88",x"83",x"C6",x"A1",x"86",x"8E");
-	type sevenSeg2 is array (0 to 15) of unsigned(7 downto 0);
+	type sevenSeg2 is array (0 to 15) of std_logic_vector(7 downto 0);
 	constant sevSegDec: sevenSeg2 := (X"40",X"79",X"24",X"30",X"19",X"12",X"02",X"78",X"00",X"18",x"08",x"03",x"46",x"21",x"06",x"0E");
 	begin
 
