@@ -33,7 +33,7 @@ begin
 	begin
 		if rising_edge(clk) then
 
-			if count = 2500000 then
+			if count = 25 then
 				count <= 0;
 
 				if hToAdd = 40 then

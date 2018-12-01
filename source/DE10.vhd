@@ -113,7 +113,8 @@ architecture rtl of DE10 is
 			vPos : in unsigned(9 downto 0);
 			ball_status : out std_logic;
 			lives :out unsigned(3 downto 0);
-			reset :in std_logic
+			reset :in std_logic;
+			go    :in std_logic
 		
 		
 		);
@@ -222,7 +223,7 @@ begin
 	 Ball1 : Ball
 		generic map(
 		
-		BallUpdate=>12500000
+		BallUpdate=>1750000
 		)
 		port map(
 				clk=>MAX10_CLK1_50,
@@ -230,7 +231,9 @@ begin
 				vPos=>vPos,
 				ball_status=>ball_status,
 				lives=>livesNum,
-				reset=>KEY(0)
+				reset=>KEY(0),
+				go=>KEY(1)
+				
 		
 		
 		);
