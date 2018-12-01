@@ -1,5 +1,5 @@
 Flow report for DE10
-Thu Nov 29 12:41:46 2018
+Sat Dec 01 10:04:32 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Nov 29 12:41:46 2018       ;
+; Flow Status                        ; Successful - Sat Dec 01 10:04:32 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; DE10                                        ;
 ; Top-level Entity Name              ; DE10                                        ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,250 / 49,760 ( 7 % )                      ;
-;     Total combinational functions  ; 3,219 / 49,760 ( 6 % )                      ;
-;     Dedicated logic registers      ; 1,620 / 49,760 ( 3 % )                      ;
-; Total registers                    ; 1620                                        ;
+; Total logic elements               ; 3,451 / 49,760 ( 7 % )                      ;
+;     Total combinational functions  ; 3,406 / 49,760 ( 7 % )                      ;
+;     Dedicated logic registers      ; 1,733 / 49,760 ( 3 % )                      ;
+; Total registers                    ; 1733                                        ;
 ; Total pins                         ; 66 / 360 ( 18 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/29/2018 12:40:48 ;
+; Start date & time ; 12/01/2018 10:03:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE10                ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+-------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 121374122727.154352044808548                          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 8796760729097.154368380603680                         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                    ; --            ; --          ; --             ;
@@ -108,12 +108,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 4841 MB             ; 00:00:36                           ;
-; Fitter               ; 00:00:16     ; 1.3                     ; 5695 MB             ; 00:00:26                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4707 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.7                     ; 4865 MB             ; 00:00:07                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4694 MB             ; 00:00:01                           ;
-; Total                ; 00:00:51     ; --                      ; --                  ; 00:01:13                           ;
+; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 4838 MB             ; 00:00:31                           ;
+; Fitter               ; 00:00:23     ; 1.3                     ; 5566 MB             ; 00:00:34                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4710 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.6                     ; 4859 MB             ; 00:00:10                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4696 MB             ; 00:00:02                           ;
+; Total                ; 00:01:00     ; --                      ; --                  ; 00:01:21                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -122,11 +122,11 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; ERIKSARGENTB229  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; ERIKSARGENTB229  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; ERIKSARGENTB229  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; ERIKSARGENTB229  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; ERIKSARGENTB229  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-EKDTFHT  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-EKDTFHT  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-EKDTFHT  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-EKDTFHT  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-EKDTFHT  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

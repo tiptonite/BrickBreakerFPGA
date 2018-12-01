@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE10
-Thu Nov 29 12:41:12 2018
+Sat Dec 01 10:03:50 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -51,21 +51,21 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
  43. Parameter Settings for User Entity Instance: ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001
  44. Parameter Settings for User Entity Instance: ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1
  45. Parameter Settings for User Entity Instance: ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 46. altpll Parameter Settings by Entity Instance
- 47. scfifo Parameter Settings by Entity Instance
- 48. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001"
- 49. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
- 50. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller"
- 51. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo"
- 52. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal"
- 53. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1"
- 54. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys"
- 55. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1"
- 56. Port Connectivity Checks: "sevenSeg:ADCcount3"
- 57. Port Connectivity Checks: "sevenSeg:ADCcount2"
- 58. Port Connectivity Checks: "sevenSeg:ADCcount1"
- 59. Port Connectivity Checks: "sevenSeg:lives"
- 60. Port Connectivity Checks: "Status:Status_1"
+ 46. Parameter Settings for User Entity Instance: Ball:Ball1
+ 47. altpll Parameter Settings by Entity Instance
+ 48. scfifo Parameter Settings by Entity Instance
+ 49. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001"
+ 50. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
+ 51. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller"
+ 52. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo"
+ 53. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal"
+ 54. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1"
+ 55. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys"
+ 56. Port Connectivity Checks: "ADC_COMM:ADC_COMM_1|ADC:adc_1"
+ 57. Port Connectivity Checks: "sevenSeg:ADCcount3"
+ 58. Port Connectivity Checks: "sevenSeg:ADCcount2"
+ 59. Port Connectivity Checks: "sevenSeg:ADCcount1"
+ 60. Port Connectivity Checks: "sevenSeg:lives"
  61. Post-Synthesis Netlist Statistics for Top Partition
  62. Elapsed Time Per Partition
  63. Analysis & Synthesis Messages
@@ -95,15 +95,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 29 12:41:12 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec 01 10:03:50 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; DE10                                        ;
 ; Top-level Entity Name              ; DE10                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 3,265                                       ;
-;     Total combinational functions  ; 3,218                                       ;
-;     Dedicated logic registers      ; 1,620                                       ;
-; Total registers                    ; 1620                                        ;
+; Total logic elements               ; 3,463                                       ;
+;     Total combinational functions  ; 3,405                                       ;
+;     Dedicated logic registers      ; 1,733                                       ;
+; Total registers                    ; 1733                                        ;
 ; Total pins                         ; 66                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -206,64 +206,65 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 3           ;
+; Maximum allowed            ; 3           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 3           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                 ;
-+-------------------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                      ; Library ;
-+-------------------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
-; ../source/adc.vhd                                                       ; yes             ; User VHDL File               ; //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd                                                       ;         ;
-; ../ip/ADC/synthesis/ADC.vhd                                             ; yes             ; User VHDL File               ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/ADC.vhd                                             ; ADC     ;
-; ../ip/ADC/synthesis/submodules/altera_reset_controller.v                ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_controller.v                ; ADC     ;
-; ../ip/ADC/synthesis/submodules/altera_reset_synchronizer.v              ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_synchronizer.v              ; ADC     ;
-; ../ip/ADC/synthesis/submodules/ADC_modular_adc_0.v                      ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_modular_adc_0.v                      ; ADC     ;
-; ../ip/ADC/synthesis/submodules/altera_modular_adc_control.v             ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control.v             ; ADC     ;
-; ../ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v   ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v   ; ADC     ;
-; ../ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v         ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v         ; ADC     ;
-; ../ip/ADC/synthesis/submodules/chsel_code_converter_sw_to_hw.v          ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/chsel_code_converter_sw_to_hw.v          ; ADC     ;
-; ../ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v ; ADC     ;
-; ../ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v       ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v       ; ADC     ;
-; ../ip/ADC/synthesis/submodules/ADC_altpll_sys.v                         ; yes             ; User Verilog HDL File        ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v                         ; ADC     ;
-; ../source/sevenSeg.vhd                                                  ; yes             ; User VHDL File               ; //Mac/Home/Documents/school/F18/BrickBreaker/source/sevenSeg.vhd                                                  ;         ;
-; ../source/paddle.vhd                                                    ; yes             ; User VHDL File               ; //Mac/Home/Documents/school/F18/BrickBreaker/source/paddle.vhd                                                    ;         ;
-; ../source/Bricks.vhd                                                    ; yes             ; User VHDL File               ; //Mac/Home/Documents/school/F18/BrickBreaker/source/Bricks.vhd                                                    ;         ;
-; ../source/Status.vhd                                                    ; yes             ; User VHDL File               ; //Mac/Home/Documents/school/F18/BrickBreaker/source/Status.vhd                                                    ;         ;
-; ../source/vga.vhd                                                       ; yes             ; User VHDL File               ; //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd                                                       ;         ;
-; ../source/DE10.vhd                                                      ; yes             ; User VHDL File               ; //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd                                                      ;         ;
-; ../ip/pll.vhd                                                           ; yes             ; User Wizard-Generated File   ; //Mac/Home/Documents/school/F18/BrickBreaker/ip/pll.vhd                                                           ;         ;
-; altpll.tdf                                                              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altpll.tdf                                                 ;         ;
-; aglobal180.inc                                                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/aglobal180.inc                                             ;         ;
-; stratix_pll.inc                                                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratix_pll.inc                                            ;         ;
-; stratixii_pll.inc                                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratixii_pll.inc                                          ;         ;
-; cycloneii_pll.inc                                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/cycloneii_pll.inc                                          ;         ;
-; db/pll_altpll.v                                                         ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/pll_altpll.v                                              ;         ;
-; altera_std_synchronizer.v                                               ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altera_std_synchronizer.v                                  ;         ;
-; scfifo.tdf                                                              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/scfifo.tdf                                                 ;         ;
-; a_regfifo.inc                                                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_regfifo.inc                                              ;         ;
-; a_dpfifo.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_dpfifo.inc                                               ;         ;
-; a_i2fifo.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_i2fifo.inc                                               ;         ;
-; a_fffifo.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_fffifo.inc                                               ;         ;
-; a_f2fifo.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_f2fifo.inc                                               ;         ;
-; db/scfifo_ds61.tdf                                                      ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/scfifo_ds61.tdf                                           ;         ;
-; db/a_dpfifo_3o41.tdf                                                    ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf                                         ;         ;
-; db/a_fefifo_c6e.tdf                                                     ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/a_fefifo_c6e.tdf                                          ;         ;
-; db/cntr_337.tdf                                                         ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/cntr_337.tdf                                              ;         ;
-; db/altsyncram_rqn1.tdf                                                  ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf                                       ;         ;
-; db/cntr_n2b.tdf                                                         ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/cntr_n2b.tdf                                              ;         ;
-+-------------------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                      ;
++-------------------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                           ; Library ;
++-------------------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------+---------+
+; ../source/adc.vhd                                                       ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd                                                       ;         ;
+; ../ip/ADC/synthesis/ADC.vhd                                             ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/ADC.vhd                                             ; ADC     ;
+; ../ip/ADC/synthesis/submodules/altera_reset_controller.v                ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_controller.v                ; ADC     ;
+; ../ip/ADC/synthesis/submodules/altera_reset_synchronizer.v              ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_synchronizer.v              ; ADC     ;
+; ../ip/ADC/synthesis/submodules/ADC_modular_adc_0.v                      ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_modular_adc_0.v                      ; ADC     ;
+; ../ip/ADC/synthesis/submodules/altera_modular_adc_control.v             ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control.v             ; ADC     ;
+; ../ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v   ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v   ; ADC     ;
+; ../ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v         ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v         ; ADC     ;
+; ../ip/ADC/synthesis/submodules/chsel_code_converter_sw_to_hw.v          ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/chsel_code_converter_sw_to_hw.v          ; ADC     ;
+; ../ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v ; ADC     ;
+; ../ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v       ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v       ; ADC     ;
+; ../ip/ADC/synthesis/submodules/ADC_altpll_sys.v                         ; yes             ; User Verilog HDL File        ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v                         ; ADC     ;
+; ../source/sevenSeg.vhd                                                  ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/sevenSeg.vhd                                                  ;         ;
+; ../source/paddle.vhd                                                    ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/paddle.vhd                                                    ;         ;
+; ../source/Bricks.vhd                                                    ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Bricks.vhd                                                    ;         ;
+; ../source/Status.vhd                                                    ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Status.vhd                                                    ;         ;
+; ../source/vga.vhd                                                       ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd                                                       ;         ;
+; ../source/DE10.vhd                                                      ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd                                                      ;         ;
+; ../ip/pll.vhd                                                           ; yes             ; User Wizard-Generated File   ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/pll.vhd                                                           ;         ;
+; ../source/averageADC.vhd                                                ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/averageADC.vhd                                                ;         ;
+; ../source/Ball.vhd                                                      ; yes             ; User VHDL File               ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd                                                      ;         ;
+; altpll.tdf                                                              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altpll.tdf                                                      ;         ;
+; aglobal180.inc                                                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/aglobal180.inc                                                  ;         ;
+; stratix_pll.inc                                                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratix_pll.inc                                                 ;         ;
+; stratixii_pll.inc                                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratixii_pll.inc                                               ;         ;
+; cycloneii_pll.inc                                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/cycloneii_pll.inc                                               ;         ;
+; db/pll_altpll.v                                                         ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/pll_altpll.v                                              ;         ;
+; altera_std_synchronizer.v                                               ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altera_std_synchronizer.v                                       ;         ;
+; scfifo.tdf                                                              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/scfifo.tdf                                                      ;         ;
+; a_regfifo.inc                                                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_regfifo.inc                                                   ;         ;
+; a_dpfifo.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_dpfifo.inc                                                    ;         ;
+; a_i2fifo.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_i2fifo.inc                                                    ;         ;
+; a_fffifo.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_fffifo.inc                                                    ;         ;
+; a_f2fifo.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_f2fifo.inc                                                    ;         ;
+; db/scfifo_ds61.tdf                                                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/scfifo_ds61.tdf                                           ;         ;
+; db/a_dpfifo_3o41.tdf                                                    ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf                                         ;         ;
+; db/a_fefifo_c6e.tdf                                                     ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/a_fefifo_c6e.tdf                                          ;         ;
+; db/cntr_337.tdf                                                         ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/cntr_337.tdf                                              ;         ;
+; db/altsyncram_rqn1.tdf                                                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf                                       ;         ;
+; db/cntr_n2b.tdf                                                         ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/cntr_n2b.tdf                                              ;         ;
++-------------------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -271,20 +272,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                       ;
 +---------------------------------------------+-----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,265                                                                       ;
+; Estimated Total logic elements              ; 3,463                                                                       ;
 ;                                             ;                                                                             ;
-; Total combinational functions               ; 3218                                                                        ;
+; Total combinational functions               ; 3405                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                             ;
-;     -- 4 input functions                    ; 1590                                                                        ;
-;     -- 3 input functions                    ; 1303                                                                        ;
-;     -- <=2 input functions                  ; 325                                                                         ;
+;     -- 4 input functions                    ; 1652                                                                        ;
+;     -- 3 input functions                    ; 1319                                                                        ;
+;     -- <=2 input functions                  ; 434                                                                         ;
 ;                                             ;                                                                             ;
 ; Logic elements by mode                      ;                                                                             ;
-;     -- normal mode                          ; 2954                                                                        ;
-;     -- arithmetic mode                      ; 264                                                                         ;
+;     -- normal mode                          ; 3020                                                                        ;
+;     -- arithmetic mode                      ; 385                                                                         ;
 ;                                             ;                                                                             ;
-; Total registers                             ; 1620                                                                        ;
-;     -- Dedicated logic registers            ; 1620                                                                        ;
+; Total registers                             ; 1733                                                                        ;
+;     -- Dedicated logic registers            ; 1733                                                                        ;
 ;     -- I/O registers                        ; 0                                                                           ;
 ;                                             ;                                                                             ;
 ; I/O pins                                    ; 66                                                                          ;
@@ -296,8 +297,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                             ;
 ; Maximum fan-out node                        ; pll:pll1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 1486                                                                        ;
-; Total fan-out                               ; 14520                                                                       ;
-; Average fan-out                             ; 2.92                                                                        ;
+; Total fan-out                               ; 15361                                                                       ;
+; Average fan-out                             ; 2.91                                                                        ;
 +---------------------------------------------+-----------------------------------------------------------------------------+
 
 
@@ -306,8 +307,8 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                ; Entity Name                            ; Library Name ;
 +------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
-; |DE10                                                                        ; 3218 (1)            ; 1620 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |DE10                                                                                                                                                                                                              ; DE10                                   ; work         ;
-;    |ADC_COMM:ADC_COMM_1|                                                     ; 173 (112)           ; 114 (48)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1                                                                                                                                                                                          ; ADC_COMM                               ; work         ;
+; |DE10                                                                        ; 3405 (1)            ; 1733 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |DE10                                                                                                                                                                                                              ; DE10                                   ; work         ;
+;    |ADC_COMM:ADC_COMM_1|                                                     ; 172 (111)           ; 114 (48)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1                                                                                                                                                                                          ; ADC_COMM                               ; work         ;
 ;       |ADC:adc_1|                                                            ; 61 (0)              ; 66 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1                                                                                                                                                                                ; ADC                                    ; adc          ;
 ;          |ADC_altpll_sys:altpll_sys|                                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys                                                                                                                                                      ; ADC_altpll_sys                         ; ADC          ;
 ;             |ADC_altpll_sys_altpll_9b92:sd1|                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1                                                                                                                       ; ADC_altpll_sys_altpll_9b92             ; ADC          ;
@@ -321,15 +322,18 @@ refer to the applicable agreement for further details.
 ;                   |fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance ; fiftyfivenm_adcblock_primitive_wrapper ; ADC          ;
 ;          |altera_reset_controller:rst_controller_001|                        ; 0 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001                                                                                                                                     ; altera_reset_controller                ; ADC          ;
 ;             |altera_reset_synchronizer:alt_rst_sync_uq1|                     ; 0 (0)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1                                                                                          ; altera_reset_synchronizer              ; ADC          ;
-;    |Bricks:Bricks_1|                                                         ; 2715 (2715)         ; 1367 (1367)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|Bricks:Bricks_1                                                                                                                                                                                              ; Bricks                                 ; work         ;
-;    |VGA:VGA_1|                                                               ; 266 (266)           ; 118 (118)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|VGA:VGA_1                                                                                                                                                                                                    ; VGA                                    ; work         ;
-;    |paddle:paddle_1|                                                         ; 42 (42)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1                                                                                                                                                                                              ; paddle                                 ; work         ;
+;    |Ball:Ball1|                                                              ; 119 (119)           ; 47 (47)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|Ball:Ball1                                                                                                                                                                                                   ; Ball                                   ; work         ;
+;    |Bricks:Bricks_1|                                                         ; 2693 (2693)         ; 1367 (1367)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|Bricks:Bricks_1                                                                                                                                                                                              ; Bricks                                 ; work         ;
+;    |VGA:VGA_1|                                                               ; 289 (289)           ; 118 (118)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|VGA:VGA_1                                                                                                                                                                                                    ; VGA                                    ; work         ;
+;    |paddle:paddle_1|                                                         ; 103 (42)            ; 59 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1                                                                                                                                                                                              ; paddle                                 ; work         ;
+;       |averageADC:avg1|                                                      ; 61 (61)             ; 59 (59)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1                                                                                                                                                                              ; averageADC                             ; work         ;
 ;    |pll:pll1|                                                                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|pll:pll1                                                                                                                                                                                                     ; pll                                    ; work         ;
 ;       |altpll:altpll_component|                                              ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|pll:pll1|altpll:altpll_component                                                                                                                                                                             ; altpll                                 ; work         ;
 ;          |pll_altpll:auto_generated|                                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|pll:pll1|altpll:altpll_component|pll_altpll:auto_generated                                                                                                                                                   ; pll_altpll                             ; work         ;
 ;    |sevenSeg:ADCcount1|                                                      ; 7 (7)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|sevenSeg:ADCcount1                                                                                                                                                                                           ; sevenSeg                               ; work         ;
 ;    |sevenSeg:ADCcount2|                                                      ; 7 (7)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|sevenSeg:ADCcount2                                                                                                                                                                                           ; sevenSeg                               ; work         ;
 ;    |sevenSeg:ADCcount3|                                                      ; 7 (7)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|sevenSeg:ADCcount3                                                                                                                                                                                           ; sevenSeg                               ; work         ;
+;    |sevenSeg:lives|                                                          ; 7 (7)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|sevenSeg:lives                                                                                                                                                                                               ; sevenSeg                               ; work         ;
 +------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -515,11 +519,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; sevenSeg:ADCcount3|seg_out[7]                                                                                                                                                                                                                                                                                                                       ; Stuck at VCC due to stuck port data_in                                                                                                                                             ;
 ; sevenSeg:ADCcount2|seg_out[7]                                                                                                                                                                                                                                                                                                                       ; Stuck at VCC due to stuck port data_in                                                                                                                                             ;
 ; sevenSeg:ADCcount1|seg_out[7]                                                                                                                                                                                                                                                                                                                       ; Stuck at VCC due to stuck port data_in                                                                                                                                             ;
-; sevenSeg:lives|seg_out[0]                                                                                                                                                                                                                                                                                                                           ; Stuck at GND due to stuck port data_in                                                                                                                                             ;
-; sevenSeg:lives|seg_out[1]                                                                                                                                                                                                                                                                                                                           ; Stuck at VCC due to stuck port data_in                                                                                                                                             ;
-; sevenSeg:lives|seg_out[2,3]                                                                                                                                                                                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                             ;
-; sevenSeg:lives|seg_out[4]                                                                                                                                                                                                                                                                                                                           ; Stuck at VCC due to stuck port data_in                                                                                                                                             ;
-; sevenSeg:lives|seg_out[5,6]                                                                                                                                                                                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                                                                                             ;
 ; sevenSeg:lives|seg_out[7]                                                                                                                                                                                                                                                                                                                           ; Stuck at VCC due to stuck port data_in                                                                                                                                             ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|avrg_cnt_done                                                                                                                                                                                ; Lost fanout                                                                                                                                                                        ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|avrg_sum[0..17]                                                                                                                                                                              ; Lost fanout                                                                                                                                                                        ;
@@ -543,7 +542,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PUTRESP                                                                                                                                                                           ; Merged with ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|conv_dly1_s_flp ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|cmd_fetched                                                                                                                                                                                  ; Stuck at GND due to stuck port data_in                                                                                                                                             ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[4]                                                                                                                                                                                     ; Merged with ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[1]        ;
-; Total Number of Removed Registers = 67                                                                                                                                                                                                                                                                                                              ;                                                                                                                                                                                    ;
+; paddle:paddle_1|averageADC:avg1|sum[16..31]                                                                                                                                                                                                                                                                                                         ; Lost fanout                                                                                                                                                                        ;
+; Total Number of Removed Registers = 76                                                                                                                                                                                                                                                                                                              ;                                                                                                                                                                                    ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -568,12 +568,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1620  ;
-; Number of registers using Synchronous Clear  ; 40    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 101   ;
+; Total registers                              ; 1733  ;
+; Number of registers using Synchronous Clear  ; 56    ;
+; Number of registers using Synchronous Load   ; 10    ;
+; Number of registers using Asynchronous Clear ; 115   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 128   ;
+; Number of registers using Clock Enable       ; 176   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -583,12 +583,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                               ; Fan out ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Ball:Ball1|BCv[7]                                                                                                                                               ; 4       ;
+; Ball:Ball1|BCv[6]                                                                                                                                               ; 4       ;
+; Ball:Ball1|BCv[5]                                                                                                                                               ; 4       ;
+; Ball:Ball1|BCv[4]                                                                                                                                               ; 4       ;
+; Ball:Ball1|life[0]                                                                                                                                              ; 12      ;
+; Ball:Ball1|life[2]                                                                                                                                              ; 10      ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out     ; 63      ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0]      ; 1       ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|usr_pwd  ; 2       ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[1] ; 4       ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]      ; 1       ;
-; Total number of inverted registers = 5                                                                                                                          ;         ;
+; Total number of inverted registers = 11                                                                                                                         ;         ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -597,14 +603,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[7] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DE10|VGA:VGA_1|lineCount[26]                                                                                                                                             ;
-; 8:1                ; 21 bits   ; 105 LEs       ; 21 LEs               ; 84 LEs                 ; Yes        ; |DE10|VGA:VGA_1|pixelCount[20]                                                                                                                                            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE10|VGA:VGA_1|VGA_B                                                                                                                                                     ;
-; 4:1                ; 82 bits   ; 164 LEs       ; 164 LEs              ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux40                                                                                                                                               ;
-; 8:1                ; 82 bits   ; 410 LEs       ; 410 LEs              ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux5                                                                                                                                                ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; No         ; |DE10|VGA:VGA_1|Selector68                                                                                                                                                ;
-; 9:1                ; 11 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux0                                                                                                                                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[1] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DE10|VGA:VGA_1|lineCount[28]                                                                                                                                             ;
+; 8:1                ; 21 bits   ; 105 LEs       ; 21 LEs               ; 84 LEs                 ; Yes        ; |DE10|VGA:VGA_1|pixelCount[11]                                                                                                                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE10|VGA:VGA_1|VGA_B                                                                                                                                                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE10|VGA:VGA_1|VGA_R                                                                                                                                                     ;
+; 4:1                ; 82 bits   ; 164 LEs       ; 164 LEs              ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux3                                                                                                                                                ;
+; 8:1                ; 82 bits   ; 410 LEs       ; 410 LEs              ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux34                                                                                                                                               ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; No         ; |DE10|VGA:VGA_1|Selector53                                                                                                                                                ;
+; 9:1                ; 11 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux32                                                                                                                                               ;
 ; 8:1                ; 11 bits   ; 55 LEs        ; 11 LEs               ; 44 LEs                 ; No         ; |DE10|VGA:VGA_1|Selector38                                                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1395,6 +1402,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Ball:Ball1 ;
++----------------+----------+-----------------------------+
+; Parameter Name ; Value    ; Type                        ;
++----------------+----------+-----------------------------+
+; ballupdate     ; 12500000 ; Signed Integer              ;
++----------------+----------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                     ;
 +-------------------------------+----------------------------------+
@@ -1610,26 +1627,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------+
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "sevenSeg:lives"  ;
-+-----------+-------+----------+--------------+
-; Port      ; Type  ; Severity ; Details      ;
-+-----------+-------+----------+--------------+
-; num_in[3] ; Input ; Info     ; Stuck at GND ;
-; num_in[2] ; Input ; Info     ; Stuck at VCC ;
-; num_in[1] ; Input ; Info     ; Stuck at GND ;
-; num_in[0] ; Input ; Info     ; Stuck at VCC ;
-; dec       ; Input ; Info     ; Stuck at GND ;
-+-----------+-------+----------+--------------+
-
-
-+-----------------------------------------------+
-; Port Connectivity Checks: "Status:Status_1"   ;
-+-------------+-------+----------+--------------+
-; Port        ; Type  ; Severity ; Details      ;
-+-------------+-------+----------+--------------+
-; ball_status ; Input ; Info     ; Stuck at GND ;
-+-------------+-------+----------+--------------+
++--------------------------------------------+
+; Port Connectivity Checks: "sevenSeg:lives" ;
++------+-------+----------+------------------+
+; Port ; Type  ; Severity ; Details          ;
++------+-------+----------+------------------+
+; dec  ; Input ; Info     ; Stuck at GND     ;
++------+-------+----------+------------------+
 
 
 +-----------------------------------------------------+
@@ -1638,28 +1642,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 66                          ;
-; cycloneiii_ff         ; 1620                        ;
+; cycloneiii_ff         ; 1733                        ;
 ;     CLR               ; 81                          ;
-;     ENA               ; 76                          ;
-;     ENA CLR           ; 12                          ;
+;     CLR SLD           ; 10                          ;
+;     ENA               ; 120                         ;
+;     ENA CLR           ; 16                          ;
 ;     ENA CLR SCLR      ; 8                           ;
 ;     ENA SCLR          ; 32                          ;
-;     plain             ; 1411                        ;
-; cycloneiii_lcell_comb ; 3219                        ;
-;     arith             ; 264                         ;
-;         2 data inputs ; 241                         ;
-;         3 data inputs ; 23                          ;
-;     normal            ; 2955                        ;
-;         0 data inputs ; 4                           ;
-;         1 data inputs ; 13                          ;
-;         2 data inputs ; 68                          ;
-;         3 data inputs ; 1280                        ;
-;         4 data inputs ; 1590                        ;
+;     SCLR              ; 16                          ;
+;     plain             ; 1450                        ;
+; cycloneiii_lcell_comb ; 3406                        ;
+;     arith             ; 385                         ;
+;         2 data inputs ; 326                         ;
+;         3 data inputs ; 59                          ;
+;     normal            ; 3021                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 21                          ;
+;         2 data inputs ; 86                          ;
+;         3 data inputs ; 1260                        ;
+;         4 data inputs ; 1652                        ;
 ; cycloneiii_pll        ; 2                           ;
 ; fiftyfivenm_adcblock  ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 17.20                       ;
-; Average LUT depth     ; 8.12                        ;
+; Max LUT depth         ; 16.50                       ;
+; Average LUT depth     ; 8.22                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1668,7 +1674,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -1678,65 +1684,70 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 29 12:40:47 2018
+    Info: Processing started: Sat Dec 01 10:03:26 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10 -c DE10
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/source/adc.vhd
-    Info (12022): Found design unit 1: ADC_COMM-behavioral File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 16
-    Info (12023): Found entity 1: ADC_COMM File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/adc.vhd
-    Info (12022): Found design unit 1: ADC-rtl File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 27
-    Info (12023): Found entity 1: ADC File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/altera_reset_controller.v
-    Info (12023): Found entity 1: altera_reset_controller File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_controller.v Line: 42
-Info (12021): Found 1 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/altera_reset_synchronizer.v
-    Info (12023): Found entity 1: altera_reset_synchronizer File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_synchronizer.v Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/adc_modular_adc_0.v
-    Info (12023): Found entity 1: ADC_modular_adc_0 File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_modular_adc_0.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/altera_modular_adc_control.v
-    Info (12023): Found entity 1: altera_modular_adc_control File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control.v Line: 18
-Info (12021): Found 1 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v
-    Info (12023): Found entity 1: altera_modular_adc_control_avrg_fifo File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v Line: 53
-Info (12021): Found 1 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/altera_modular_adc_control_fsm.v
-    Info (12023): Found entity 1: altera_modular_adc_control_fsm File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 18
-Info (12021): Found 1 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/chsel_code_converter_sw_to_hw.v
-    Info (12023): Found entity 1: chsel_code_converter_sw_to_hw File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/chsel_code_converter_sw_to_hw.v Line: 32
-Info (12021): Found 1 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v
-    Info (12023): Found entity 1: fiftyfivenm_adcblock_primitive_wrapper File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v Line: 37
-Info (12021): Found 1 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v
-    Info (12023): Found entity 1: fiftyfivenm_adcblock_top_wrapper File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v Line: 31
-Info (12021): Found 4 design units, including 4 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/adc/synthesis/submodules/adc_altpll_sys.v
-    Info (12023): Found entity 1: ADC_altpll_sys_dffpipe_l2c File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 37
-    Info (12023): Found entity 2: ADC_altpll_sys_stdsync_sv6 File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 98
-    Info (12023): Found entity 3: ADC_altpll_sys_altpll_9b92 File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 130
-    Info (12023): Found entity 4: ADC_altpll_sys File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 217
-Info (12021): Found 2 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/source/sevenseg.vhd
-    Info (12022): Found design unit 1: sevenSeg-RTL File: //Mac/Home/Documents/school/F18/BrickBreaker/source/sevenSeg.vhd Line: 34
-    Info (12023): Found entity 1: sevenSeg File: //Mac/Home/Documents/school/F18/BrickBreaker/source/sevenSeg.vhd Line: 23
-Info (12021): Found 2 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/source/paddle.vhd
-    Info (12022): Found design unit 1: paddle-RTL File: //Mac/Home/Documents/school/F18/BrickBreaker/source/paddle.vhd Line: 23
-    Info (12023): Found entity 1: paddle File: //Mac/Home/Documents/school/F18/BrickBreaker/source/paddle.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/source/bricks.vhd
-    Info (12022): Found design unit 1: Bricks-rtl File: //Mac/Home/Documents/school/F18/BrickBreaker/source/Bricks.vhd Line: 19
-    Info (12023): Found entity 1: Bricks File: //Mac/Home/Documents/school/F18/BrickBreaker/source/Bricks.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/source/status.vhd
-    Info (12022): Found design unit 1: Status-rtl File: //Mac/Home/Documents/school/F18/BrickBreaker/source/Status.vhd Line: 19
-    Info (12023): Found entity 1: Status File: //Mac/Home/Documents/school/F18/BrickBreaker/source/Status.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/source/vga.vhd
-    Info (12022): Found design unit 1: VGA-rtl File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 25
-    Info (12023): Found entity 1: VGA File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/source/de10.vhd
-    Info (12022): Found design unit 1: DE10-rtl File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 29
-    Info (12023): Found entity 1: DE10 File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file //mac/home/documents/school/f18/brickbreaker/ip/pll.vhd
-    Info (12022): Found design unit 1: pll-SYN File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/pll.vhd Line: 51
-    Info (12023): Found entity 1: pll File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/pll.vhd Line: 42
+Info (20030): Parallel compilation is enabled and will use 3 of the 3 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/adc.vhd
+    Info (12022): Found design unit 1: ADC_COMM-behavioral File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 16
+    Info (12023): Found entity 1: ADC_COMM File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/adc.vhd
+    Info (12022): Found design unit 1: ADC-rtl File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 27
+    Info (12023): Found entity 1: ADC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_controller.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_synchronizer.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/adc_modular_adc_0.v
+    Info (12023): Found entity 1: ADC_modular_adc_0 File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_modular_adc_0.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/altera_modular_adc_control.v
+    Info (12023): Found entity 1: altera_modular_adc_control File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v
+    Info (12023): Found entity 1: altera_modular_adc_control_avrg_fifo File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v Line: 53
+Info (12021): Found 1 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/altera_modular_adc_control_fsm.v
+    Info (12023): Found entity 1: altera_modular_adc_control_fsm File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/chsel_code_converter_sw_to_hw.v
+    Info (12023): Found entity 1: chsel_code_converter_sw_to_hw File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/chsel_code_converter_sw_to_hw.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v
+    Info (12023): Found entity 1: fiftyfivenm_adcblock_primitive_wrapper File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v Line: 37
+Info (12021): Found 1 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v
+    Info (12023): Found entity 1: fiftyfivenm_adcblock_top_wrapper File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v Line: 31
+Info (12021): Found 4 design units, including 4 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/adc/synthesis/submodules/adc_altpll_sys.v
+    Info (12023): Found entity 1: ADC_altpll_sys_dffpipe_l2c File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 37
+    Info (12023): Found entity 2: ADC_altpll_sys_stdsync_sv6 File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 98
+    Info (12023): Found entity 3: ADC_altpll_sys_altpll_9b92 File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 130
+    Info (12023): Found entity 4: ADC_altpll_sys File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 217
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/sevenseg.vhd
+    Info (12022): Found design unit 1: sevenSeg-RTL File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/sevenSeg.vhd Line: 34
+    Info (12023): Found entity 1: sevenSeg File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/sevenSeg.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/paddle.vhd
+    Info (12022): Found design unit 1: paddle-RTL File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/paddle.vhd Line: 25
+    Info (12023): Found entity 1: paddle File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/paddle.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/bricks.vhd
+    Info (12022): Found design unit 1: Bricks-rtl File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Bricks.vhd Line: 19
+    Info (12023): Found entity 1: Bricks File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Bricks.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/status.vhd
+    Info (12022): Found design unit 1: Status-rtl File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Status.vhd Line: 19
+    Info (12023): Found entity 1: Status File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Status.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/vga.vhd
+    Info (12022): Found design unit 1: VGA-rtl File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 25
+    Info (12023): Found entity 1: VGA File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/de10.vhd
+    Info (12022): Found design unit 1: DE10-rtl File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 29
+    Info (12023): Found entity 1: DE10 File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/ip/pll.vhd
+    Info (12022): Found design unit 1: pll-SYN File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/pll.vhd Line: 51
+    Info (12023): Found entity 1: pll File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/pll.vhd Line: 42
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/averageadc.vhd
+    Info (12022): Found design unit 1: averageADC-RTL File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/averageADC.vhd Line: 17
+    Info (12023): Found entity 1: averageADC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/averageADC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/ball.vhd
+    Info (12022): Found design unit 1: Ball-RTL File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 22
+    Info (12023): Found entity 1: Ball File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 5
 Info (12127): Elaborating entity "DE10" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at DE10.vhd(113): used explicit default value for signal "ball_status" because signal was never assigned a value File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 113
-Info (12128): Elaborating entity "pll" for hierarchy "pll:pll1" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 120
-Info (12128): Elaborating entity "altpll" for hierarchy "pll:pll1|altpll:altpll_component" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/pll.vhd Line: 133
-Info (12130): Elaborated megafunction instantiation "pll:pll1|altpll:altpll_component" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/pll.vhd Line: 133
-Info (12133): Instantiated megafunction "pll:pll1|altpll:altpll_component" with the following parameter: File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/pll.vhd Line: 133
+Info (12128): Elaborating entity "pll" for hierarchy "pll:pll1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 141
+Info (12128): Elaborating entity "altpll" for hierarchy "pll:pll1|altpll:altpll_component" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/pll.vhd Line: 133
+Info (12130): Elaborated megafunction instantiation "pll:pll1|altpll:altpll_component" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/pll.vhd Line: 133
+Info (12133): Instantiated megafunction "pll:pll1|altpll:altpll_component" with the following parameter: File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/pll.vhd Line: 133
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "2"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1792,102 +1803,103 @@ Info (12133): Instantiated megafunction "pll:pll1|altpll:altpll_component" with 
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
-    Info (12023): Found entity 1: pll_altpll File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/pll_altpll.v Line: 29
+    Info (12023): Found entity 1: pll_altpll File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/pll_altpll.v Line: 29
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:pll1|altpll:altpll_component|pll_altpll:auto_generated" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "VGA" for hierarchy "VGA:VGA_1" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 126
-Warning (10631): VHDL Process Statement warning at vga.vhd(129): inferring latch(es) for signal or variable "nextPixelCountV", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[0]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[1]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[2]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[3]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[4]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[5]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[6]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[7]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[8]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[9]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[10]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[11]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[12]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[13]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[14]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[15]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[16]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[17]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[18]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[19]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[20]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[21]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[22]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[23]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[24]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[25]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[26]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[27]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[28]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[29]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[30]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (10041): Inferred latch for "nextPixelCountV[31]" at vga.vhd(129) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/vga.vhd Line: 129
-Info (12128): Elaborating entity "Status" for hierarchy "Status:Status_1" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 140
-Info (12128): Elaborating entity "sevenSeg" for hierarchy "sevenSeg:lives" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 148
-Info (12128): Elaborating entity "paddle" for hierarchy "paddle:paddle_1" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 156
-Warning (10492): VHDL Process Statement warning at paddle.vhd(42): signal "PL" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/school/F18/BrickBreaker/source/paddle.vhd Line: 42
-Warning (10492): VHDL Process Statement warning at paddle.vhd(42): signal "PR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/school/F18/BrickBreaker/source/paddle.vhd Line: 42
-Info (12128): Elaborating entity "ADC_COMM" for hierarchy "ADC_COMM:ADC_COMM_1" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 194
-Warning (10036): Verilog HDL or VHDL warning at adc.vhd(40): object "clk_10M" assigned a value but never read File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 40
-Warning (10036): Verilog HDL or VHDL warning at adc.vhd(41): object "resp_sop" assigned a value but never read File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 41
-Warning (10036): Verilog HDL or VHDL warning at adc.vhd(42): object "resp_eop" assigned a value but never read File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 42
-Warning (10492): VHDL Process Statement warning at adc.vhd(76): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 76
-Warning (10631): VHDL Process Statement warning at adc.vhd(100): inferring latch(es) for signal or variable "next_count", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[0]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[1]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[2]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[3]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[4]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[5]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[6]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[7]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[8]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[9]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[10]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[11]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[12]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[13]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[14]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[15]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[16]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[17]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[18]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[19]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[20]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[21]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[22]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[23]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[24]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[25]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[26]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[27]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[28]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[29]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[30]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (10041): Inferred latch for "next_count[31]" at adc.vhd(100) File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 100
-Info (12128): Elaborating entity "ADC" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 52
-Info (12128): Elaborating entity "ADC_altpll_sys" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 155
-Info (12128): Elaborating entity "ADC_altpll_sys_stdsync_sv6" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_stdsync_sv6:stdsync2" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 288
-Info (12128): Elaborating entity "ADC_altpll_sys_dffpipe_l2c" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_stdsync_sv6:stdsync2|ADC_altpll_sys_dffpipe_l2c:dffpipe3" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 116
-Info (12128): Elaborating entity "ADC_altpll_sys_altpll_9b92" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 294
-Info (12128): Elaborating entity "ADC_modular_adc_0" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 183
-Info (12128): Elaborating entity "altera_modular_adc_control" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/ADC_modular_adc_0.v Line: 92
-Info (12128): Elaborating entity "altera_modular_adc_control_fsm" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control.v Line: 108
-Warning (10036): Verilog HDL or VHDL warning at altera_modular_adc_control_fsm.v(70): object "sync_ctrl_state_nxt" assigned a value but never read File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 70
-Info (12128): Elaborating entity "altera_std_synchronizer" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 156
-Info (12130): Elaborated megafunction instantiation "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 156
-Info (12133): Instantiated megafunction "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer" with the following parameter: File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 156
+Info (12128): Elaborating entity "VGA" for hierarchy "VGA:VGA_1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 147
+Warning (10631): VHDL Process Statement warning at vga.vhd(129): inferring latch(es) for signal or variable "nextPixelCountV", which holds its previous value in one or more paths through the process File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[0]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[1]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[2]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[3]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[4]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[5]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[6]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[7]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[8]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[9]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[10]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[11]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[12]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[13]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[14]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[15]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[16]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[17]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[18]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[19]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[20]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[21]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[22]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[23]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[24]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[25]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[26]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[27]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[28]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[29]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[30]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (10041): Inferred latch for "nextPixelCountV[31]" at vga.vhd(129) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/vga.vhd Line: 129
+Info (12128): Elaborating entity "Status" for hierarchy "Status:Status_1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 161
+Info (12128): Elaborating entity "sevenSeg" for hierarchy "sevenSeg:lives" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 169
+Info (12128): Elaborating entity "paddle" for hierarchy "paddle:paddle_1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at paddle.vhd(67): signal "PL" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/paddle.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at paddle.vhd(67): signal "PR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/paddle.vhd Line: 67
+Info (12128): Elaborating entity "averageADC" for hierarchy "paddle:paddle_1|averageADC:avg1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/paddle.vhd Line: 50
+Info (12128): Elaborating entity "ADC_COMM" for hierarchy "ADC_COMM:ADC_COMM_1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 216
+Warning (10036): Verilog HDL or VHDL warning at adc.vhd(40): object "clk_10M" assigned a value but never read File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 40
+Warning (10036): Verilog HDL or VHDL warning at adc.vhd(41): object "resp_sop" assigned a value but never read File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 41
+Warning (10036): Verilog HDL or VHDL warning at adc.vhd(42): object "resp_eop" assigned a value but never read File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at adc.vhd(76): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 76
+Warning (10631): VHDL Process Statement warning at adc.vhd(100): inferring latch(es) for signal or variable "next_count", which holds its previous value in one or more paths through the process File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[0]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[1]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[2]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[3]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[4]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[5]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[6]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[7]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[8]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[9]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[10]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[11]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[12]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[13]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[14]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[15]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[16]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[17]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[18]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[19]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[20]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[21]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[22]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[23]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[24]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[25]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[26]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[27]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[28]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[29]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[30]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (10041): Inferred latch for "next_count[31]" at adc.vhd(100) File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 100
+Info (12128): Elaborating entity "ADC" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 52
+Info (12128): Elaborating entity "ADC_altpll_sys" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 155
+Info (12128): Elaborating entity "ADC_altpll_sys_stdsync_sv6" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_stdsync_sv6:stdsync2" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 288
+Info (12128): Elaborating entity "ADC_altpll_sys_dffpipe_l2c" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_stdsync_sv6:stdsync2|ADC_altpll_sys_dffpipe_l2c:dffpipe3" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 116
+Info (12128): Elaborating entity "ADC_altpll_sys_altpll_9b92" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_altpll_sys.v Line: 294
+Info (12128): Elaborating entity "ADC_modular_adc_0" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 183
+Info (12128): Elaborating entity "altera_modular_adc_control" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/ADC_modular_adc_0.v Line: 92
+Info (12128): Elaborating entity "altera_modular_adc_control_fsm" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control.v Line: 108
+Warning (10036): Verilog HDL or VHDL warning at altera_modular_adc_control_fsm.v(70): object "sync_ctrl_state_nxt" assigned a value but never read File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 70
+Info (12128): Elaborating entity "altera_std_synchronizer" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 156
+Info (12130): Elaborated megafunction instantiation "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 156
+Info (12133): Instantiated megafunction "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer" with the following parameter: File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 156
     Info (12134): Parameter "depth" = "2"
-Info (12128): Elaborating entity "altera_modular_adc_control_avrg_fifo" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 955
-Info (12128): Elaborating entity "scfifo" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v Line: 91
-Info (12130): Elaborated megafunction instantiation "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v Line: 91
-Info (12133): Instantiated megafunction "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component" with the following parameter: File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v Line: 91
+Info (12128): Elaborating entity "altera_modular_adc_control_avrg_fifo" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 955
+Info (12128): Elaborating entity "scfifo" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v Line: 91
+Info (12130): Elaborated megafunction instantiation "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v Line: 91
+Info (12133): Instantiated megafunction "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component" with the following parameter: File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v Line: 91
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
     Info (12134): Parameter "lpm_hint" = "RAM_BLOCK_TYPE=M9K"
@@ -1900,100 +1912,104 @@ Info (12133): Instantiated megafunction "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modul
     Info (12134): Parameter "underflow_checking" = "ON"
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_ds61.tdf
-    Info (12023): Found entity 1: scfifo_ds61 File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/scfifo_ds61.tdf Line: 24
+    Info (12023): Found entity 1: scfifo_ds61 File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/scfifo_ds61.tdf Line: 24
 Info (12128): Elaborating entity "scfifo_ds61" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/scfifo.tdf Line: 299
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_3o41.tdf
-    Info (12023): Found entity 1: a_dpfifo_3o41 File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf Line: 28
-Info (12128): Elaborating entity "a_dpfifo_3o41" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/scfifo_ds61.tdf Line: 36
+    Info (12023): Found entity 1: a_dpfifo_3o41 File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf Line: 28
+Info (12128): Elaborating entity "a_dpfifo_3o41" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/scfifo_ds61.tdf Line: 36
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_c6e.tdf
-    Info (12023): Found entity 1: a_fefifo_c6e File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/a_fefifo_c6e.tdf Line: 24
-Info (12128): Elaborating entity "a_fefifo_c6e" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|a_fefifo_c6e:fifo_state" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf Line: 40
+    Info (12023): Found entity 1: a_fefifo_c6e File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/a_fefifo_c6e.tdf Line: 24
+Info (12128): Elaborating entity "a_fefifo_c6e" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|a_fefifo_c6e:fifo_state" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_337.tdf
-    Info (12023): Found entity 1: cntr_337 File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/cntr_337.tdf Line: 25
-Info (12128): Elaborating entity "cntr_337" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|a_fefifo_c6e:fifo_state|cntr_337:count_usedw" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/a_fefifo_c6e.tdf Line: 37
+    Info (12023): Found entity 1: cntr_337 File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/cntr_337.tdf Line: 25
+Info (12128): Elaborating entity "cntr_337" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|a_fefifo_c6e:fifo_state|cntr_337:count_usedw" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/a_fefifo_c6e.tdf Line: 37
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_rqn1.tdf
-    Info (12023): Found entity 1: altsyncram_rqn1 File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_rqn1" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf Line: 41
+    Info (12023): Found entity 1: altsyncram_rqn1 File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_rqn1" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf Line: 41
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_n2b.tdf
-    Info (12023): Found entity 1: cntr_n2b File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/cntr_n2b.tdf Line: 25
-Info (12128): Elaborating entity "cntr_n2b" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|cntr_n2b:rd_ptr_count" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf Line: 42
-Info (12128): Elaborating entity "fiftyfivenm_adcblock_top_wrapper" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control.v Line: 152
-Info (12128): Elaborating entity "chsel_code_converter_sw_to_hw" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|chsel_code_converter_sw_to_hw:decoder" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v Line: 173
-Info (12128): Elaborating entity "fiftyfivenm_adcblock_primitive_wrapper" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v Line: 191
-Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 204
-Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_controller.v Line: 208
-Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_controller.v Line: 220
-Info (12128): Elaborating entity "Bricks" for hierarchy "Bricks:Bricks_1" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 224
+    Info (12023): Found entity 1: cntr_n2b File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/cntr_n2b.tdf Line: 25
+Info (12128): Elaborating entity "cntr_n2b" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|cntr_n2b:rd_ptr_count" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/a_dpfifo_3o41.tdf Line: 42
+Info (12128): Elaborating entity "fiftyfivenm_adcblock_top_wrapper" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_modular_adc_control.v Line: 152
+Info (12128): Elaborating entity "chsel_code_converter_sw_to_hw" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|chsel_code_converter_sw_to_hw:decoder" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v Line: 173
+Info (12128): Elaborating entity "fiftyfivenm_adcblock_primitive_wrapper" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v Line: 191
+Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/ADC.vhd Line: 204
+Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_controller.v Line: 208
+Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_controller.v Line: 220
+Info (12128): Elaborating entity "Ball" for hierarchy "Ball:Ball1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 222
+Warning (10540): VHDL Signal Declaration warning at Ball.vhd(23): used explicit default value for signal "BCh" because signal was never assigned a value File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 23
+Warning (10036): Verilog HDL or VHDL warning at Ball.vhd(25): object "BBh" assigned a value but never read File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 25
+Warning (10036): Verilog HDL or VHDL warning at Ball.vhd(28): object "BLv" assigned a value but never read File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at Ball.vhd(30): object "BRv" assigned a value but never read File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 30
+Warning (10036): Verilog HDL or VHDL warning at Ball.vhd(31): object "BTh" assigned a value but never read File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at Ball.vhd(41): signal "BTv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at Ball.vhd(41): signal "BBv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at Ball.vhd(42): signal "BLh" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at Ball.vhd(42): signal "BRh" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at Ball.vhd(59): signal "life" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 59
+Info (12128): Elaborating entity "Bricks" for hierarchy "Bricks:Bricks_1" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 261
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[0]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 39
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[1]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 69
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[2]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 99
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[3]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 129
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[4]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 159
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[5]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 189
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[6]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 219
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[7]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 249
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[8]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 279
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[9]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 309
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[10]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 339
-        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[11]" File: //Mac/Home/Documents/school/F18/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 369
-Info (13000): Registers with preset signals will power-up high File: //Mac/Home/Documents/school/F18/BrickBreaker/ip/ADC/synthesis/submodules/altera_reset_synchronizer.v Line: 62
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[0]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 39
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[1]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 69
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[2]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 99
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[3]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 129
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[4]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 159
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[5]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 189
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[6]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 219
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[7]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 249
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[8]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 279
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[9]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 309
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[10]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 339
+        Warning (14320): Synthesized away node "ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[11]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/altsyncram_rqn1.tdf Line: 369
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 73
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 17
-    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 17
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 17
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 17
-    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 17
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 17
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 17
-    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 17
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 18
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 18
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 18
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 18
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 18
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 18
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 18
-    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 18
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 19
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 19
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 19
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 19
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 19
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 19
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 19
-    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 19
-    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 20
-    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 21
-    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 22
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 17
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 18
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 18
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 18
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 18
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 18
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 18
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 18
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 18
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 19
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 19
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 19
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 19
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 19
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 19
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 19
+    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 19
+    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 20
+    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 21
+    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 22
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register ADC_COMM:ADC_COMM_1|count[31] will power up to Low File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 72
-    Critical Warning (18010): Register ADC_COMM:ADC_COMM_1|count[0] will power up to Low File: //Mac/Home/Documents/school/F18/BrickBreaker/source/adc.vhd Line: 72
-Info (17049): 47 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file //Mac/Home/Documents/school/F18/BrickBreaker/quartus/DE10.map.smsg
+    Critical Warning (18010): Register ADC_COMM:ADC_COMM_1|count[31] will power up to Low File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 72
+    Critical Warning (18010): Register ADC_COMM:ADC_COMM_1|count[0] will power up to Low File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 72
+Info (17049): 63 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/DE10.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "ADC_CLK_10" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 9
-    Warning (15610): No output dependent on input pin "KEY[1]" File: //Mac/Home/Documents/school/F18/BrickBreaker/source/DE10.vhd Line: 11
-Info (21057): Implemented 3422 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "ADC_CLK_10" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 11
+Info (21057): Implemented 3621 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 62 output pins
-    Info (21061): Implemented 3353 logic cells
+    Info (21061): Implemented 3552 logic cells
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
-    Info: Peak virtual memory: 4841 megabytes
-    Info: Processing ended: Thu Nov 29 12:41:13 2018
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:37
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Sat Dec 01 10:03:50 2018
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:32
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in //Mac/Home/Documents/school/F18/BrickBreaker/quartus/DE10.map.smsg.
+The suppressed messages can be found in C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/DE10.map.smsg.
 
 

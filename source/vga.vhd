@@ -72,7 +72,7 @@ begin
 				-- Ball
 				elsif status(1) = '1' then
 					VGA_B <= "1111";
-					VGA_G <= "0000";
+					VGA_G <= "1111";
 					VGA_R <= "0000";
 				-- Brick
 				elsif status(2) = '1' then
