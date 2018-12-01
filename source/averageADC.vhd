@@ -20,21 +20,22 @@ architecture RTL of averageADC is
 	
 begin
 	
-	process(clk)
-	begin
-	if rising_edge(clk) then
-		sum<=sum+unsigned(data_in);
-		
-		if count=257 then
-			--sum<=shift_right(sum,8);
-			data_out<=sum(15 downto 5);
-			sum<=(others=>'0');
-			count<=0;
-		else
-			count<=count+1;
-	
-		end if;
-	end if;
-	end process;
+--	process(clk)
+--	begin
+--	if rising_edge(clk) then
+--		sum<=sum+unsigned(data_in);
+--		
+--		if count=65536 then
+--			sum<=shift_right(sum,16);
+--			data_out<=sum(10 downto 0);
+--			sum<=(others=>'0');
+--			count<=0;
+--		else
+--			count<=count+1;
+--	
+--		end if;
+--	end if;
+--	end process;
+	data_out<=unsigned('0' & data_in(11 downto 2));
 		
 end architecture RTL;
