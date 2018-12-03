@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE10
-Mon Dec 03 14:08:53 2018
+Mon Dec 03 14:38:43 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -97,15 +97,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 03 14:08:53 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 03 14:38:42 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; DE10                                        ;
 ; Top-level Entity Name              ; DE10                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 3,452                                       ;
-;     Total combinational functions  ; 3,405                                       ;
-;     Dedicated logic registers      ; 1,676                                       ;
-; Total registers                    ; 1676                                        ;
+; Total logic elements               ; 3,410                                       ;
+;     Total combinational functions  ; 3,373                                       ;
+;     Dedicated logic registers      ; 1,661                                       ;
+; Total registers                    ; 1661                                        ;
 ; Total pins                         ; 66                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -286,8 +286,6 @@ refer to the applicable agreement for further details.
 ; look_add.inc                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/look_add.inc                                                    ;         ;
 ; alt_stratix_add_sub.inc                                                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                         ;         ;
 ; db/add_sub_5vg.tdf                                                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/add_sub_5vg.tdf                                           ;         ;
-; db/add_sub_bkg.tdf                                                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/add_sub_bkg.tdf                                           ;         ;
-; db/add_sub_9vg.tdf                                                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/add_sub_9vg.tdf                                           ;         ;
 ; altshift.tdf                                                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altshift.tdf                                                    ;         ;
 +-------------------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------+---------+
 
@@ -297,20 +295,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                       ;
 +---------------------------------------------+-----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,452                                                                       ;
+; Estimated Total logic elements              ; 3,410                                                                       ;
 ;                                             ;                                                                             ;
-; Total combinational functions               ; 3405                                                                        ;
+; Total combinational functions               ; 3373                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                             ;
-;     -- 4 input functions                    ; 1675                                                                        ;
-;     -- 3 input functions                    ; 1325                                                                        ;
-;     -- <=2 input functions                  ; 405                                                                         ;
+;     -- 4 input functions                    ; 1611                                                                        ;
+;     -- 3 input functions                    ; 1355                                                                        ;
+;     -- <=2 input functions                  ; 407                                                                         ;
 ;                                             ;                                                                             ;
 ; Logic elements by mode                      ;                                                                             ;
-;     -- normal mode                          ; 3033                                                                        ;
-;     -- arithmetic mode                      ; 372                                                                         ;
+;     -- normal mode                          ; 3012                                                                        ;
+;     -- arithmetic mode                      ; 361                                                                         ;
 ;                                             ;                                                                             ;
-; Total registers                             ; 1676                                                                        ;
-;     -- Dedicated logic registers            ; 1676                                                                        ;
+; Total registers                             ; 1661                                                                        ;
+;     -- Dedicated logic registers            ; 1661                                                                        ;
 ;     -- I/O registers                        ; 0                                                                           ;
 ;                                             ;                                                                             ;
 ; I/O pins                                    ; 66                                                                          ;
@@ -322,8 +320,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                             ;
 ; Maximum fan-out node                        ; pll:pll1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 1486                                                                        ;
-; Total fan-out                               ; 15272                                                                       ;
-; Average fan-out                             ; 2.93                                                                        ;
+; Total fan-out                               ; 15061                                                                       ;
+; Average fan-out                             ; 2.91                                                                        ;
 +---------------------------------------------+-----------------------------------------------------------------------------+
 
 
@@ -332,14 +330,14 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                ; Entity Name                            ; Library Name ;
 +------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
-; |DE10                                                                        ; 3405 (1)            ; 1676 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |DE10                                                                                                                                                                                                              ; DE10                                   ; work         ;
-;    |ADC_COMM:ADC_COMM_1|                                                     ; 172 (111)           ; 114 (48)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1                                                                                                                                                                                          ; ADC_COMM                               ; work         ;
-;       |ADC:adc_1|                                                            ; 61 (0)              ; 66 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1                                                                                                                                                                                ; ADC                                    ; adc          ;
+; |DE10                                                                        ; 3373 (1)            ; 1661 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |DE10                                                                                                                                                                                                              ; DE10                                   ; work         ;
+;    |ADC_COMM:ADC_COMM_1|                                                     ; 167 (111)           ; 99 (43)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1                                                                                                                                                                                          ; ADC_COMM                               ; work         ;
+;       |ADC:adc_1|                                                            ; 56 (0)              ; 56 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1                                                                                                                                                                                ; ADC                                    ; adc          ;
 ;          |ADC_altpll_sys:altpll_sys|                                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys                                                                                                                                                      ; ADC_altpll_sys                         ; ADC          ;
 ;             |ADC_altpll_sys_altpll_9b92:sd1|                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_altpll_sys:altpll_sys|ADC_altpll_sys_altpll_9b92:sd1                                                                                                                       ; ADC_altpll_sys_altpll_9b92             ; ADC          ;
-;          |ADC_modular_adc_0:modular_adc_0|                                   ; 61 (0)              ; 63 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0                                                                                                                                                ; ADC_modular_adc_0                      ; ADC          ;
-;             |altera_modular_adc_control:control_internal|                    ; 61 (0)              ; 63 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal                                                                                                    ; altera_modular_adc_control             ; ADC          ;
-;                |altera_modular_adc_control_fsm:u_control_fsm|                ; 59 (59)             ; 63 (59)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm                                                       ; altera_modular_adc_control_fsm         ; ADC          ;
+;          |ADC_modular_adc_0:modular_adc_0|                                   ; 56 (0)              ; 53 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0                                                                                                                                                ; ADC_modular_adc_0                      ; ADC          ;
+;             |altera_modular_adc_control:control_internal|                    ; 56 (0)              ; 53 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal                                                                                                    ; altera_modular_adc_control             ; ADC          ;
+;                |altera_modular_adc_control_fsm:u_control_fsm|                ; 54 (54)             ; 53 (49)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm                                                       ; altera_modular_adc_control_fsm         ; ADC          ;
 ;                   |altera_std_synchronizer:u_clk_dft_synchronizer|           ; 0 (0)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer        ; altera_std_synchronizer                ; work         ;
 ;                   |altera_std_synchronizer:u_eoc_synchronizer|               ; 0 (0)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_eoc_synchronizer            ; altera_std_synchronizer                ; work         ;
 ;                |fiftyfivenm_adcblock_top_wrapper:adc_inst|                   ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst                                                          ; fiftyfivenm_adcblock_top_wrapper       ; ADC          ;
@@ -348,18 +346,15 @@ refer to the applicable agreement for further details.
 ;          |altera_reset_controller:rst_controller_001|                        ; 0 (0)               ; 3 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001                                                                                                                                     ; altera_reset_controller                ; ADC          ;
 ;             |altera_reset_synchronizer:alt_rst_sync_uq1|                     ; 0 (0)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1                                                                                          ; altera_reset_synchronizer              ; ADC          ;
 ;    |Ball:Ball1|                                                              ; 121 (121)           ; 49 (49)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|Ball:Ball1                                                                                                                                                                                                   ; Ball                                   ; work         ;
-;    |Bricks:Bricks_1|                                                         ; 2687 (2687)         ; 1367 (1367)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|Bricks:Bricks_1                                                                                                                                                                                              ; Bricks                                 ; work         ;
-;    |VGA:VGA_1|                                                               ; 287 (287)           ; 118 (118)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|VGA:VGA_1                                                                                                                                                                                                    ; VGA                                    ; work         ;
-;    |paddle:paddle_1|                                                         ; 109 (43)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1                                                                                                                                                                                              ; paddle                                 ; work         ;
-;       |averageADC:avg1|                                                      ; 66 (9)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1                                                                                                                                                                              ; averageADC                             ; work         ;
-;          |lpm_mult:Mult0|                                                    ; 57 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0                                                                                                                                                               ; lpm_mult                               ; work         ;
-;             |multcore:mult_core|                                             ; 57 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core                                                                                                                                            ; multcore                               ; work         ;
-;                |mpar_add:padder|                                             ; 26 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                                                                            ; mpar_add                               ; work         ;
-;                   |lpm_add_sub:adder[0]|                                     ; 13 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                                                                       ; lpm_add_sub                            ; work         ;
-;                      |add_sub_bkg:auto_generated|                            ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bkg:auto_generated                                                                            ; add_sub_bkg                            ; work         ;
-;                   |mpar_add:sub_par_add|                                     ; 13 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                                                                       ; mpar_add                               ; work         ;
-;                      |lpm_add_sub:adder[0]|                                  ; 13 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                                                                                  ; lpm_add_sub                            ; work         ;
-;                         |add_sub_9vg:auto_generated|                         ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_9vg:auto_generated                                                       ; add_sub_9vg                            ; work         ;
+;    |Bricks:Bricks_1|                                                         ; 2683 (2683)         ; 1367 (1367)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|Bricks:Bricks_1                                                                                                                                                                                              ; Bricks                                 ; work         ;
+;    |VGA:VGA_1|                                                               ; 290 (290)           ; 118 (118)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|VGA:VGA_1                                                                                                                                                                                                    ; VGA                                    ; work         ;
+;    |paddle:paddle_1|                                                         ; 83 (43)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1                                                                                                                                                                                              ; paddle                                 ; work         ;
+;       |averageADC:avg1|                                                      ; 40 (9)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1                                                                                                                                                                              ; averageADC                             ; work         ;
+;          |lpm_mult:Mult0|                                                    ; 31 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0                                                                                                                                                               ; lpm_mult                               ; work         ;
+;             |multcore:mult_core|                                             ; 31 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core                                                                                                                                            ; multcore                               ; work         ;
+;                |mpar_add:padder|                                             ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                                                                            ; mpar_add                               ; work         ;
+;                   |lpm_add_sub:adder[0]|                                     ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                                                                       ; lpm_add_sub                            ; work         ;
+;                      |add_sub_5vg:auto_generated|                            ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_5vg:auto_generated                                                                            ; add_sub_5vg                            ; work         ;
 ;    |pll:pll1|                                                                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|pll:pll1                                                                                                                                                                                                     ; pll                                    ; work         ;
 ;       |altpll:altpll_component|                                              ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|pll:pll1|altpll:altpll_component                                                                                                                                                                             ; altpll                                 ; work         ;
 ;          |pll_altpll:auto_generated|                                         ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DE10|pll:pll1|altpll:altpll_component|pll_altpll:auto_generated                                                                                                                                                   ; pll_altpll                             ; work         ;
@@ -553,6 +548,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; sevenSeg:ADCcount2|seg_out[7]                                                                                                                                                                                                                                                                                                                       ; Stuck at VCC due to stuck port data_in                                                                                                                                             ;
 ; sevenSeg:ADCcount1|seg_out[7]                                                                                                                                                                                                                                                                                                                       ; Stuck at VCC due to stuck port data_in                                                                                                                                             ;
 ; sevenSeg:lives|seg_out[7]                                                                                                                                                                                                                                                                                                                           ; Stuck at VCC due to stuck port data_in                                                                                                                                             ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[0..4]                                                                                                                                                                               ; Lost fanout                                                                                                                                                                        ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|avrg_cnt_done                                                                                                                                                                                ; Lost fanout                                                                                                                                                                        ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|avrg_sum[0..17]                                                                                                                                                                              ; Lost fanout                                                                                                                                                                        ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|frst_64_ptr_done                                                                                                                                                                             ; Lost fanout                                                                                                                                                                        ;
@@ -575,7 +571,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PUTRESP                                                                                                                                                                           ; Merged with ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|conv_dly1_s_flp ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|cmd_fetched                                                                                                                                                                                  ; Stuck at GND due to stuck port data_in                                                                                                                                             ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[4]                                                                                                                                                                                     ; Merged with ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[1]        ;
-; Total Number of Removed Registers = 60                                                                                                                                                                                                                                                                                                              ;                                                                                                                                                                                    ;
+; Total Number of Removed Registers = 65                                                                                                                                                                                                                                                                                                              ;                                                                                                                                                                                    ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -600,12 +596,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1676  ;
+; Total registers                              ; 1661  ;
 ; Number of registers using Synchronous Clear  ; 40    ;
 ; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 117   ;
+; Number of registers using Asynchronous Clear ; 107   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 165   ;
+; Number of registers using Clock Enable       ; 155   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -623,7 +619,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Ball:Ball1|BCv[0]                                                                                                                                               ; 5       ;
 ; Ball:Ball1|life[0]                                                                                                                                              ; 12      ;
 ; Ball:Ball1|life[2]                                                                                                                                              ; 10      ;
-; ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out     ; 63      ;
+; ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out     ; 53      ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|altera_reset_controller:rst_controller_001|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0]      ; 1       ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|usr_pwd  ; 2       ;
 ; ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[1] ; 4       ;
@@ -637,15 +633,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[7] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DE10|VGA:VGA_1|lineCount[1]                                                                                                                                              ;
-; 8:1                ; 21 bits   ; 105 LEs       ; 21 LEs               ; 84 LEs                 ; Yes        ; |DE10|VGA:VGA_1|pixelCount[26]                                                                                                                                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE10|ADC_COMM:ADC_COMM_1|ADC:adc_1|ADC_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[6] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DE10|VGA:VGA_1|lineCount[6]                                                                                                                                              ;
+; 8:1                ; 21 bits   ; 105 LEs       ; 21 LEs               ; 84 LEs                 ; Yes        ; |DE10|VGA:VGA_1|pixelCount[22]                                                                                                                                            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE10|VGA:VGA_1|VGA_B                                                                                                                                                     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE10|VGA:VGA_1|VGA_R                                                                                                                                                     ;
-; 4:1                ; 82 bits   ; 164 LEs       ; 164 LEs              ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux3                                                                                                                                                ;
-; 8:1                ; 82 bits   ; 410 LEs       ; 410 LEs              ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux34                                                                                                                                               ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; No         ; |DE10|VGA:VGA_1|Selector60                                                                                                                                                ;
-; 9:1                ; 11 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux16                                                                                                                                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE10|VGA:VGA_1|VGA_B                                                                                                                                                     ;
+; 4:1                ; 82 bits   ; 164 LEs       ; 164 LEs              ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux40                                                                                                                                               ;
+; 8:1                ; 82 bits   ; 410 LEs       ; 410 LEs              ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux6                                                                                                                                                ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; No         ; |DE10|VGA:VGA_1|Selector68                                                                                                                                                ;
+; 9:1                ; 11 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |DE10|Bricks:Bricks_1|Mux34                                                                                                                                               ;
 ; 8:1                ; 11 bits   ; 55 LEs        ; 11 LEs               ; 44 LEs                 ; No         ; |DE10|VGA:VGA_1|Selector38                                                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1456,9 +1452,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; AUTO_CASCADE_CHAINS                            ; ON      ; AUTO_CASCADE                         ;
 ; IGNORE_CASCADE_BUFFERS                         ; OFF     ; IGNORE_CASCADE                       ;
 ; LPM_WIDTHA                                     ; 11      ; Untyped                              ;
-; LPM_WIDTHB                                     ; 13      ; Untyped                              ;
-; LPM_WIDTHP                                     ; 24      ; Untyped                              ;
-; LPM_WIDTHR                                     ; 24      ; Untyped                              ;
+; LPM_WIDTHB                                     ; 8       ; Untyped                              ;
+; LPM_WIDTHP                                     ; 19      ; Untyped                              ;
+; LPM_WIDTHR                                     ; 19      ; Untyped                              ;
 ; LPM_WIDTHS                                     ; 1       ; Untyped                              ;
 ; LPM_REPRESENTATION                             ; SIGNED  ; Untyped                              ;
 ; LPM_PIPELINE                                   ; 0       ; Untyped                              ;
@@ -1521,8 +1517,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances            ; 1                                              ;
 ; Entity Instance                       ; paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0 ;
 ;     -- LPM_WIDTHA                     ; 11                                             ;
-;     -- LPM_WIDTHB                     ; 13                                             ;
-;     -- LPM_WIDTHP                     ; 24                                             ;
+;     -- LPM_WIDTHB                     ; 8                                              ;
+;     -- LPM_WIDTHP                     ; 19                                             ;
 ;     -- LPM_REPRESENTATION             ; SIGNED                                         ;
 ;     -- INPUT_A_IS_CONSTANT            ; YES                                            ;
 ;     -- INPUT_B_IS_CONSTANT            ; NO                                             ;
@@ -1731,30 +1727,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 66                          ;
-; cycloneiii_ff         ; 1676                        ;
-;     CLR               ; 83                          ;
+; cycloneiii_ff         ; 1661                        ;
+;     CLR               ; 78                          ;
 ;     CLR SLD           ; 10                          ;
-;     ENA               ; 109                         ;
-;     ENA CLR           ; 16                          ;
+;     ENA               ; 104                         ;
+;     ENA CLR           ; 11                          ;
 ;     ENA CLR SCLR      ; 8                           ;
 ;     ENA SCLR          ; 32                          ;
 ;     plain             ; 1418                        ;
-; cycloneiii_lcell_comb ; 3406                        ;
-;     arith             ; 372                         ;
+; cycloneiii_lcell_comb ; 3374                        ;
+;     arith             ; 361                         ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 304                         ;
-;         3 data inputs ; 67                          ;
-;     normal            ; 3034                        ;
+;         2 data inputs ; 305                         ;
+;         3 data inputs ; 55                          ;
+;     normal            ; 3013                        ;
 ;         0 data inputs ; 3                           ;
-;         1 data inputs ; 21                          ;
-;         2 data inputs ; 77                          ;
-;         3 data inputs ; 1258                        ;
-;         4 data inputs ; 1675                        ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 79                          ;
+;         3 data inputs ; 1300                        ;
+;         4 data inputs ; 1611                        ;
 ; cycloneiii_pll        ; 2                           ;
 ; fiftyfivenm_adcblock  ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 18.50                       ;
-; Average LUT depth     ; 9.01                        ;
+; Average LUT depth     ; 9.03                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1773,7 +1769,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 03 14:08:27 2018
+    Info: Processing started: Mon Dec 03 14:38:09 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10 -c DE10
 Info (20030): Parallel compilation is enabled and will use 3 of the 3 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file /users/nathan/desktop/brickbreaker/brickbreaker/source/adc.vhd
@@ -2055,9 +2051,9 @@ Info (278001): Inferred 1 megafunctions from design logic
 Info (12130): Elaborated megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/averageADC.vhd Line: 53
 Info (12133): Instantiated megafunction "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" with the following parameter: File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/averageADC.vhd Line: 53
     Info (12134): Parameter "LPM_WIDTHA" = "11"
-    Info (12134): Parameter "LPM_WIDTHB" = "13"
-    Info (12134): Parameter "LPM_WIDTHP" = "24"
-    Info (12134): Parameter "LPM_WIDTHR" = "24"
+    Info (12134): Parameter "LPM_WIDTHB" = "8"
+    Info (12134): Parameter "LPM_WIDTHP" = "19"
+    Info (12134): Parameter "LPM_WIDTHR" = "19"
     Info (12134): Parameter "LPM_WIDTHS" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "YES"
@@ -2065,16 +2061,9 @@ Info (12133): Instantiated megafunction "paddle:paddle_1|averageADC:avg1|lpm_mul
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Info (12131): Elaborated megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
 Info (12131): Elaborated megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/multcore.tdf Line: 228
-Info (12131): Elaborated megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]", which is child of megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12131): Elaborated megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_5vg.tdf
     Info (12023): Found entity 1: add_sub_5vg File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/add_sub_5vg.tdf Line: 22
-Info (12131): Elaborated megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_bkg.tdf
-    Info (12023): Found entity 1: add_sub_bkg File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/add_sub_bkg.tdf Line: 22
-Info (12131): Elaborated megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
-Info (12131): Elaborated megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_9vg.tdf
-    Info (12023): Found entity 1: add_sub_9vg File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/db/add_sub_9vg.tdf Line: 22
 Info (12131): Elaborated megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "paddle:paddle_1|averageADC:avg1|lpm_mult:Mult0" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
 Info (13000): Registers with preset signals will power-up high File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/Ball.vhd Line: 78
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
@@ -2103,22 +2092,22 @@ Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register ADC_COMM:ADC_COMM_1|count[31] will power up to Low File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 72
     Critical Warning (18010): Register ADC_COMM:ADC_COMM_1|count[0] will power up to Low File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/adc.vhd Line: 72
-Info (17049): 47 registers lost all their fanouts during netlist optimizations.
+Info (17049): 52 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/quartus/DE10.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ADC_CLK_10" File: C:/Users/Nathan/Desktop/BrickBreaker/BrickBreaker/source/DE10.vhd Line: 9
-Info (21057): Implemented 3610 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3568 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 62 output pins
-    Info (21061): Implemented 3541 logic cells
+    Info (21061): Implemented 3499 logic cells
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 4850 megabytes
-    Info: Processing ended: Mon Dec 03 14:08:53 2018
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Mon Dec 03 14:38:43 2018
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:36
 
 
 +------------------------------------------+

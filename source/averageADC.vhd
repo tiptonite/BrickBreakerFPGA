@@ -21,7 +21,7 @@ architecture RTL of averageADC is
 	signal horiz :unsigned(31 downto 0);
 	
 begin
-	ADCcount<=to_integer(unsigned(data_in));
+	ADCcount<=to_integer(unsigned(data_in(11 downto 5)));
 	
 --	process(clk)
 --	begin
@@ -50,8 +50,8 @@ begin
 --		end if;
 --	end if;
 --	end process;
-	horiz<=to_unsigned(620*ADCcount,horiz'length);
-	sum<=shift_right(horiz,12);
+	horiz<=to_unsigned(625*ADCcount,horiz'length);
+	sum<=shift_right(horiz,7);
 	data_out<=sum(10 downto 0)+20;
 	
 --	data_out<=to_unsigned(0+((600-0)/(255-0))*(ADCcount-0)+20,data_out'length);
