@@ -223,7 +223,7 @@ begin
 	 Ball1 : Ball
 		generic map(
 		
-		BallUpdate=>1750000
+		BallUpdate=>437500
 		)
 		port map(
 				clk=>MAX10_CLK1_50,

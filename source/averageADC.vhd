@@ -17,9 +17,23 @@ end entity averageADC;
 architecture RTL of averageADC is
 	signal sum :unsigned (31 downto 0);
 	signal count :integer :=0;
+	signal ADCcount :integer;
+	signal horiz :unsigned(31 downto 0);
 	
 begin
+	ADCcount<=to_integer(unsigned(data_in));
 	
+--	process(clk)
+--	begin
+--	if ADCcount>=500 then
+--		data_out<=to_unsigned(619,data_out'length);
+--	elsif ADCcount<=20 then
+--		data_out<=to_unsigned(20,data_out'length);
+--	else
+--		data_out<=to_unsigned(ADCcount,data_out'length);
+--	end if;
+--		
+--	end process;
 --	process(clk)
 --	begin
 --	if rising_edge(clk) then
@@ -36,6 +50,12 @@ begin
 --		end if;
 --	end if;
 --	end process;
-	data_out<=unsigned('0' & data_in(11 downto 2));
-		
+	horiz<=to_unsigned(620*ADCcount,horiz'length);
+	sum<=shift_right(horiz,12);
+	data_out<=sum(10 downto 0)+20;
+	
+--	data_out<=to_unsigned(0+((600-0)/(255-0))*(ADCcount-0)+20,data_out'length);
+--	data_out<=to_unsigned(to_integer(shift_right(x"258",12))*ADCcount+20,data_out'length);
+--	data_out<=to_unsigned((0.14652*ADCcount)+20,data_out'length);
+
 end architecture RTL;
