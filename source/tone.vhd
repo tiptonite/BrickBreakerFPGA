@@ -31,10 +31,10 @@ begin
 	out_signal <= current_state;
 
 	process(clk)
+	begin
 		if rising_edge(clk_audio) then
 			current_tone <= next_tone;
 		end if;
-	begin
 	end process;
 
 	process(clk_audio)
