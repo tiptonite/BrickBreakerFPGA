@@ -128,7 +128,8 @@ architecture rtl of DE10 is
 
     component Tone is
         port (
-            clk                : in  std_logic;
+            clk 			   : in std_logic;
+			clk_audio 		   : in std_logic;
             play_bounce_wall   : in  std_logic;
             play_bounce_brick  : in  std_logic;
             play_bounce_paddle : in  std_logic;
@@ -288,7 +289,8 @@ begin
 
     Tone_1 : Tone
         port map (
-            clk                => audio_clk,
+            clk                => clk,
+            clk_audio		   => audio_clk,
             play_bounce_wall   => play_bounce_wall_sound,
             play_bounce_brick  => play_bounce_brick_sound,
             play_bounce_paddle => play_bounce_paddle_sound,

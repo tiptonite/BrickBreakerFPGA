@@ -7,6 +7,7 @@ entity Tone is
 	
 	port(
 		clk : in std_logic;
+		clk_audio : in std_logic;
 		play_bounce_wall : in std_logic;
 		play_bounce_brick : in std_logic;
 		play_bounce_paddle : in std_logic;
@@ -30,10 +31,16 @@ begin
 	out_signal <= current_state;
 
 	process(clk)
-	begin
-		if rising_edge(clk) then
-
+		if rising_edge(clk_audio) then
 			current_tone <= next_tone;
+		end if;
+	begin
+	end process;
+
+	process(clk_audio)
+	begin
+		if rising_edge(clk_audio) then
+
 			current_count <= next_count;
 			current_tone_length <= next_tone_length;
 			current_state <= next_state;
