@@ -140,8 +140,6 @@ architecture rtl of DE10 is
     signal play_bounce_paddle_sound : std_logic := '0';
     signal play_die_sound           : std_logic := '0';
 
-    signal simulate_sound_counter : integer := 0;
-
 
 begin
 
