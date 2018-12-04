@@ -32,7 +32,7 @@ begin
 
 	process(clk)
 	begin
-		if rising_edge(clk_audio) then
+		if rising_edge(clk) then
 			current_tone <= next_tone;
 		end if;
 	end process;
