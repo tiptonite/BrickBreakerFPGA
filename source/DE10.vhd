@@ -289,7 +289,7 @@ begin
 
     Tone_1 : Tone
         port map (
-            clk                => clk,
+            clk                => MAX10_CLK1_50,
             clk_audio		   => audio_clk,
             play_bounce_wall   => play_bounce_wall_sound,
             play_bounce_brick  => play_bounce_brick_sound,
