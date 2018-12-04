@@ -33,7 +33,8 @@ begin
 	begin
 		if rising_edge(clk) then
 
-			if (vToAdd > 4 AND count = 10000000) OR (vToAdd <= 4 AND count = 250000) then
+
+			if count = 25 then
 				count <= 0;
 
 				if hToAdd = 40 then
