@@ -230,6 +230,8 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 
+
+set_global_assignment -name VHDL_FILE ../source/tone.vhd
 set_global_assignment -name VHDL_FILE ../source/adc.vhd
 set_global_assignment -name QIP_FILE ../ip/ADC/synthesis/ADC.qip
 set_global_assignment -name VHDL_FILE ../source/sevenSeg.vhd
@@ -240,6 +242,10 @@ set_global_assignment -name VHDL_FILE ../source/vga.vhd
 set_global_assignment -name VHDL_FILE ../source/DE10.vhd
 set_global_assignment -name SDC_FILE DE10.SDC
 set_global_assignment -name QIP_FILE ../ip/pll.qip
+<<<<<<< HEAD
 set_global_assignment -name VHDL_FILE ../source/averageADC.vhd
 set_global_assignment -name VHDL_FILE ../source/Ball.vhd
+=======
+set_global_assignment -name QIP_FILE ../ip/pll_audio.qip
+>>>>>>> master
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

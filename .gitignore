@@ -13,3 +13,4 @@
 *tmp
 .qsys_edit
 modelsim/
+*.rpt

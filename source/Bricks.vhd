@@ -33,6 +33,7 @@ begin
 	begin
 		if rising_edge(clk) then
 
+
 			if count = 25 then
 				count <= 0;
 
@@ -96,10 +97,18 @@ begin
 				end if;
 			else
 				-- Horizontal Mortar
-				if grid(hIndex, vIndex) = '1' AND grid(hIndex, vIndex + 1) = '1' then
-					brick_status <= "10";
+				if vPos(3) = '0' then
+					if grid(hIndex, vIndex) = '1' AND grid(to_integer((hPos + 9) srl 4), vIndex + 1) = '1' then
+						brick_status <= "10";
+					else
+						brick_status <= "00";
+					end if;
 				else
-					brick_status <= "00";
+					if grid(hIndex, vIndex) = '1' AND grid(to_integer((hPos + 1) srl 4), vIndex + 1) = '1' then
+						brick_status <= "10";
+					else
+						brick_status <= "00";
+					end if;
 				end if;
 			end if;
 

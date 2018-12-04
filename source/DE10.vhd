@@ -19,7 +19,8 @@ entity DE10 is
 		HEX2   : out std_logic_vector(7 downto 0);
 		HEX3   : out std_logic_vector(7 downto 0);
 		HEX4   : out std_logic_vector(7 downto 0);
-		HEX5   : out std_logic_vector(7 downto 0)
+		HEX5   : out std_logic_vector(7 downto 0);
+		ARDUINO_IO : out std_logic_vector(15 downto 0)
 	);
 
 
@@ -34,6 +35,13 @@ architecture rtl of DE10 is
 			c0		: OUT STD_LOGIC
      	);
     end component pll;
+
+    component pll_audio is
+     	port (
+			inclk0	: IN STD_LOGIC;
+			c0		: OUT STD_LOGIC
+     	);
+    end component pll_audio;
 
     component VGA is
         port (
@@ -100,7 +108,7 @@ architecture rtl of DE10 is
             brick_status : out std_logic_vector(1 downto 0)
         );
 	end component Bricks;
-	 
+
 	component Ball is
 		generic(
 			BallUpdate :integer
@@ -115,11 +123,19 @@ architecture rtl of DE10 is
 			lives :out unsigned(3 downto 0);
 			reset :in std_logic;
 			go    :in std_logic
-		
-		
 		);
 	end component Ball;
 
+    component Tone is
+        port (
+            clk                : in  std_logic;
+            play_bounce_wall   : in  std_logic;
+            play_bounce_brick  : in  std_logic;
+            play_bounce_paddle : in  std_logic;
+            play_die           : in  std_logic;
+            out_signal         : out std_logic
+        );
+    end component Tone;    
   
     signal clockVGA : std_logic := '0';
     signal hPos : unsigned(10 downto 0);
@@ -136,6 +152,13 @@ architecture rtl of DE10 is
     signal paddle_status : std_logic := '0';
     signal brick_status : std_logic_vector(1 downto 0) := (others => '0');
 
+    signal audio_clk : std_logic := '0';
+    signal audio_signal : std_logic := '0';
+	signal play_bounce_wall_sound   : std_logic := '0';
+    signal play_bounce_brick_sound  : std_logic := '0';
+    signal play_bounce_paddle_sound : std_logic := '0';
+    signal play_die_sound           : std_logic := '0';
+
 
 begin
 
@@ -143,6 +166,12 @@ begin
 		port map (
 			inclk0 => MAX10_CLK1_50,
 			c0 => clockVGA
+		);
+
+	pll2 : pll_audio
+		port map (
+			inclk0 => MAX10_CLK1_50,
+			c0 => audio_clk
 		);
 
     VGA_1 : VGA
@@ -220,6 +249,7 @@ begin
             reset     => ADC_reset,
             adc_value => ADC_DATA
         );
+        
 	 Ball1 : Ball
 		generic map(
 		
@@ -237,20 +267,7 @@ begin
 		
 		
 		);
-	
-	--u0 : component ADC
-	--	port map (
-	--		CLOCK => MAX10_CLK1_50, --      clk.clk
-	--		CH0   => ADC_DATA,   -- readings.CH0
-	--		CH1   => open,   --         .CH1
-	--		CH2   => open,   --         .CH2
-	--		CH3   => open,   --         .CH3
-	--		CH4   => open,   --         .CH4
-	--		CH5   => open,   --         .CH5
-	--		CH6   => open,   --         .CH6
-	--		CH7   => open,    --         .CH7
-	--		RESET => ADC_reset --    reset.reset
-	--	);
+
 	
 	
 	 HEX1(7 downto 0)<=x"FF";
@@ -267,6 +284,18 @@ begin
             hPos         => hPos,
             vPos         => vPos,
             brick_status => brick_status
-        );        
+        );
+
+    Tone_1 : Tone
+        port map (
+            clk                => audio_clk,
+            play_bounce_wall   => play_bounce_wall_sound,
+            play_bounce_brick  => play_bounce_brick_sound,
+            play_bounce_paddle => play_bounce_paddle_sound,
+            play_die           => play_die_sound,
+            out_signal         => audio_signal
+        );
+
+    ARDUINO_IO(7) <= audio_signal;
 	
 end architecture rtl;
