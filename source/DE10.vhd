@@ -95,7 +95,11 @@ architecture rtl of DE10 is
 			vPos : in unsigned(9 downto 0);
 			paddle_status : out std_logic;
 			ADC_in :in std_logic_vector(11 downto 0);
-			Pos_out :out std_logic_vector(11 downto 0)
+			Pos_out :out std_logic_vector(11 downto 0);
+			BCv :in unsigned(9 downto 0);
+			BCh :in unsigned(10 downto 0);
+			PaddleHit :out std_logic;
+			BallUpdateClk :in std_logic
 
 		);
 	end component paddle;
@@ -127,7 +131,15 @@ architecture rtl of DE10 is
 			ball_status : out std_logic;
 			lives :out unsigned(3 downto 0);
 			reset :in std_logic;
-			go    :in std_logic
+			go    :in std_logic;
+			die_sound :out std_logic;
+			BC_V :out unsigned(9 downto 0);
+			BC_H :out unsigned(10 downto 0);
+			PaddleHit :in std_logic;
+			WallHit :in std_logic;
+			WallHitSide :in std_logic_vector(3 downto 0);
+			BallClk :out std_logic
+	
 		);
 	end component Ball;
 
@@ -146,6 +158,8 @@ architecture rtl of DE10 is
     signal clockVGA : std_logic := '0';
     signal hPos : unsigned(10 downto 0);
     signal vPos : unsigned(9 downto 0);
+	 signal BV :unsigned(9 downto 0);
+	 signal BH :unsigned(10 downto 0);
     signal pixel_status : std_logic_vector(3 downto 0);
 	signal livesNum :unsigned(3 downto 0);
 	signal ADC1 :std_logic_vector(3 downto 0);
@@ -157,7 +171,7 @@ architecture rtl of DE10 is
     signal ball_status : std_logic := '0';
     signal paddle_status : std_logic := '0';
     signal brick_status : std_logic_vector(1 downto 0) := (others => '0');
-
+	signal PaddleBallHit :std_logic;
     signal audio_clk : std_logic := '0';
     signal audio_signal : std_logic := '0';
 	signal play_bounce_wall_sound   : std_logic := '0';
@@ -165,8 +179,6 @@ architecture rtl of DE10 is
     signal play_bounce_paddle_sound : std_logic := '0';
     signal play_die_sound           : std_logic := '0';
 
-    signal ballCh : unsigned(10 downto 0) := (others => '0');
-    signal ballCv : unsigned(9 downto 0) := (others => '0');
     signal wall_hit : std_logic := '0';
     signal wall_hit_side : std_logic_vector(3 downto 0) := "0000";
     signal ball_update_clk : std_logic := '0';
@@ -227,7 +239,11 @@ begin
 			vPos => vPos,
 			paddle_status => paddle_status,
 			ADC_in => ADC_DATA,
-			Pos_out =>Paddle_Pos
+			Pos_out =>Paddle_Pos,
+			BCv=>BV,
+			BCh=>BH,
+			PaddleHit=>PaddleBallHit,
+			BallUpdateClk=>ball_update_clk
 		
 		);
 	
@@ -274,7 +290,14 @@ begin
 				ball_status=>ball_status,
 				lives=>livesNum,
 				reset=>KEY(0),
-				go=>KEY(1)
+				go=>KEY(1),
+				die_sound=>play_die_sound,
+				BC_V=>BV,
+				BC_H=>BH,
+				PaddleHit=>PaddleBallHit,
+				WallHit =>wall_hit,
+				WallHitSide =>wall_hit_side,
+				BallClk=>ball_update_clk
 				
 		
 		
@@ -296,8 +319,8 @@ begin
             hPos            => hPos,
             vPos            => vPos,
             brick_status    => brick_status,
-            BCh             => ballCh,
-            BCv             => ballCv,
+            BCh             => BH,
+            BCv             => BV,
             hit             => wall_hit,
             hit_side        => wall_hit_side,
             ball_update_clk => ball_update_clk
@@ -308,8 +331,8 @@ begin
             clk                => MAX10_CLK1_50,
             clk_audio		   => audio_clk,
             play_bounce_wall   => play_bounce_wall_sound,
-            play_bounce_brick  => play_bounce_brick_sound,
-            play_bounce_paddle => play_bounce_paddle_sound,
+            play_bounce_brick  => wall_hit,
+            play_bounce_paddle => PaddleBallHit,
             play_die           => play_die_sound,
             out_signal         => audio_signal
         );

@@ -98,15 +98,15 @@ begin
 
 			when BWALL =>
 				target_count <= 4;
-				target_tone_length <= 1000;
+				target_tone_length <= 175;
 
 			when BBRICK =>
 				target_count <= 5;
-				target_tone_length <= 1000;
+				target_tone_length <= 175;
 
 			when BPADDLE =>
 				target_count <= 8;
-				target_tone_length <= 1000;
+				target_tone_length <= 175;
 				
 			when DIE =>
 				target_count <= 10;

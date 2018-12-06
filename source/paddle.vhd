@@ -16,7 +16,11 @@ entity paddle is
             vPos : in unsigned(9 downto 0);
             paddle_status : out std_logic;
             ADC_in :in std_logic_vector(11 downto 0);
-			Pos_out :out std_logic_vector(11 downto 0)
+			Pos_out :out std_logic_vector(11 downto 0);
+				BCv :in unsigned(9 downto 0);
+				BCh :in unsigned(10 downto 0);
+				PaddleHit :out std_logic;
+				BallUpdateClk :in std_logic
 
     );
 end entity paddle;
@@ -35,7 +39,14 @@ architecture RTL of paddle is
 	signal ADC_count : integer :=0;
 	signal ADC_in2 : unsigned(10 downto 0) :=b"00101000000";
 	signal ADC_val : integer;
-	
+	signal BBh :unsigned (10 downto 0);
+	signal BBv :unsigned (9 downto 0);
+	signal BLh :unsigned (10 downto 0);
+	signal BLv :unsigned (9 downto 0);
+	signal BRh :unsigned (10 downto 0);
+	signal BRv :unsigned (9 downto 0);
+	signal BTh :unsigned (10 downto 0);
+	signal BTv :unsigned (9 downto 0);
 	
 	component averageADC is
 	port(
@@ -78,43 +89,29 @@ architecture RTL of paddle is
     end process P_status;
 
 
---	process(clk)
---	begin
---		if rising_edge(clk) then
---		ADC_val<=to_integer(unsigned(ADC_in));
---		if ADC_count=100 then
---			ADC_Average<=ADC_Average/100;
---			ADC_in2<=to_unsigned(ADC_Average,ADC_in2'length);
---		else
---			ADC_count<=ADC_count+1;
---			ADC_Average<=ADC_Average+ADC_val;
---		end if;
---		end if;
---	end process;
+	HitStatus:process(BallUpdateClk)
+	begin
+			if rising_edge(BallUpdateClk) then
+				if (BBv=474) then
+					if(BBh<(PR+5) and BBh>(PL-5)) then
+						PaddleHit<='1';
+					else
+						PaddleHit<='0';
+					end if;
+				else
+					PaddleHit<='0';
+				end if;
+			end if;
+	end process HitStatus;
 	
---    process(clk)
---    begin
---		if rising_edge(clk) then
---			PC<=unsigned('0'&'0' & ADC_in(11 downto 3));
---		
---		end if;
---    end process;
-
---    --Rate at which paddle position updates
---    P_update : process(clk)
---    begin
---        if rising_edge(clk)then
---            if count = PaddleUpdate then
---                count<=0
---                update<='1';
---            else
---                count<=count+1;
---                update<='0';
---            end if;
---        end if;
---    end process P_update;
---
-
+	BBh<=BCh;
+	BBv<=BCv+5;
+	BTh<=BCh;
+	BTv<=BCv-5;
+	BLh<=BCh-5;
+	BLv<=BCv;
+	BRh<=BCh+5;
+	BRv<=BCv;
     PL<=PC-20;
     PR<=PC+20;
 	Pos_out(10 downto 0)<=std_logic_vector(PC(10 downto 0));
