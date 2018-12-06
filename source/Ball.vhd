@@ -15,7 +15,11 @@ entity Ball is
 		ball_status : out std_logic;
 		lives :out unsigned(3 downto 0);
 		reset :in std_logic;
-		go    :in std_logic
+		go    :in std_logic;
+		die_sound :out std_logic;
+		BC_V :out unsigned(9 downto 0);
+		BC_H :out unsigned(10 downto 0);
+		PaddleHit :in std_logic
 	
 	);
 end entity Ball;
@@ -38,6 +42,7 @@ architecture RTL of Ball is
 	signal update :std_logic;
 	signal life :unsigned (3 downto 0) :=b"0101";
 	signal die :std_logic:='0';
+	signal direction :std_logic :='1';
 	begin
 	
 	BallStatus:process(hPos,vPos)
@@ -73,13 +78,17 @@ architecture RTL of Ball is
 	end process Ball_Update;
 	
 	
-	BallPosition:process(update,reset,PS)
+	BallPosition:process(update,reset,PS,direction)
 	begin
 		if reset='0' then
 			life<=b"0101";
 			BCv<=b"0011110101";
 		elsif rising_edge(update)then
-			BCv<=BCv+1;
+			if direction='1' then
+				BCv<=BCv+1;
+			else
+				BCv<=BCv-1;
+			end if;
 			if BCv>485 then
 				life<=life-1;
 				die<='1';
@@ -122,6 +131,13 @@ architecture RTL of Ball is
 		
 	end process BallWait;
 	
+	Paddle:process(PaddleHit)
+	begin
+		if rising_edge(PaddleHit) then
+			direction<=not direction;
+		end if;
+	end process Paddle;
+	
 BBh<=BCh;
 BBv<=BCv+5;
 BTh<=BCh;
@@ -131,6 +147,9 @@ BLv<=BCv;
 BRh<=BCh+5;
 BRv<=BCv;
 lives<=life;
+die_sound<=die;
+BC_V<=BCv;
+BC_H<=BCh;
 	
 	
 	
