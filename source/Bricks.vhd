@@ -9,55 +9,40 @@ entity Bricks is
 		clk : in std_logic;
 		hPos : in unsigned(10 downto 0);
         vPos : in unsigned(9 downto 0);
-		brick_status : out std_logic_vector(1 downto 0)
+		brick_status : out std_logic_vector(1 downto 0);
+		BCh : in unsigned(10 downto 0);
+		BCv : in unsigned(9 downto 0);
+		hit : out std_logic;
+		hit_side : out std_logic_vector(3 downto 0);
+		ball_update_clk : in std_logic
 	);
-
 
 end entity Bricks;
 
 
 architecture rtl of Bricks is
 
-	--type BRICK_ROW is array (0 to 40) of std_logic;
 	type BRICK_GRID is array (0 to 40, 0 to 30) of std_logic;
 
-	signal grid : BRICK_GRID := (others => (others => '0'));
+	signal grid : BRICK_GRID := (others => (others => '1'));
 
 	signal count : integer := 0;
 	signal hToAdd : integer := 0;
 	signal vToAdd : integer := 0;
 
+	signal BBh :unsigned (10 downto 0);
+	signal BBv :unsigned (9 downto 0);
+	signal BLh :unsigned (10 downto 0);
+	signal BLv :unsigned (9 downto 0);
+	signal BRh :unsigned (10 downto 0);
+	signal BRv :unsigned (9 downto 0);
+	signal BTh :unsigned (10 downto 0);
+	signal BTv :unsigned (9 downto 0);
+
+	signal next_hit : std_logic := '0';
+	signal next_hit_side : std_logic_vector(3 downto 0) := "0000";
+
 begin
-
-	process(clk)
-	begin
-		if rising_edge(clk) then
-
-
-			if count = 25 then
-				count <= 0;
-
-				if hToAdd = 40 then
-					hToAdd <= 0;
-
-					if vToAdd < 30 then
-						vToAdd <= vToAdd + 1;
-					else
-						vToAdd <= vToAdd;
-					end if;
-
-				else
-					hToAdd <= hToAdd + 1;
-				end if;
-
-				grid(hToAdd, vToAdd) <= '1';
-			else
-				count <= count + 1;
-			end if;
-
-
-		end if;
-	end process;
 
 	process(hPos, vPos, grid)
 
@@ -115,5 +100,101 @@ begin
 		end if;
 
 	end process;
+
+	process(ball_update_clk, BCh, BCv, BBh, BBv, BLh, BLv, BRh, BRv, BTh, BTv)
+
+		variable bTopIndexH : integer := 0;
+		variable bTopIndexV : integer := 0;
+		variable bBottomIndexH : integer := 0;
+		variable bBottomIndexV : integer := 0;
+		variable bLeftIndexH : integer := 0;
+		variable bLeftIndexV : integer := 0;
+		variable bRightIndexH : integer := 0;
+		variable bRightIndexV : integer := 0;
+
+	begin
+
+		bTopIndexH := to_integer(BTh srl 3);
+		if BTv(3) = '1' then
+			-- Shift the odd rows over
+			bTopIndexV := to_integer((BTv + 8) srl 4);
+		else
+			bTopIndexV := to_integer(BTv srl 4);
+		end if;
+
+		bBottomIndexH := to_integer(BBh srl 3);
+		if BBv(3) = '1' then
+			-- Shift the odd rows over
+			bBottomIndexV := to_integer((BBv + 8) srl 4);
+		else
+			bBottomIndexV := to_integer(BBv srl 4);
+		end if;
+
+		bLeftIndexH := to_integer(BLh srl 3);
+		if BLv(3) = '1' then
+			-- Shift the odd rows over
+			bLeftIndexV := to_integer((BLv + 8) srl 4);
+		else
+			bLeftIndexV := to_integer(BLv srl 4);
+		end if;
+
+		bRightIndexH := to_integer(BRh srl 3);
+		if BRv(3) = '1' then
+			-- Shift the odd rows over
+			bRightIndexV := to_integer((BRv + 8) srl 4);
+		else
+			bRightIndexV := to_integer(BRv srl 4);
+		end if;
+
+
+		if BTv <= 239 then
+			if grid(bTopIndexH, bTopIndexV) = '1' then
+				next_hit <= '1';
+				next_hit_side <= "1000";
+			elsif BCv <= 239 AND grid(bLeftIndexH, bLeftIndexV) = '1' then
+				next_hit <= '1';
+				next_hit_side <= "0100";
+			elsif BCv <= 239 AND grid(bRightIndexH, bRightIndexV) = '1' then
+				next_hit <= '1';
+				next_hit_side <= "0010";
+			elsif BBv <= 239 AND grid(bBottomIndexH, bBottomIndexV) = '1' then
+				next_hit <= '1';
+				next_hit_side <= "0001";
+			else 
+				next_hit <= '0';
+				next_hit_side <= "0000";
+			end if;
+		else
+			next_hit <= '0';
+			next_hit_side <= "0000";
+		end if;
+
+		if rising_edge(ball_update_clk) then
+			hit <= next_hit;
+			hit_side <= next_hit_side;
+
+			if next_hit = '1' then
+				if next_hit_side = "1000" then
+					grid(bTopIndexH, bTopIndexV) <= '0';
+				elsif next_hit_side = "0100" then
+					grid(bLeftIndexH, bLeftIndexV) <= '0';
+				elsif next_hit_side = "0010" then
+					grid(bRightIndexH, bRightIndexV) <= '0';
+				elsif next_hit_side = "0001" then
+					grid(bBottomIndexH, bBottomIndexV) <= '0';
+				end if;
+			end if;
+		end if;
+
+	end process;
+
+	BBh<=BCh;
+	BBv<=BCv+5;
+	BTh<=BCh;
+	BTv<=BCv-5;
+	BLh<=BCh-5;
+	BLv<=BCv;
+	BRh<=BCh+5;
+	BRv<=BCv;
 	
 end architecture rtl;

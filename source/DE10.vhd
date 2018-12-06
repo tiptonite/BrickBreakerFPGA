@@ -103,14 +103,19 @@ architecture rtl of DE10 is
 		);
 	end component paddle;
 	
-	component Bricks is
+    component Bricks is
         port (
-            clk          : in  std_logic;
-            hPos         : in  unsigned(10 downto 0);
-            vPos         : in  unsigned(9 downto 0);
-            brick_status : out std_logic_vector(1 downto 0)
+            clk             : in  std_logic;
+            hPos            : in  unsigned(10 downto 0);
+            vPos            : in  unsigned(9 downto 0);
+            brick_status    : out std_logic_vector(1 downto 0);
+            BCh             : in  unsigned(10 downto 0);
+            BCv             : in  unsigned(9 downto 0);
+            hit             : out std_logic;
+            hit_side        : out std_logic_vector(3 downto 0);
+            ball_update_clk : in  std_logic
         );
-	end component Bricks;
+    end component Bricks;
 
 	component Ball is
 		generic(
@@ -169,6 +174,12 @@ architecture rtl of DE10 is
     signal play_bounce_brick_sound  : std_logic := '0';
     signal play_bounce_paddle_sound : std_logic := '0';
     signal play_die_sound           : std_logic := '0';
+
+    signal ballCh : unsigned(10 downto 0) := (others => '0');
+    signal ballCv : unsigned(9 downto 0) := (others => '0');
+    signal wall_hit : std_logic := '0';
+    signal wall_hit_side : std_logic_vector(3 downto 0) := "0000";
+    signal ball_update_clk : std_logic := '0';
 
 
 begin
@@ -298,10 +309,15 @@ begin
      
     Bricks_1 : Bricks
         port map (
-            clk          => clockVGA,
-            hPos         => hPos,
-            vPos         => vPos,
-            brick_status => brick_status
+            clk             => clockVGA,
+            hPos            => hPos,
+            vPos            => vPos,
+            brick_status    => brick_status,
+            BCh             => ballCh,
+            BCv             => ballCv,
+            hit             => wall_hit,
+            hit_side        => wall_hit_side,
+            ball_update_clk => ball_update_clk
         );
 
     Tone_1 : Tone
