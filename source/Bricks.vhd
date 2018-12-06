@@ -148,16 +148,16 @@ begin
 
 
 		if BTv <= 239 then
-			if grid(bTopIndexH, bTopIndexV) = '1' then
+			if grid(bTopIndexV, bTopIndexH) = '1' then
 				next_hit <= '1';
 				next_hit_side <= "1000";
-			elsif BCv <= 239 AND grid(bLeftIndexH, bLeftIndexV) = '1' then
+			elsif BCv <= 239 AND grid(bLeftIndexV, bLeftIndexH) = '1' then
 				next_hit <= '1';
 				next_hit_side <= "0100";
-			elsif BCv <= 239 AND grid(bRightIndexH, bRightIndexV) = '1' then
+			elsif BCv <= 239 AND grid(bRightIndexV, bRightIndexH) = '1' then
 				next_hit <= '1';
 				next_hit_side <= "0010";
-			elsif BBv <= 239 AND grid(bBottomIndexH, bBottomIndexV) = '1' then
+			elsif BBv <= 239 AND grid(bBottomIndexV, bBottomIndexH) = '1' then
 				next_hit <= '1';
 				next_hit_side <= "0001";
 			else 
@@ -175,13 +175,13 @@ begin
 
 			if next_hit = '1' then
 				if next_hit_side = "1000" then
-					grid(bTopIndexH, bTopIndexV) <= '0';
+					grid(bTopIndexV, bTopIndexH) <= '0';
 				elsif next_hit_side = "0100" then
-					grid(bLeftIndexH, bLeftIndexV) <= '0';
+					grid(bLeftIndexV, bLeftIndexH) <= '0';
 				elsif next_hit_side = "0010" then
-					grid(bRightIndexH, bRightIndexV) <= '0';
+					grid(bRightIndexV, bRightIndexH) <= '0';
 				elsif next_hit_side = "0001" then
-					grid(bBottomIndexH, bBottomIndexV) <= '0';
+					grid(bBottomIndexV, bBottomIndexH) <= '0';
 				end if;
 			end if;
 		end if;
