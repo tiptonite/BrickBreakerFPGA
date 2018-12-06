@@ -19,7 +19,10 @@ entity Ball is
 		die_sound :out std_logic;
 		BC_V :out unsigned(9 downto 0);
 		BC_H :out unsigned(10 downto 0);
-		PaddleHit :in std_logic
+		PaddleHit :in std_logic;
+		WallHit :in std_logic;
+		WallHitSide :in std_logic_vector(3 downto 0);
+		BallClk :out std_logic
 	
 	);
 end entity Ball;
@@ -131,10 +134,14 @@ architecture RTL of Ball is
 		
 	end process BallWait;
 	
-	Paddle:process(PaddleHit)
+	Paddle:process(update)
 	begin
-		if rising_edge(PaddleHit) then
-			direction<=not direction;
+		if rising_edge(update) then
+			if PaddleHit='1'then
+				direction<='0';
+			elsif WallHit='1' then
+				direction<='1';
+			end if;
 		end if;
 	end process Paddle;
 	
@@ -150,7 +157,7 @@ lives<=life;
 die_sound<=die;
 BC_V<=BCv;
 BC_H<=BCh;
-	
+BallClk<=update;	
 	
 	
 end architecture RTL;
