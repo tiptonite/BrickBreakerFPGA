@@ -114,50 +114,50 @@ begin
 
 	begin
 
-		bTopIndexH := to_integer(BTh srl 3);
+		bTopIndexV := to_integer(BTv srl 3);
 		if BTv(3) = '1' then
 			-- Shift the odd rows over
-			bTopIndexV := to_integer((BTv + 8) srl 4);
+			bTopIndexH := to_integer((BTh + 8) srl 4);
 		else
-			bTopIndexV := to_integer(BTv srl 4);
+			bTopIndexH := to_integer(BTh srl 4);
 		end if;
 
-		bBottomIndexH := to_integer(BBh srl 3);
+		bBottomIndexV := to_integer(BBv srl 3);
 		if BBv(3) = '1' then
 			-- Shift the odd rows over
-			bBottomIndexV := to_integer((BBv + 8) srl 4);
+			bBottomIndexH := to_integer((BBh + 8) srl 4);
 		else
-			bBottomIndexV := to_integer(BBv srl 4);
+			bBottomIndexH := to_integer(BBh srl 4);
 		end if;
 
-		bLeftIndexH := to_integer(BLh srl 3);
+		bLeftIndexV := to_integer(BLv srl 3);
 		if BLv(3) = '1' then
 			-- Shift the odd rows over
-			bLeftIndexV := to_integer((BLv + 8) srl 4);
+			bLeftIndexH := to_integer((BLh + 8) srl 4);
 		else
-			bLeftIndexV := to_integer(BLv srl 4);
+			bLeftIndexH := to_integer(BLh srl 4);
 		end if;
 
-		bRightIndexH := to_integer(BRh srl 3);
+		bRightIndexV := to_integer(BRv srl 3);
 		if BRv(3) = '1' then
 			-- Shift the odd rows over
-			bRightIndexV := to_integer((BRv + 8) srl 4);
+			bRightIndexH := to_integer((BRh + 8) srl 4);
 		else
-			bRightIndexV := to_integer(BRv srl 4);
+			bRightIndexH := to_integer(BRh srl 4);
 		end if;
 
 
 		if BTv <= 239 then
-			if grid(bTopIndexV, bTopIndexH) = '1' then
+			if grid(bTopIndexH, bTopIndexV) = '1' then
 				next_hit <= '1';
 				next_hit_side <= "1000";
-			elsif BCv <= 239 AND grid(bLeftIndexV, bLeftIndexH) = '1' then
+			elsif BCv <= 239 AND grid(bLeftIndexH, bLeftIndexV) = '1' then
 				next_hit <= '1';
 				next_hit_side <= "0100";
-			elsif BCv <= 239 AND grid(bRightIndexV, bRightIndexH) = '1' then
+			elsif BCv <= 239 AND grid(bRightIndexH, bRightIndexV) = '1' then
 				next_hit <= '1';
 				next_hit_side <= "0010";
-			elsif BBv <= 239 AND grid(bBottomIndexV, bBottomIndexH) = '1' then
+			elsif BBv <= 239 AND grid(bBottomIndexH, bBottomIndexV) = '1' then
 				next_hit <= '1';
 				next_hit_side <= "0001";
 			else 
@@ -175,13 +175,13 @@ begin
 
 			if next_hit = '1' then
 				if next_hit_side = "1000" then
-					grid(bTopIndexV, bTopIndexH) <= '0';
+					grid(bTopIndexH, bTopIndexV) <= '0';
 				elsif next_hit_side = "0100" then
-					grid(bLeftIndexV, bLeftIndexH) <= '0';
+					grid(bLeftIndexH, bLeftIndexV) <= '0';
 				elsif next_hit_side = "0010" then
-					grid(bRightIndexV, bRightIndexH) <= '0';
+					grid(bRightIndexH, bRightIndexV) <= '0';
 				elsif next_hit_side = "0001" then
-					grid(bBottomIndexV, bBottomIndexH) <= '0';
+					grid(bBottomIndexH, bBottomIndexV) <= '0';
 				end if;
 			end if;
 		end if;
