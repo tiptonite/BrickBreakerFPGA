@@ -50,7 +50,7 @@ begin
 --		end if;
 --	end if;
 --	end process;
-	horiz<=to_unsigned(625*ADCcount,horiz'length);
+	horiz<=to_unsigned(622*ADCcount,horiz'length);
 	sum<=shift_right(horiz,7);
 	data_out<=sum(10 downto 0)+20;
 	

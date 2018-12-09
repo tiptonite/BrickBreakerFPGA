@@ -15,7 +15,7 @@ entity VGA is
         VGA_VS : out std_logic 					  := '0';
         hPos   : out unsigned(10 downto 0);
         vPos   : out unsigned(9 downto 0);
-        status : in std_logic_vector(3 downto 0)  := (others => '0')
+        status : in std_logic_vector(6 downto 0)  := (others => '0')
 	);
 
 
@@ -73,14 +73,26 @@ begin
 				elsif status(1) = '1' then
 					VGA_B <= "1111";
 					VGA_G <= "1111";
-					VGA_R <= "0000";
-				-- Brick
+					VGA_R <= "1111";
 				elsif status(2) = '1' then
+					VGA_B <= "1100";
+					VGA_G <= "1100";
+					VGA_R <= "1100";
+				elsif status(3) = '1' then
+					VGA_B <= "1000";
+					VGA_G <= "1000";
+					VGA_R <= "1000";
+				elsif status(4) = '1' then
+					VGA_B <= "0100";
+					VGA_G <= "0100";
+					VGA_R <= "0100";
+				-- Brick
+				elsif status(5) = '1' then
 					VGA_B <= "0000";
 					VGA_G <= "0000";
 					VGA_R <= "1111";
 				-- Mortar
-				elsif status(3) = '1' then
+				elsif status(6) = '1' then
 					VGA_B <= "1111";
 					VGA_G <= "1111";
 					VGA_R <= "1111";

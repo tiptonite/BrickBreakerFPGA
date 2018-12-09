@@ -7,6 +7,7 @@ entity Bricks is
 	
 	port(
 		clk : in std_logic;
+		reset : in std_logic;
 		hPos : in unsigned(10 downto 0);
         vPos : in unsigned(9 downto 0);
 		brick_status : out std_logic_vector(1 downto 0);
@@ -14,7 +15,8 @@ entity Bricks is
 		BCv : in unsigned(9 downto 0);
 		hit : out std_logic;
 		hit_side : out std_logic_vector(3 downto 0);
-		ball_update_clk : in std_logic
+		ball_update_clk : in std_logic;
+		game_over : in std_logic
 	);
 
 end entity Bricks;
@@ -101,7 +103,7 @@ begin
 
 	end process;
 
-	process(ball_update_clk, BCh, BCv, BBh, BBv, BLh, BLv, BRh, BRv, BTh, BTv)
+	process(reset, game_over, ball_update_clk, BCh, BCv, BBh, BBv, BLh, BLv, BRh, BRv, BTh, BTv)
 
 		variable bTopIndexH : integer := 0;
 		variable bTopIndexV : integer := 0;
@@ -114,74 +116,80 @@ begin
 
 	begin
 
-		bTopIndexV := to_integer(BTv srl 3);
-		if BTv(3) = '1' then
-			-- Shift the odd rows over
-			bTopIndexH := to_integer((BTh + 8) srl 4);
-		else
-			bTopIndexH := to_integer(BTh srl 4);
-		end if;
+		if reset = '0' then
+			grid <= (others => (others => '1'));
+		elsif game_over = '1' then
+			grid <= (others => (others => '0'));
+		else 
+			bTopIndexV := to_integer(BTv srl 3);
+			if BTv(3) = '1' then
+				-- Shift the odd rows over
+				bTopIndexH := to_integer((BTh + 8) srl 4);
+			else
+				bTopIndexH := to_integer(BTh srl 4);
+			end if;
 
-		bBottomIndexV := to_integer(BBv srl 3);
-		if BBv(3) = '1' then
-			-- Shift the odd rows over
-			bBottomIndexH := to_integer((BBh + 8) srl 4);
-		else
-			bBottomIndexH := to_integer(BBh srl 4);
-		end if;
+			bBottomIndexV := to_integer(BBv srl 3);
+			if BBv(3) = '1' then
+				-- Shift the odd rows over
+				bBottomIndexH := to_integer((BBh + 8) srl 4);
+			else
+				bBottomIndexH := to_integer(BBh srl 4);
+			end if;
 
-		bLeftIndexV := to_integer(BLv srl 3);
-		if BLv(3) = '1' then
-			-- Shift the odd rows over
-			bLeftIndexH := to_integer((BLh + 8) srl 4);
-		else
-			bLeftIndexH := to_integer(BLh srl 4);
-		end if;
+			bLeftIndexV := to_integer(BLv srl 3);
+			if BLv(3) = '1' then
+				-- Shift the odd rows over
+				bLeftIndexH := to_integer((BLh + 8) srl 4);
+			else
+				bLeftIndexH := to_integer(BLh srl 4);
+			end if;
 
-		bRightIndexV := to_integer(BRv srl 3);
-		if BRv(3) = '1' then
-			-- Shift the odd rows over
-			bRightIndexH := to_integer((BRh + 8) srl 4);
-		else
-			bRightIndexH := to_integer(BRh srl 4);
-		end if;
+			bRightIndexV := to_integer(BRv srl 3);
+			if BRv(3) = '1' then
+				-- Shift the odd rows over
+				bRightIndexH := to_integer((BRh + 8) srl 4);
+			else
+				bRightIndexH := to_integer(BRh srl 4);
+			end if;
 
 
-		if BTv <= 239 then
-			if grid(bTopIndexH, bTopIndexV) = '1' then
-				next_hit <= '1';
-				next_hit_side <= "1000";
-			elsif BCv <= 239 AND grid(bLeftIndexH, bLeftIndexV) = '1' then
-				next_hit <= '1';
-				next_hit_side <= "0100";
-			elsif BCv <= 239 AND grid(bRightIndexH, bRightIndexV) = '1' then
-				next_hit <= '1';
-				next_hit_side <= "0010";
-			elsif BBv <= 239 AND grid(bBottomIndexH, bBottomIndexV) = '1' then
-				next_hit <= '1';
-				next_hit_side <= "0001";
-			else 
+			if BTv <= 239 then
+				if grid(bTopIndexH, bTopIndexV) = '1' then
+					next_hit <= '1';
+					next_hit_side <= "1000";
+				elsif BCv <= 239 AND grid(bLeftIndexH, bLeftIndexV) = '1' then
+					next_hit <= '1';
+					next_hit_side <= "0100";
+				elsif BCv <= 239 AND grid(bRightIndexH, bRightIndexV) = '1' then
+					next_hit <= '1';
+					next_hit_side <= "0010";
+				elsif BBv <= 239 AND grid(bBottomIndexH, bBottomIndexV) = '1' then
+					next_hit <= '1';
+					next_hit_side <= "0001";
+				else 
+					next_hit <= '0';
+					next_hit_side <= "0000";
+				end if;
+			else
 				next_hit <= '0';
 				next_hit_side <= "0000";
 			end if;
-		else
-			next_hit <= '0';
-			next_hit_side <= "0000";
-		end if;
 
-		if rising_edge(ball_update_clk) then
-			hit <= next_hit;
-			hit_side <= next_hit_side;
+			if rising_edge(ball_update_clk) then
+				hit <= next_hit;
+				hit_side <= next_hit_side;
 
-			if next_hit = '1' then
-				if next_hit_side = "1000" then
-					grid(bTopIndexH, bTopIndexV) <= '0';
-				elsif next_hit_side = "0100" then
-					grid(bLeftIndexH, bLeftIndexV) <= '0';
-				elsif next_hit_side = "0010" then
-					grid(bRightIndexH, bRightIndexV) <= '0';
-				elsif next_hit_side = "0001" then
-					grid(bBottomIndexH, bBottomIndexV) <= '0';
+				if next_hit = '1' then
+					if next_hit_side = "1000" then
+						grid(bTopIndexH, bTopIndexV) <= '0';
+					elsif next_hit_side = "0100" then
+						grid(bLeftIndexH, bLeftIndexV) <= '0';
+					elsif next_hit_side = "0010" then
+						grid(bRightIndexH, bRightIndexV) <= '0';
+					elsif next_hit_side = "0001" then
+						grid(bBottomIndexH, bBottomIndexV) <= '0';
+					end if;
 				end if;
 			end if;
 		end if;

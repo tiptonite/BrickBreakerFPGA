@@ -12,14 +12,15 @@ entity Ball is
 		clk :in std_logic;
 		hPos : in unsigned(10 downto 0);
 		vPos : in unsigned(9 downto 0);
-		ball_status : out std_logic;
+		ball_status : out std_logic_vector(3 downto 0);
 		lives :out unsigned(3 downto 0);
 		reset :in std_logic;
 		go    :in std_logic;
 		die_sound :out std_logic;
+		side_sound : out std_logic;
 		BC_V :out unsigned(9 downto 0);
 		BC_H :out unsigned(10 downto 0);
-		PaddleHit :in std_logic;
+		PaddleHit :in std_logic_vector(2 downto 0);
 		WallHit :in std_logic;
 		WallHitSide :in std_logic_vector(3 downto 0);
 		BallClk :out std_logic
@@ -31,7 +32,9 @@ architecture RTL of Ball is
 	type GameStatus is (dead,live);
 	signal PS :GameStatus := dead;
 	signal NS :GameStatus;
-	signal BCh :unsigned (10 downto 0) :=b"00101000000";
+	signal ball_hPos : unsigned(12 downto 0) := b"0010011111100";
+	signal ball_vPos :unsigned (11 downto 0) := b"001111010100";
+	signal BCh :unsigned (10 downto 0) :=b"00100111111";
 	signal BCv :unsigned (9 downto 0) := b"0011110101";
 	signal BBh :unsigned (10 downto 0);
 	signal BBv :unsigned (9 downto 0);
@@ -45,24 +48,40 @@ architecture RTL of Ball is
 	signal update :std_logic;
 	signal life :unsigned (3 downto 0) :=b"0101";
 	signal die :std_logic:='0';
-	signal direction :std_logic :='1';
+	constant speedLength : integer := 3;
+	signal hSpeed :unsigned((speedLength-1) downto 0) := "000";
+	signal vSpeed :unsigned((speedLength-1) downto 0) := "011";
+	signal paddleHits : unsigned(23 downto 0) := (others => '0');
 	begin
+
+	BCh <= ball_hPos(12 downto 2);
+	BCv <= ball_vPos(11 downto 2);
 	
 	BallStatus:process(hPos,vPos)
+		variable md : signed(11 downto 0);
 	begin
+
+		md := abs(signed('0' & hPos) - signed('0' & BCh)) + abs(signed('0' & vPos) - signed('0' & BCv));
 		
 		if vPos >= BTv and vPos <= BBv then
 			if hPos >= BLh and hPos <= BRh then
-				ball_status<='1';
+				if md <= 5 then
+					ball_status <= "0001";
+				elsif md <= 6 then
+					ball_status <= "0010";
+				elsif md <= 7 then
+					ball_status <= "0100";
+				elsif md <= 8 then
+					ball_status <= "1000";
+				else
+					ball_status <= "0000";
+				end if;
 			else
-				ball_status<='0';
+				ball_status<="0000";
 			end if;
 		else
-			ball_status<='0';
+			ball_status<="0000";
 		end if;
-		
-		
-		
 		
 		
 	end process BallStatus;
@@ -70,7 +89,7 @@ architecture RTL of Ball is
 	Ball_Update:process(clk)
 	begin
 		if rising_edge(clk) and PS=live then
-			if count = BallUpdate then
+			if count = BallUpdate - to_integer(paddleHits sll 9) then
 				update<='1';
 				count<=0;
 			else
@@ -81,21 +100,30 @@ architecture RTL of Ball is
 	end process Ball_Update;
 	
 	
-	BallPosition:process(update,reset,PS,direction)
+	BallPosition:process(update,reset,PS)
 	begin
 		if reset='0' then
 			life<=b"0101";
-			BCv<=b"0011110101";
+			ball_vPos<=b"001111010100";
+			ball_hPos <= b"0010011111100";
 		elsif rising_edge(update)then
-			if direction='1' then
-				BCv<=BCv+1;
+			if vSpeed(speedLength-1) = '1' then
+				ball_vPos <= to_unsigned(to_integer(ball_vPos) - to_integer(vSpeed(speedLength-2 downto 0)), ball_vPos'length);
 			else
-				BCv<=BCv-1;
+				ball_vPos <= to_unsigned(to_integer(ball_vPos) + to_integer(vSpeed(speedLength-2 downto 0)), ball_vPos'length);
 			end if;
+
+			if hSpeed(speedLength-1) = '1' then
+				ball_hPos <= to_unsigned(to_integer(ball_hPos) - to_integer(hSpeed(speedLength-2 downto 0)), ball_hPos'length);
+			else
+				ball_hPos <= to_unsigned(to_integer(ball_hPos) + to_integer(hSpeed(speedLength-2 downto 0)), ball_hPos'length);
+			end if;
+
 			if BCv>485 then
 				life<=life-1;
 				die<='1';
-				BCv<=b"0011110101";
+				ball_vPos<=b"001111010100";
+				ball_hPos <= b"0010011111100";
 			end if;
 		
 		end if;
@@ -134,16 +162,61 @@ architecture RTL of Ball is
 		
 	end process BallWait;
 	
-	Paddle:process(update)
+	Paddle:process(update, reset)
 	begin
-		if rising_edge(update) then
-			if PaddleHit='1'then
-				direction<='0';
+		if reset = '0' then
+			vSpeed <= "011";
+			hSpeed <= "000";
+			paddleHits <= (others => '0');
+		elsif rising_edge(update) then
+			if PaddleHit="100" then
+				paddleHits <= paddleHits + 1;
+				vSpeed <= "110";
+				hSpeed <= "110";
+			elsif PaddleHit="010" then
+				paddleHits <= paddleHits + 1;
+				vSpeed(speedLength-1) <= '1';
+			elsif PaddleHit="001" then
+				paddleHits <= paddleHits + 1;
+				vSpeed <= "110";
+				hSpeed <= "010";
 			elsif WallHit='1' then
-				direction<='1';
+				paddleHits <= paddleHits + 1;
+				if WallHitSide = "1000" then
+					vSpeed(speedLength-1) <= '0';
+				elsif WallHitSide = "0100" then
+					hSpeed(speedLength-1) <= '0';
+				elsif WallHitSide = "0010" then
+					hSpeed(speedLength-1) <= '1';
+				elsif WallHitSide = "0001" then
+					vSpeed(speedLength-1) <= '1';
+				end if;
+			elsif BLh = 0 then
+				hSpeed(speedLength-1) <= '0';
+				paddleHits <= paddleHits + 1;
+			elsif BRh = 639 then
+				hSpeed(speedLength-1) <= '1';
+				paddleHits <= paddleHits + 1;
+			elsif BCv>485 then
+				vSpeed <= "011";
+				hSpeed <= "000";
+			elsif BTv=0 then
+				vSpeed(speedLength-1) <= '0';
+				paddleHits <= paddleHits + 1;
 			end if;
 		end if;
 	end process Paddle;
+
+	SIDESOUND : process(update)
+	begin
+		if rising_edge(update) then
+			if BLh = 0 OR BRh = 639 OR BTv=0 then
+				side_sound <= '1';
+			else 
+				side_sound <= '0';
+			end if;
+		end if;
+	end process SIDESOUND;
 	
 BBh<=BCh;
 BBv<=BCv+5;

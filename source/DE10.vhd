@@ -54,16 +54,16 @@ architecture rtl of DE10 is
             VGA_VS : out std_logic                    := '0';
             hPos   : out unsigned(10 downto 0);
             vPos   : out unsigned(9 downto 0);
-            status : in  std_logic_vector(3 downto 0) := (others => '0')
+            status : in  std_logic_vector(6 downto 0) := (others => '0')
         );
     end component VGA;  
 
     component Status is
         port (
-            ball_status   : in  std_logic;
+            ball_status   : in  std_logic_vector(3 downto 0);
             paddle_status : in  std_logic;
             brick_status  : in  std_logic_vector(1 downto 0);
-            status        : out std_logic_vector(3 downto 0) := (others => '0')
+            status        : out std_logic_vector(6 downto 0) := (others => '0')
         );
     end component Status;    
 	
@@ -98,7 +98,7 @@ architecture rtl of DE10 is
 			Pos_out :out std_logic_vector(11 downto 0);
 			BCv :in unsigned(9 downto 0);
 			BCh :in unsigned(10 downto 0);
-			PaddleHit :out std_logic;
+			PaddleHit :out std_logic_vector(2 downto 0);
 			BallUpdateClk :in std_logic
 
 		);
@@ -107,6 +107,7 @@ architecture rtl of DE10 is
     component Bricks is
         port (
             clk             : in  std_logic;
+            reset           : in  std_logic;
             hPos            : in  unsigned(10 downto 0);
             vPos            : in  unsigned(9 downto 0);
             brick_status    : out std_logic_vector(1 downto 0);
@@ -114,7 +115,8 @@ architecture rtl of DE10 is
             BCv             : in  unsigned(9 downto 0);
             hit             : out std_logic;
             hit_side        : out std_logic_vector(3 downto 0);
-            ball_update_clk : in  std_logic
+            ball_update_clk : in  std_logic;
+            game_over		: in std_logic
         );
     end component Bricks;
 
@@ -128,14 +130,15 @@ architecture rtl of DE10 is
 			clk :in std_logic;
 			hPos : in unsigned(10 downto 0);
 			vPos : in unsigned(9 downto 0);
-			ball_status : out std_logic;
+			ball_status : out std_logic_vector(3 downto 0);
 			lives :out unsigned(3 downto 0);
 			reset :in std_logic;
 			go    :in std_logic;
 			die_sound :out std_logic;
+			side_sound : out std_logic;
 			BC_V :out unsigned(9 downto 0);
 			BC_H :out unsigned(10 downto 0);
-			PaddleHit :in std_logic;
+			PaddleHit :in std_logic_vector(2 downto 0);
 			WallHit :in std_logic;
 			WallHitSide :in std_logic_vector(3 downto 0);
 			BallClk :out std_logic
@@ -160,7 +163,7 @@ architecture rtl of DE10 is
     signal vPos : unsigned(9 downto 0);
 	 signal BV :unsigned(9 downto 0);
 	 signal BH :unsigned(10 downto 0);
-    signal pixel_status : std_logic_vector(3 downto 0);
+    signal pixel_status : std_logic_vector(6 downto 0);
 	signal livesNum :unsigned(3 downto 0);
 	signal ADC1 :std_logic_vector(3 downto 0);
 	signal ADC2 :std_logic_vector(3 downto 0);
@@ -168,10 +171,10 @@ architecture rtl of DE10 is
 	signal ADC_reset :std_logic;
 	signal ADC_DATA :std_logic_vector (11 downto 0);
 	signal Paddle_Pos :std_logic_vector(11 downto 0);
-    signal ball_status : std_logic := '0';
+    signal ball_status : std_logic_vector(3 downto 0) := (others => '0');
     signal paddle_status : std_logic := '0';
     signal brick_status : std_logic_vector(1 downto 0) := (others => '0');
-	signal PaddleBallHit :std_logic;
+	signal PaddleBallHit :std_logic_vector(2 downto 0);
     signal audio_clk : std_logic := '0';
     signal audio_signal : std_logic := '0';
 	signal play_bounce_wall_sound   : std_logic := '0';
@@ -182,6 +185,7 @@ architecture rtl of DE10 is
     signal wall_hit : std_logic := '0';
     signal wall_hit_side : std_logic_vector(3 downto 0) := "0000";
     signal ball_update_clk : std_logic := '0';
+    signal game_over : std_logic := '0';
 
 
 begin
@@ -292,6 +296,7 @@ begin
 				reset=>KEY(0),
 				go=>KEY(1),
 				die_sound=>play_die_sound,
+				side_sound=>play_bounce_wall_sound,
 				BC_V=>BV,
 				BC_H=>BH,
 				PaddleHit=>PaddleBallHit,
@@ -316,6 +321,7 @@ begin
     Bricks_1 : Bricks
         port map (
             clk             => clockVGA,
+            reset 			=> KEY(0),
             hPos            => hPos,
             vPos            => vPos,
             brick_status    => brick_status,
@@ -323,7 +329,8 @@ begin
             BCv             => BV,
             hit             => wall_hit,
             hit_side        => wall_hit_side,
-            ball_update_clk => ball_update_clk
+            ball_update_clk => ball_update_clk,
+            game_over		=> game_over
         );
 
     Tone_1 : Tone
@@ -332,11 +339,16 @@ begin
             clk_audio		   => audio_clk,
             play_bounce_wall   => play_bounce_wall_sound,
             play_bounce_brick  => wall_hit,
-            play_bounce_paddle => PaddleBallHit,
+            play_bounce_paddle => PaddleBallHit(0) OR PaddleBallHit(1) OR PaddleBallHit(2),
             play_die           => play_die_sound,
             out_signal         => audio_signal
         );
 
     ARDUINO_IO(7) <= audio_signal;
+
+    with livesNum select
+    	game_over <= '1' when "0000",
+    				 '0' when others;
+
 	
 end architecture rtl;
