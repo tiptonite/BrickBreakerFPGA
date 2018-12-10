@@ -59,20 +59,24 @@ architecture RTL of Ball is
 	
 	BallStatus:process(hPos,vPos)
 		variable md : signed(11 downto 0);
+		variable dh : signed(11 downto 0);
+		variable dv : signed(10 downto 0);
 	begin
 
-		md := abs(signed('0' & hPos) - signed('0' & BCh)) + abs(signed('0' & vPos) - signed('0' & BCv));
+		dh := abs(signed('0' & hPos) - signed('0' & BCh));
+		dv := abs(signed('0' & vPos) - signed('0' & BCv));
+		md := dh + dv;
 		
 		if vPos >= BTv and vPos <= BBv then
 			if hPos >= BLh and hPos <= BRh then
-				if md <= 5 then
+				if (dv <= 4 AND dh <= 2) OR (dv <= 2 AND dh <= 4) OR (dv <= 3 AND dh <= 3) then
 					ball_status <= "0001";
-				elsif md <= 6 then
+				elsif (dv <= 4 AND dh <= 3) OR (dv <= 3 AND dh <= 4) then
 					ball_status <= "0010";
-				elsif md <= 7 then
+				elsif md <= 5 then
+					ball_status <= "0010";
+				elsif md <= 6 then
 					ball_status <= "0100";
-				elsif md <= 8 then
-					ball_status <= "1000";
 				else
 					ball_status <= "0000";
 				end if;

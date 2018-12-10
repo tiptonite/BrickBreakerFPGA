@@ -75,17 +75,17 @@ begin
 					VGA_G <= "1111";
 					VGA_R <= "1111";
 				elsif status(2) = '1' then
-					VGA_B <= "1100";
-					VGA_G <= "1100";
-					VGA_R <= "1100";
+					VGA_B <= "1010";
+					VGA_G <= "1010";
+					VGA_R <= "1010";
 				elsif status(3) = '1' then
 					VGA_B <= "1000";
 					VGA_G <= "1000";
 					VGA_R <= "1000";
 				elsif status(4) = '1' then
-					VGA_B <= "0100";
-					VGA_G <= "0100";
-					VGA_R <= "0100";
+					VGA_B <= "0111";
+					VGA_G <= "0111";
+					VGA_R <= "0111";
 				-- Brick
 				elsif status(5) = '1' then
 					VGA_B <= "0000";
