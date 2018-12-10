@@ -98,7 +98,7 @@ architecture rtl of DE10 is
 			Pos_out :out std_logic_vector(11 downto 0);
 			BCv :in unsigned(9 downto 0);
 			BCh :in unsigned(10 downto 0);
-			PaddleHit :out std_logic_vector(2 downto 0);
+			PaddleHit :out std_logic_vector(4 downto 0);
 			BallUpdateClk :in std_logic
 
 		);
@@ -138,7 +138,7 @@ architecture rtl of DE10 is
 			side_sound : out std_logic;
 			BC_V :out unsigned(9 downto 0);
 			BC_H :out unsigned(10 downto 0);
-			PaddleHit :in std_logic_vector(2 downto 0);
+			PaddleHit :in std_logic_vector(4 downto 0);
 			WallHit :in std_logic;
 			WallHitSide :in std_logic_vector(3 downto 0);
 			BallClk :out std_logic
@@ -164,7 +164,7 @@ architecture rtl of DE10 is
 	 signal BV :unsigned(9 downto 0);
 	 signal BH :unsigned(10 downto 0);
     signal pixel_status : std_logic_vector(6 downto 0);
-	signal livesNum :unsigned(3 downto 0);
+	signal livesNum :unsigned(3 downto 0):="0101";
 	signal ADC1 :std_logic_vector(3 downto 0);
 	signal ADC2 :std_logic_vector(3 downto 0);
 	signal ADC3 :std_logic_vector(3 downto 0);
@@ -174,7 +174,7 @@ architecture rtl of DE10 is
     signal ball_status : std_logic_vector(3 downto 0) := (others => '0');
     signal paddle_status : std_logic := '0';
     signal brick_status : std_logic_vector(1 downto 0) := (others => '0');
-	signal PaddleBallHit :std_logic_vector(2 downto 0);
+	signal PaddleBallHit :std_logic_vector(4 downto 0);
     signal audio_clk : std_logic := '0';
     signal audio_signal : std_logic := '0';
 	signal play_bounce_wall_sound   : std_logic := '0';
@@ -285,7 +285,7 @@ begin
 	 Ball1 : Ball
 		generic map(
 		
-		BallUpdate=>437500
+		BallUpdate=>337500
 		)
 		port map(
 				clk=>MAX10_CLK1_50,
@@ -339,7 +339,7 @@ begin
             clk_audio		   => audio_clk,
             play_bounce_wall   => play_bounce_wall_sound,
             play_bounce_brick  => wall_hit,
-            play_bounce_paddle => PaddleBallHit(0) OR PaddleBallHit(1) OR PaddleBallHit(2),
+            play_bounce_paddle => PaddleBallHit(0) OR PaddleBallHit(1) OR PaddleBallHit(2) OR PaddleBallHit(3) OR PaddleBallHit(4),
             play_die           => play_die_sound,
             out_signal         => audio_signal
         );
