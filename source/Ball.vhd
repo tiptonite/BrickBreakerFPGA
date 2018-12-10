@@ -20,7 +20,7 @@ entity Ball is
 		side_sound : out std_logic;
 		BC_V :out unsigned(9 downto 0);
 		BC_H :out unsigned(10 downto 0);
-		PaddleHit :in std_logic_vector(2 downto 0);
+		PaddleHit :in std_logic_vector(4 downto 0);
 		WallHit :in std_logic;
 		WallHitSide :in std_logic_vector(3 downto 0);
 		BallClk :out std_logic
@@ -93,7 +93,7 @@ architecture RTL of Ball is
 	Ball_Update:process(clk)
 	begin
 		if rising_edge(clk) and PS=live then
-			if count = BallUpdate - to_integer(paddleHits sll 9) then
+			if ((paddleHits<600) and count = BallUpdate - to_integer(paddleHits sll 9)) or (paddleHits>=600 and count>=130300) then
 				update<='1';
 				count<=0;
 			else
@@ -173,17 +173,30 @@ architecture RTL of Ball is
 			hSpeed <= "000";
 			paddleHits <= (others => '0');
 		elsif rising_edge(update) then
-			if PaddleHit="100" then
+			if PaddleHit="10000" then
+				paddleHits <= paddleHits + 1;
+				vSpeed <= "101";
+				hSpeed <= "111";
+				
+			elsif PaddleHit="01000" then
 				paddleHits <= paddleHits + 1;
 				vSpeed <= "110";
 				hSpeed <= "110";
-			elsif PaddleHit="010" then
+				
+			elsif PaddleHit="00100" then
 				paddleHits <= paddleHits + 1;
 				vSpeed(speedLength-1) <= '1';
-			elsif PaddleHit="001" then
+				
+			elsif PaddleHit="00010" then
 				paddleHits <= paddleHits + 1;
 				vSpeed <= "110";
 				hSpeed <= "010";
+				
+			elsif PaddleHit="00001" then
+				paddleHits <= paddleHits + 1;
+				vSpeed <= "101";
+				hSpeed <= "011";
+				
 			elsif WallHit='1' then
 				paddleHits <= paddleHits + 1;
 				if WallHitSide = "1000" then
