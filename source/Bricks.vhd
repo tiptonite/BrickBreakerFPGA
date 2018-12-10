@@ -40,9 +40,11 @@ architecture rtl of Bricks is
 	signal BRv :unsigned (9 downto 0);
 	signal BTh :unsigned (10 downto 0);
 	signal BTv :unsigned (9 downto 0);
+	signal BTCv :unsigned (9 downto 0);
 
 	signal next_hit : std_logic := '0';
 	signal next_hit_side : std_logic_vector(3 downto 0) := "0000";
+	signal side_hit_is_top : std_logic := '0';
 
 begin
 
@@ -107,6 +109,9 @@ begin
 
 		variable bTopIndexH : integer := 0;
 		variable bTopIndexV : integer := 0;
+		variable bTopCornerV : integer := 0;
+		variable bTopRightIndexH : integer := 0;
+		variable bTopLeftIndexH : integer := 0;
 		variable bBottomIndexH : integer := 0;
 		variable bBottomIndexV : integer := 0;
 		variable bLeftIndexH : integer := 0;
@@ -127,6 +132,16 @@ begin
 				bTopIndexH := to_integer((BTh + 8) srl 4);
 			else
 				bTopIndexH := to_integer(BTh srl 4);
+			end if;
+
+			bTopCornerV := to_integer((BTv + 3) srl 3);
+			if BTCv(3) = '1' then
+				-- Shift the odd rows over
+				bTopRightIndexH := to_integer((BRh + 5) srl 4);
+				bTopLeftIndexH := to_integer((BLh + 11) srl 4);
+			else
+				bTopRightIndexH := to_integer((BRh - 3) srl 4);
+				bTopLeftIndexH := to_integer((BLh + 3) srl 4);
 			end if;
 
 			bBottomIndexV := to_integer(BBv srl 3);
@@ -158,37 +173,60 @@ begin
 				if grid(bTopIndexH, bTopIndexV) = '1' then
 					next_hit <= '1';
 					next_hit_side <= "1000";
-				elsif BCv <= 239 AND grid(bLeftIndexH, bLeftIndexV) = '1' then
+					side_hit_is_top <= '0';
+				elsif grid(bTopLeftIndexH, bTopCornerV) = '1' then
 					next_hit <= '1';
 					next_hit_side <= "0100";
-				elsif BCv <= 239 AND grid(bRightIndexH, bRightIndexV) = '1' then
+					side_hit_is_top <= '1';
+				elsif grid(bTopRightIndexH, bTopCornerV) = '1' then
 					next_hit <= '1';
 					next_hit_side <= "0010";
-				elsif BBv <= 239 AND grid(bBottomIndexH, bBottomIndexV) = '1' then
+					side_hit_is_top <= '1';
+				elsif BCv <= 234 AND grid(bLeftIndexH, bLeftIndexV) = '1' then
+					next_hit <= '1';
+					next_hit_side <= "0100";
+					side_hit_is_top <= '0';
+				elsif BCv <= 234 AND grid(bRightIndexH, bRightIndexV) = '1' then
+					next_hit <= '1';
+					next_hit_side <= "0010";
+					side_hit_is_top <= '0';
+				elsif BBv <= 229 AND grid(bBottomIndexH, bBottomIndexV) = '1' then
 					next_hit <= '1';
 					next_hit_side <= "0001";
+					side_hit_is_top <= '0';
 				else 
 					next_hit <= '0';
 					next_hit_side <= "0000";
+					side_hit_is_top <= '0';
 				end if;
 			else
 				next_hit <= '0';
 				next_hit_side <= "0000";
+				side_hit_is_top <= '0';
 			end if;
 
 			if rising_edge(ball_update_clk) then
 				hit <= next_hit;
-				hit_side <= next_hit_side;
 
 				if next_hit = '1' then
 					if next_hit_side = "1000" then
 						grid(bTopIndexH, bTopIndexV) <= '0';
-					elsif next_hit_side = "0100" then
+						hit_side <= next_hit_side;
+					elsif next_hit_side = "0100" AND side_hit_is_top = '0' then
 						grid(bLeftIndexH, bLeftIndexV) <= '0';
-					elsif next_hit_side = "0010" then
-						grid(bRightIndexH, bRightIndexV) <= '0';
+						hit_side <= next_hit_side;
+					elsif next_hit_side = "0100" AND side_hit_is_top = '1' then
+						grid(bTopLeftIndexH, bTopCornerV) <= '0';
+						hit_side <= "1000";
+					elsif next_hit_side = "0010" AND side_hit_is_top = '0' then
+						grid(bTopIndexH, bLeftIndexV) <= '0';
+						hit_side <= next_hit_side;
+					elsif next_hit_side = "0010" AND side_hit_is_top = '1' then
+						grid(bTopRightIndexH, bTopCornerV) <= '0';
+						hit_side <= "1000";
 					elsif next_hit_side = "0001" then
 						grid(bBottomIndexH, bBottomIndexV) <= '0';
+						hit_side <= next_hit_side;
 					end if;
 				end if;
 			end if;
@@ -200,6 +238,7 @@ begin
 	BBv<=BCv+5;
 	BTh<=BCh;
 	BTv<=BCv-5;
+	BTCv<=BCv-2;
 	BLh<=BCh-5;
 	BLv<=BCv;
 	BRh<=BCh+5;
