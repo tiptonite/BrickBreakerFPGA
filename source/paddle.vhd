@@ -19,7 +19,7 @@ entity paddle is
 			Pos_out :out std_logic_vector(11 downto 0);
 			BCv :in unsigned(9 downto 0);
 			BCh :in unsigned(10 downto 0);
-			PaddleHit :out std_logic_vector(2 downto 0);
+			PaddleHit :out std_logic_vector(4 downto 0);
 			BallUpdateClk :in std_logic
 
     );
@@ -93,19 +93,23 @@ architecture RTL of paddle is
 	begin
 			if rising_edge(BallUpdateClk) then
 				if (BBv>474 AND BBV<485) then
-					if(BBh<(PR+5) and BBh>(PL-5)) then
-						if BBH < PC - 10 then
-							PaddleHit <= "100";
-						elsif BBH < PC + 10 then
-							PaddleHit <= "010";
+					if(BBh<(PR+5) and (BBh>(PL-5) or PL<5) ) then
+						if BBH < PC - 20 then
+							PaddleHit <= "10000";
+						elsif BBH<PC-5 then
+							PaddleHit<="01000";
+						elsif BBH > PC + 20 then
+							PaddleHit <= "00001";
+						elsif BBH>PC+5 then
+							PaddleHit <="00010";
 						else
-							PaddleHit<="001";
+							PaddleHit<="00100";
 						end if;
 					else
-						PaddleHit<="000";
+						PaddleHit<="00000";
 					end if;
 				else
-					PaddleHit<="000";
+					PaddleHit<="00000";
 				end if;
 			end if;
 	end process HitStatus;

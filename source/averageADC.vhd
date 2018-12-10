@@ -19,6 +19,7 @@ architecture RTL of averageADC is
 	signal count :integer :=0;
 	signal ADCcount :integer;
 	signal horiz :unsigned(31 downto 0);
+	signal data :unsigned(10 downto 0);
 	
 begin
 	ADCcount<=to_integer(unsigned(data_in(11 downto 5)));
@@ -50,9 +51,18 @@ begin
 --		end if;
 --	end if;
 --	end process;
-	horiz<=to_unsigned(622*ADCcount,horiz'length);
+	horiz<=to_unsigned(638*ADCcount,horiz'length);
 	sum<=shift_right(horiz,7);
-	data_out<=sum(10 downto 0)+20;
+	data<=sum(10 downto 0)+20;
+	process(data)
+	begin
+	if data<620 then
+		data_out<=data;
+	else
+		data_out<=to_unsigned(620,data_out'length);
+	end if;
+	end process;
+					
 	
 --	data_out<=to_unsigned(0+((600-0)/(255-0))*(ADCcount-0)+20,data_out'length);
 --	data_out<=to_unsigned(to_integer(shift_right(x"258",12))*ADCcount+20,data_out'length);
