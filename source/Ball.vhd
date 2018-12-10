@@ -93,7 +93,7 @@ architecture RTL of Ball is
 	Ball_Update:process(clk)
 	begin
 		if rising_edge(clk) and PS=live then
-			if ((paddleHits<600) and count = BallUpdate - to_integer(paddleHits sll 9)) or (paddleHits>=600 and count>=130300) then
+			if ((paddleHits<600) and count = BallUpdate - to_integer(paddleHits sll 9)) or (paddleHits>=600 and count>=50000) then
 				update<='1';
 				count<=0;
 			else

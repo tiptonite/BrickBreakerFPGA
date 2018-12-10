@@ -134,7 +134,7 @@ begin
 				bTopIndexH := to_integer(BTh srl 4);
 			end if;
 
-			bTopCornerV := to_integer((BTv + 3) srl 3);
+			bTopCornerV := to_integer(BTCv srl 3);
 			if BTCv(3) = '1' then
 				-- Shift the odd rows over
 				bTopRightIndexH := to_integer((BRh + 5) srl 4);
@@ -182,15 +182,15 @@ begin
 					next_hit <= '1';
 					next_hit_side <= "0010";
 					side_hit_is_top <= '1';
-				elsif BCv <= 234 AND grid(bLeftIndexH, bLeftIndexV) = '1' then
+				elsif BCv <= 235 AND grid(bLeftIndexH, bLeftIndexV) = '1' then
 					next_hit <= '1';
 					next_hit_side <= "0100";
 					side_hit_is_top <= '0';
-				elsif BCv <= 234 AND grid(bRightIndexH, bRightIndexV) = '1' then
+				elsif BCv <= 235 AND grid(bRightIndexH, bRightIndexV) = '1' then
 					next_hit <= '1';
 					next_hit_side <= "0010";
 					side_hit_is_top <= '0';
-				elsif BBv <= 229 AND grid(bBottomIndexH, bBottomIndexV) = '1' then
+				elsif BBv <= 230 AND grid(bBottomIndexH, bBottomIndexV) = '1' then
 					next_hit <= '1';
 					next_hit_side <= "0001";
 					side_hit_is_top <= '0';
@@ -219,7 +219,7 @@ begin
 						grid(bTopLeftIndexH, bTopCornerV) <= '0';
 						hit_side <= "1000";
 					elsif next_hit_side = "0010" AND side_hit_is_top = '0' then
-						grid(bTopIndexH, bLeftIndexV) <= '0';
+						grid(bRightIndexH, bRightIndexV) <= '0';
 						hit_side <= next_hit_side;
 					elsif next_hit_side = "0010" AND side_hit_is_top = '1' then
 						grid(bTopRightIndexH, bTopCornerV) <= '0';

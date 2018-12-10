@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("//Mac/Home/Documents/school/F18/BrickBreaker/quartus/") File("DE10.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("Y:/Documents/school/F18/BrickBreaker/quartus/") File("DE10.pof") MfrSpec(OpMask(1) Child_OpMask(2 1 1));
 
 ChainEnd;
 
