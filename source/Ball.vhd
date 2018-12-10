@@ -22,7 +22,7 @@ entity Ball is
 		BC_H :out unsigned(10 downto 0);
 		PaddleHit :in std_logic_vector(4 downto 0);
 		WallHit :in std_logic;
-		WallHitSide :in std_logic_vector(3 downto 0);
+		WallHitSide :in std_logic_vector(5 downto 0);
 		BallClk :out std_logic
 	
 	);
@@ -93,7 +93,7 @@ architecture RTL of Ball is
 	Ball_Update:process(clk)
 	begin
 		if rising_edge(clk) and PS=live then
-			if ((paddleHits<600) and count = BallUpdate - to_integer(paddleHits sll 9)) or (paddleHits>=600 and count>=50000) then
+			if ((paddleHits<600) and count = BallUpdate - to_integer(paddleHits sll 9)) or (paddleHits>=600 and count>=100000) then
 				update<='1';
 				count<=0;
 			else
@@ -173,7 +173,14 @@ architecture RTL of Ball is
 			hSpeed <= "000";
 			paddleHits <= (others => '0');
 		elsif rising_edge(update) then
-			if PaddleHit="10000" then
+			if BLh = 0 then
+				hSpeed(speedLength-1) <= '0';
+				paddleHits <= paddleHits + 1;
+			elsif BRh = 639 then
+				hSpeed(speedLength-1) <= '1';
+				paddleHits <= paddleHits + 1;
+
+			elsif PaddleHit="10000" then
 				paddleHits <= paddleHits + 1;
 				vSpeed <= "101";
 				hSpeed <= "111";
@@ -199,24 +206,25 @@ architecture RTL of Ball is
 				
 			elsif WallHit='1' then
 				paddleHits <= paddleHits + 1;
-				if WallHitSide = "1000" then
+				if WallHitSide = "100000" then
 					vSpeed(speedLength-1) <= '0';
-				elsif WallHitSide = "0100" then
+				elsif WallHitSide = "010000" then
+					vSpeed(speedLength-1) <= '0';
 					hSpeed(speedLength-1) <= '0';
-				elsif WallHitSide = "0010" then
+				elsif WallHitSide = "001000" then
+					hSpeed(speedLength-1) <= '0';
+				elsif WallHitSide = "000100" then
 					hSpeed(speedLength-1) <= '1';
-				elsif WallHitSide = "0001" then
+				elsif WallHitSide = "000010" then
+					vSpeed(speedLength-1) <= '0';
+					hSpeed(speedLength-1) <= '1';
+				elsif WallHitSide = "000001" then
 					vSpeed(speedLength-1) <= '1';
 				end if;
-			elsif BLh = 0 then
-				hSpeed(speedLength-1) <= '0';
-				paddleHits <= paddleHits + 1;
-			elsif BRh = 639 then
-				hSpeed(speedLength-1) <= '1';
-				paddleHits <= paddleHits + 1;
 			elsif BCv>485 then
 				vSpeed <= "011";
 				hSpeed <= "000";
+				paddleHits <= (others => '0');
 			elsif BTv=0 then
 				vSpeed(speedLength-1) <= '0';
 				paddleHits <= paddleHits + 1;

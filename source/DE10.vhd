@@ -115,7 +115,7 @@ architecture rtl of DE10 is
             BCh             : in  unsigned(10 downto 0);
             BCv             : in  unsigned(9 downto 0);
             hit             : out std_logic;
-            hit_side        : out std_logic_vector(3 downto 0);
+            hit_side        : out std_logic_vector(5 downto 0);
             ball_update_clk : in  std_logic;
             game_over		: in std_logic
         );
@@ -141,7 +141,7 @@ architecture rtl of DE10 is
 			BC_H :out unsigned(10 downto 0);
 			PaddleHit :in std_logic_vector(4 downto 0);
 			WallHit :in std_logic;
-			WallHitSide :in std_logic_vector(3 downto 0);
+			WallHitSide :in std_logic_vector(5 downto 0);
 			BallClk :out std_logic
 	
 		);
@@ -184,7 +184,7 @@ architecture rtl of DE10 is
     signal play_die_sound           : std_logic := '0';
 
     signal wall_hit : std_logic := '0';
-    signal wall_hit_side : std_logic_vector(3 downto 0) := "0000";
+    signal wall_hit_side : std_logic_vector(5 downto 0) := "000000";
     signal ball_update_clk : std_logic := '0';
     signal game_over : std_logic := '0';
 
